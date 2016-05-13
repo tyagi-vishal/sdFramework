@@ -1,0 +1,1334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AllevasoftModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Hometown" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ELMAH_Error">
+    <Key>
+      <PropertyRef Name="ErrorId" />
+    </Key>
+    <Property Name="ErrorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Application" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Host" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Source" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusCode" Type="int" Nullable="false" />
+    <Property Name="TimeUtc" Type="datetime" Nullable="false" />
+    <Property Name="Sequence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AllXml" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LeadBillingInfo">
+    <Key>
+      <PropertyRef Name="LeadBillingId" />
+    </Key>
+    <Property Name="LeadBillingId" Type="int" Nullable="false" />
+    <Property Name="LeadId" Type="bigint" />
+    <Property Name="PaymentOption" Type="int" />
+    <Property Name="AssignBillingCompany" Type="int" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LeadCareTreatment">
+    <Key>
+      <PropertyRef Name="TreatmentId" />
+    </Key>
+    <Property Name="TreatmentId" Type="bigint" Nullable="false" />
+    <Property Name="LeadId" Type="bigint" />
+    <Property Name="CareTreatmentId" Type="int" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LeadEmergencyContact">
+    <Key>
+      <PropertyRef Name="LeadEmergencyContactId" />
+    </Key>
+    <Property Name="LeadEmergencyContactId" Type="int" Nullable="false" />
+    <Property Name="LeadId" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Relationship" Type="int" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="State" Type="int" />
+    <Property Name="Country" Type="int" />
+    <Property Name="HomeNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LeadInfo">
+    <Key>
+      <PropertyRef Name="LeadId" />
+    </Key>
+    <Property Name="LeadId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferralCompanyId" Type="int" />
+    <Property Name="ReferralContactId" Type="int" />
+    <Property Name="Prefix" Type="nchar" MaxLength="10" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="MiddelName" Type="nvarchar" MaxLength="30" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="30" />
+    <Property Name="Gender" Type="int" Nullable="false" />
+    <Property Name="PrimaryLanguageId" Type="int" />
+    <Property Name="SSNNo" Type="nchar" MaxLength="20" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="HomeNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="OfficeNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="OtherNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactType" Type="int" />
+    <Property Name="ContactFirstName" Type="nvarchar" MaxLength="30" />
+    <Property Name="ContactLastName" Type="nvarchar" MaxLength="30" />
+    <Property Name="Relation" Type="int" />
+    <Property Name="ContactPhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="RehabId" Type="int" />
+    <Property Name="FacilityId" Type="int" />
+    <Property Name="LastContactDate" Type="date" />
+    <Property Name="Ethnicity" Type="int" />
+    <Property Name="Race" Type="int" />
+    <Property Name="ProfileStatus" Type="int" />
+    <Property Name="IsAuthorized" Type="char" MaxLength="1" />
+    <Property Name="IsMoved" Type="char" MaxLength="1" />
+    <Property Name="MovedLeadClientDate" Type="datetime" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="LeadIntakeStatusId" Type="int" />
+    <Property Name="IsLeadHot" Type="bit" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LeadIntakeStatus">
+    <Key>
+      <PropertyRef Name="LeadIntakeStatus" />
+    </Key>
+    <Property Name="LeadIntakeStatus" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeadId" Type="bigint" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="StausDate" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LeadLevelOfCare">
+    <Key>
+      <PropertyRef Name="LeadCareId" />
+    </Key>
+    <Property Name="LeadCareId" Type="bigint" Nullable="false" />
+    <Property Name="LeadId" Type="bigint" />
+    <Property Name="LevelOfCareId" Type="int" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LogExceptions">
+    <Key>
+      <PropertyRef Name="LogExceptionId" />
+    </Key>
+    <Property Name="LogExceptionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LogId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Message" Type="varchar(max)" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Source" Type="varchar(max)" Nullable="false" />
+    <Property Name="StackTrace" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogInfoes">
+    <Key>
+      <PropertyRef Name="LogInfoId" />
+    </Key>
+    <Property Name="LogInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleName" Type="varchar" MaxLength="100" />
+    <Property Name="FieldName" Type="varchar" MaxLength="100" />
+    <Property Name="PreviousValue" Type="varchar(max)" />
+    <Property Name="NewValue" Type="varchar(max)" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="101" />
+    <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogOperations">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogProperties">
+    <Key>
+      <PropertyRef Name="TypeKey" />
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="TypeKey" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Key" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LogValues" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogPropertyChanges">
+    <Key>
+      <PropertyRef Name="LogPropertyChangeId" />
+    </Key>
+    <Property Name="LogPropertyChangeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LogId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyKey" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PreviousValue" Type="varchar" MaxLength="3000" Nullable="false" />
+    <Property Name="NewValue" Type="varchar" MaxLength="3000" Nullable="false" />
+    <Property Name="EncryptionKey" Type="nvarchar" MaxLength="3000" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ObjectId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="TypeKey" Type="varchar" MaxLength="100" />
+    <Property Name="OperationKey" Type="varchar" MaxLength="100" />
+    <Property Name="Message" Type="varchar(max)" Nullable="false" />
+    <Property Name="Created" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Processed" Type="bit" Nullable="false" />
+    <Property Name="ProcessedDate" Type="datetime2" Precision="7" />
+    <Property Name="SendEmail" Type="bit" Nullable="false" />
+    <Property Name="WriteAsFile" Type="bit" Nullable="false" />
+    <Property Name="Representative" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogTypes">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IdName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClientIdName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParentIdName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="ModuleID" />
+    </Key>
+    <Property Name="ModuleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleName" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patients">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Program" Type="varchar" MaxLength="50" />
+    <Property Name="ProgramStartDate" Type="datetime" />
+    <Property Name="ServiceRequested" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="SocialSecurityNo" Type="varchar" MaxLength="50" />
+    <Property Name="Weight" Type="smallint" />
+    <Property Name="Height" Type="float" Nullable="false" />
+    <Property Name="FundSource" Type="varchar" MaxLength="50" />
+    <Property Name="FundSourcePolicy" Type="varchar" MaxLength="50" />
+    <Property Name="Race" Type="varchar" MaxLength="50" />
+    <Property Name="HomeAddress" Type="varchar(max)" />
+    <Property Name="Phone" Type="varchar" MaxLength="15" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="10" />
+    <Property Name="ReferralSource" Type="varchar" MaxLength="50" />
+    <Property Name="ReasonForReferral" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfReferral" Type="datetime" />
+    <Property Name="Siblings" Type="varchar" MaxLength="50" />
+    <Property Name="PreferredLanguage" Type="varchar" MaxLength="50" />
+    <Property Name="Ethnicity" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="EmergencyPhone" Type="varchar" MaxLength="15" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Races">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Race" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ReferralCompanies">
+    <Key>
+      <PropertyRef Name="ReferralCompanyId" />
+    </Key>
+    <Property Name="ReferralCompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferralCompanyName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Cost" Type="money" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="MobileNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="OfficeNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="OtherNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="Website" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferralTypeId" Type="int" />
+    <Property Name="ReferralCategoryId" Type="int" />
+    <Property Name="StatusId" Type="nchar" MaxLength="10" />
+    <Property Name="Reason" Type="text" />
+    <Property Name="FacebookProfileURL" Type="nvarchar" MaxLength="200" />
+    <Property Name="TwitterProfileURL" Type="nvarchar" MaxLength="200" />
+    <Property Name="LinkedinProfileURL" Type="nvarchar" MaxLength="200" />
+    <Property Name="UploadDocumentName" Type="nvarchar" MaxLength="30" />
+    <Property Name="DocumentExtension" Type="nvarchar" MaxLength="10" />
+    <Property Name="DocumentFilePath" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReferralContacts">
+    <Key>
+      <PropertyRef Name="ReferralContactId" />
+    </Key>
+    <Property Name="ReferralContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferalCategoryId" Type="int" />
+    <Property Name="ReferralCompanyId" Type="int" />
+    <Property Name="ContactPersonTitle" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="30" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="30" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="PrimaryLanguageId" Type="int" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="OfficeNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="OtherNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="Reason" Type="text" />
+    <Property Name="FacebookProfileURL" Type="nvarchar" MaxLength="200" />
+    <Property Name="TwitterProfileURL" Type="nvarchar" MaxLength="200" />
+    <Property Name="LinkedinProfileURL" Type="nvarchar" MaxLength="200" />
+    <Property Name="UploadDocumentName" Type="nvarchar" MaxLength="30" />
+    <Property Name="DocumentExtension" Type="nvarchar" MaxLength="10" />
+    <Property Name="DocumentFilePath" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="30" />
+    <Property Name="Descriptions" Type="nchar" MaxLength="10" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AspNetUserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="30" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="30" />
+    <Property Name="Prefix" Type="int" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Suffix" Type="int" />
+    <Property Name="MaritalStatus" Type="int" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="SSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="Position" Type="int" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="HireDate" Type="date" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="TimeZoneId" Type="int" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeletedBy" Type="varchar" MaxLength="30" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.BillingCompanies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BillingCompanies">
+    <Key>
+      <PropertyRef Name="BillingCompanyId" />
+    </Key>
+    <Property Name="BillingCompanyId" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="200" />
+    <Property Name="CompanyURL" Type="nvarchar" MaxLength="400" />
+    <Property Name="OfficeNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="OtherNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="State" Type="int" />
+    <Property Name="Country" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="300" />
+    <Property Name="StatusDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="char" MaxLength="1" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.BillingCompanyContacts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BillingCompanyContacts">
+    <Key>
+      <PropertyRef Name="BillingCompanyContactId" />
+    </Key>
+    <Property Name="BillingCompanyContactId" Type="int" Nullable="false" />
+    <Property Name="BillingCompanyId" Type="int" />
+    <Property Name="Prefix" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="30" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="30" />
+    <Property Name="OfficePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="OtherPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="State" Type="int" />
+    <Property Name="Country" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="300" />
+    <Property Name="StatusDate" Type="datetime" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="char" MaxLength="1" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.Countries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="CountryId" />
+      <PropertyRef Name="ISO" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="NiceName" />
+      <PropertyRef Name="PhoneCode" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="ISO" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NiceName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ISO3" Type="nvarchar" MaxLength="100" />
+    <Property Name="NumCode" Type="int" />
+    <Property Name="PhoneCode" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.GlobalCodeCategories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="GlobalCodeCategories">
+    <Key>
+      <PropertyRef Name="Category" />
+      <PropertyRef Name="CategoryName" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="AllowAddDelete" />
+      <PropertyRef Name="AllowCodeNameEdit" />
+      <PropertyRef Name="AllowSortOrderEdit" />
+      <PropertyRef Name="UserDefinedCategory" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="ModifiedBy" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="Category" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Active" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="AllowAddDelete" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="AllowCodeNameEdit" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="AllowSortOrderEdit" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="UserDefinedCategory" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="HasSubcodes" Type="char" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="RecordDeleted" Type="char" MaxLength="1" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.GlobalCodes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="GlobalCodes">
+    <Key>
+      <PropertyRef Name="GlobalCodeId" />
+      <PropertyRef Name="Category" />
+      <PropertyRef Name="CodeName" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="CannotModifyNameOrDelete" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="ModifiedBy" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="GlobalCodeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="CodeName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Active" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CannotModifyNameOrDelete" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="RecordDeleted" Type="char" MaxLength="1" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.Menus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="MenuID" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="ModifiedBy" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="MenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuName" Type="varchar" MaxLength="50" />
+    <Property Name="IconClass" Type="nvarchar(max)" />
+    <Property Name="ScreenId" Type="int" />
+    <Property Name="IsActive" Type="char" MaxLength="1" />
+    <Property Name="IsAllevaSoft" Type="char" MaxLength="1" />
+    <Property Name="OrderNumber" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="RecordDeleted" Type="char" MaxLength="1" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.RehabCompanies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RehabCompanies">
+    <Key>
+      <PropertyRef Name="RehabId" />
+    </Key>
+    <Property Name="RehabId" Type="int" Nullable="false" />
+    <Property Name="RehabName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FaderalId" Type="nvarchar" MaxLength="20" />
+    <Property Name="WebSite" Type="nvarchar" MaxLength="200" />
+    <Property Name="OfficePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="OtherPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="LogoUrl" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="TimeZone" Type="int" />
+    <Property Name="PlanStartDate" Type="date" />
+    <Property Name="ContactFirstName" Type="nvarchar" MaxLength="30" />
+    <Property Name="ContactLastName" Type="nvarchar" MaxLength="30" />
+    <Property Name="ContactEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactOfficePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactOtherPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactMobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="ContactAddress1" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactAddress2" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactCity" Type="nvarchar" MaxLength="30" />
+    <Property Name="ContactState" Type="int" />
+    <Property Name="ContactCountry" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="StatusDate" Type="datetime" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="300" />
+    <Property Name="DatabaseId" Type="int" />
+    <Property Name="DomainName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="char" MaxLength="1" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.RehabFacilities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RehabFacilities">
+    <Key>
+      <PropertyRef Name="RehabFacilityId" />
+    </Key>
+    <Property Name="RehabFacilityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RehabId" Type="int" />
+    <Property Name="FacilityName" Type="nvarchar" MaxLength="200" />
+    <Property Name="OfficePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="OtherPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="TimeZoneId" Type="int" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="Reason" Type="nvarchar(max)" />
+    <Property Name="AddressLat" Type="nvarchar" MaxLength="200" />
+    <Property Name="AddressLong" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="char" MaxLength="1" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.Screens' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Screens">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+      <PropertyRef Name="ScreenName" />
+      <PropertyRef Name="ScreenType" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="ModifiedBy" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ScreenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ScreenName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ScreenType" Type="int" Nullable="false" />
+    <Property Name="UpdateStoredProcedure" Type="varchar" MaxLength="100" />
+    <Property Name="Url" Type="nvarchar(max)" />
+    <Property Name="ControllerName" Type="varchar" MaxLength="50" />
+    <Property Name="ActionName" Type="varchar" MaxLength="50" />
+    <Property Name="FormParameters" Type="varchar" MaxLength="250" />
+    <Property Name="PageTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="char" MaxLength="1" />
+    <Property Name="CanSetPermission" Type="char" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="RecordDeleted" Type="char" MaxLength="1" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.ScreenType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ScreenType">
+    <Key>
+      <PropertyRef Name="ScreenTypeID" />
+    </Key>
+    <Property Name="ScreenTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ScreenTypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.States' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="StateName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'allevasoftrehab.dbo.SubMenus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SubMenus">
+    <Key>
+      <PropertyRef Name="SubMenuID" />
+      <PropertyRef Name="IsActive" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="ModifiedBy" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="SubMenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubMenuName" Type="varchar" MaxLength="50" />
+    <Property Name="MenuID" Type="int" />
+    <Property Name="ScreenId" Type="int" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IsAllevaSoft" Type="char" MaxLength="1" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="RecordDeleted" Type="char" MaxLength="1" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exception_Log">
+    <End Role="Logs" Type="Self.Logs" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LogExceptions" Type="Self.LogExceptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Logs">
+        <PropertyRef Name="LogId" />
+      </Principal>
+      <Dependent Role="LogExceptions">
+        <PropertyRef Name="LogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeadBillingInfo_LeadInfo">
+    <End Role="LeadInfo" Type="Self.LeadInfo" Multiplicity="0..1" />
+    <End Role="LeadBillingInfo" Type="Self.LeadBillingInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeadInfo">
+        <PropertyRef Name="LeadId" />
+      </Principal>
+      <Dependent Role="LeadBillingInfo">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeadCareTreatment_LeadInfo">
+    <End Role="LeadInfo" Type="Self.LeadInfo" Multiplicity="0..1" />
+    <End Role="LeadCareTreatment" Type="Self.LeadCareTreatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeadInfo">
+        <PropertyRef Name="LeadId" />
+      </Principal>
+      <Dependent Role="LeadCareTreatment">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeadEmergencyContact_LeadInfo">
+    <End Role="LeadInfo" Type="Self.LeadInfo" Multiplicity="0..1" />
+    <End Role="LeadEmergencyContact" Type="Self.LeadEmergencyContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeadInfo">
+        <PropertyRef Name="LeadId" />
+      </Principal>
+      <Dependent Role="LeadEmergencyContact">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeadIntakeStatus_LeadInfo">
+    <End Role="LeadInfo" Type="Self.LeadInfo" Multiplicity="1" />
+    <End Role="LeadIntakeStatus" Type="Self.LeadIntakeStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeadInfo">
+        <PropertyRef Name="LeadId" />
+      </Principal>
+      <Dependent Role="LeadIntakeStatus">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeadLevelOfCare_LeadInfo">
+    <End Role="LeadInfo" Type="Self.LeadInfo" Multiplicity="0..1" />
+    <End Role="LeadLevelOfCare" Type="Self.LeadLevelOfCare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeadInfo">
+        <PropertyRef Name="LeadId" />
+      </Principal>
+      <Dependent Role="LeadLevelOfCare">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Log_LogTypes">
+    <End Role="LogTypes" Type="Self.LogTypes" Multiplicity="0..1" />
+    <End Role="Logs" Type="Self.Logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogTypes">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="Logs">
+        <PropertyRef Name="TypeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogProperties_LogTypes">
+    <End Role="LogTypes" Type="Self.LogTypes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LogProperties" Type="Self.LogProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogTypes">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="LogProperties">
+        <PropertyRef Name="TypeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogPropertyChanges_Log">
+    <End Role="Logs" Type="Self.Logs" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LogPropertyChanges" Type="Self.LogPropertyChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Logs">
+        <PropertyRef Name="LogId" />
+      </Principal>
+      <Dependent Role="LogPropertyChanges">
+        <PropertyRef Name="LogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ssp_GetAllMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ssp_GetAllReferralCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GlobalCodeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ssp_GetAllReferralCompanies" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ssp_GetAllReferralCompanyById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ssp_GetAllReferralContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ssp_GetAllReferralContactById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ssp_GetAllReferralSource" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ssp_GetAllStates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CountryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ssp_GetCRMDashbordDatails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="actionparameter" Type="varchar" Mode="In" />
+    <Parameter Name="appointmentDateFilter" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Ssp_InsertUpdateRehabUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ACTION" Type="nvarchar" Mode="In" />
+    <Parameter Name="DATAXML" Type="xml" Mode="In" />
+    <Parameter Name="CREDXML" Type="xml" Mode="In" />
+    <Parameter Name="output" Type="int" Mode="InOut" />
+    <Parameter Name="LONGVALUE1" Type="bigint" Mode="In" />
+    <Parameter Name="LONGVALUE2" Type="bigint" Mode="In" />
+    <Parameter Name="BITVALUE1" Type="bit" Mode="In" />
+    <Parameter Name="BITVALUE2" Type="bit" Mode="In" />
+    <Parameter Name="STRINGVALUE1" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="STRINGVALUE2" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="AllevasoftModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ELMAH_Error" EntityType="Self.ELMAH_Error" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeadBillingInfo" EntityType="Self.LeadBillingInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeadCareTreatment" EntityType="Self.LeadCareTreatment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeadEmergencyContact" EntityType="Self.LeadEmergencyContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeadInfo" EntityType="Self.LeadInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeadIntakeStatus" EntityType="Self.LeadIntakeStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeadLevelOfCare" EntityType="Self.LeadLevelOfCare" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogExceptions" EntityType="Self.LogExceptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogInfoes" EntityType="Self.LogInfoes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogOperations" EntityType="Self.LogOperations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogProperties" EntityType="Self.LogProperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogPropertyChanges" EntityType="Self.LogPropertyChanges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogTypes" EntityType="Self.LogTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Module" EntityType="Self.Module" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Races" EntityType="Self.Races" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReferralCompanies" EntityType="Self.ReferralCompanies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReferralContacts" EntityType="Self.ReferralContacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BillingCompanies" EntityType="Self.BillingCompanies" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BillingCompanies].[BillingCompanyId] AS [BillingCompanyId], 
+    [BillingCompanies].[CompanyName] AS [CompanyName], 
+    [BillingCompanies].[CompanyURL] AS [CompanyURL], 
+    [BillingCompanies].[OfficeNumber] AS [OfficeNumber], 
+    [BillingCompanies].[OtherNumber] AS [OtherNumber], 
+    [BillingCompanies].[Email] AS [Email], 
+    [BillingCompanies].[Address1] AS [Address1], 
+    [BillingCompanies].[Address2] AS [Address2], 
+    [BillingCompanies].[City] AS [City], 
+    [BillingCompanies].[State] AS [State], 
+    [BillingCompanies].[Country] AS [Country], 
+    [BillingCompanies].[Status] AS [Status], 
+    [BillingCompanies].[Reason] AS [Reason], 
+    [BillingCompanies].[StatusDate] AS [StatusDate], 
+    [BillingCompanies].[CreatedBy] AS [CreatedBy], 
+    [BillingCompanies].[CreatedDate] AS [CreatedDate], 
+    [BillingCompanies].[ModifiedBy] AS [ModifiedBy], 
+    [BillingCompanies].[ModifiedDate] AS [ModifiedDate], 
+    [BillingCompanies].[IsDeleted] AS [IsDeleted], 
+    [BillingCompanies].[DeletedBy] AS [DeletedBy], 
+    [BillingCompanies].[DeletedDate] AS [DeletedDate]
+    FROM [dbo].[BillingCompanies] AS [BillingCompanies]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BillingCompanyContacts" EntityType="Self.BillingCompanyContacts" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BillingCompanyContacts].[BillingCompanyContactId] AS [BillingCompanyContactId], 
+    [BillingCompanyContacts].[BillingCompanyId] AS [BillingCompanyId], 
+    [BillingCompanyContacts].[Prefix] AS [Prefix], 
+    [BillingCompanyContacts].[FirstName] AS [FirstName], 
+    [BillingCompanyContacts].[Lastname] AS [Lastname], 
+    [BillingCompanyContacts].[OfficePhone] AS [OfficePhone], 
+    [BillingCompanyContacts].[OtherPhone] AS [OtherPhone], 
+    [BillingCompanyContacts].[Mobile] AS [Mobile], 
+    [BillingCompanyContacts].[Email] AS [Email], 
+    [BillingCompanyContacts].[Address1] AS [Address1], 
+    [BillingCompanyContacts].[Address2] AS [Address2], 
+    [BillingCompanyContacts].[City] AS [City], 
+    [BillingCompanyContacts].[State] AS [State], 
+    [BillingCompanyContacts].[Country] AS [Country], 
+    [BillingCompanyContacts].[Status] AS [Status], 
+    [BillingCompanyContacts].[Reason] AS [Reason], 
+    [BillingCompanyContacts].[StatusDate] AS [StatusDate], 
+    [BillingCompanyContacts].[PostalCode] AS [PostalCode], 
+    [BillingCompanyContacts].[CreatedBy] AS [CreatedBy], 
+    [BillingCompanyContacts].[CreatedDate] AS [CreatedDate], 
+    [BillingCompanyContacts].[ModifiedBy] AS [ModifiedBy], 
+    [BillingCompanyContacts].[ModifiedDate] AS [ModifiedDate], 
+    [BillingCompanyContacts].[IsDeleted] AS [IsDeleted], 
+    [BillingCompanyContacts].[DeletedBy] AS [DeletedBy], 
+    [BillingCompanyContacts].[DeletedDate] AS [DeletedDate]
+    FROM [dbo].[BillingCompanyContacts] AS [BillingCompanyContacts]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Countries" EntityType="Self.Countries" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Countries].[CountryId] AS [CountryId], 
+    [Countries].[ISO] AS [ISO], 
+    [Countries].[Name] AS [Name], 
+    [Countries].[NiceName] AS [NiceName], 
+    [Countries].[ISO3] AS [ISO3], 
+    [Countries].[NumCode] AS [NumCode], 
+    [Countries].[PhoneCode] AS [PhoneCode], 
+    [Countries].[IsActive] AS [IsActive]
+    FROM [dbo].[Countries] AS [Countries]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GlobalCodeCategories" EntityType="Self.GlobalCodeCategories" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [GlobalCodeCategories].[Category] AS [Category], 
+    [GlobalCodeCategories].[CategoryName] AS [CategoryName], 
+    [GlobalCodeCategories].[Active] AS [Active], 
+    [GlobalCodeCategories].[AllowAddDelete] AS [AllowAddDelete], 
+    [GlobalCodeCategories].[AllowCodeNameEdit] AS [AllowCodeNameEdit], 
+    [GlobalCodeCategories].[AllowSortOrderEdit] AS [AllowSortOrderEdit], 
+    [GlobalCodeCategories].[Description] AS [Description], 
+    [GlobalCodeCategories].[UserDefinedCategory] AS [UserDefinedCategory], 
+    [GlobalCodeCategories].[HasSubcodes] AS [HasSubcodes], 
+    [GlobalCodeCategories].[CreatedBy] AS [CreatedBy], 
+    [GlobalCodeCategories].[CreatedDate] AS [CreatedDate], 
+    [GlobalCodeCategories].[ModifiedBy] AS [ModifiedBy], 
+    [GlobalCodeCategories].[ModifiedDate] AS [ModifiedDate], 
+    [GlobalCodeCategories].[RecordDeleted] AS [RecordDeleted], 
+    [GlobalCodeCategories].[DeletedDate] AS [DeletedDate], 
+    [GlobalCodeCategories].[DeletedBy] AS [DeletedBy]
+    FROM [dbo].[GlobalCodeCategories] AS [GlobalCodeCategories]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GlobalCodes" EntityType="Self.GlobalCodes" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [GlobalCodes].[GlobalCodeId] AS [GlobalCodeId], 
+    [GlobalCodes].[Category] AS [Category], 
+    [GlobalCodes].[CodeName] AS [CodeName], 
+    [GlobalCodes].[Description] AS [Description], 
+    [GlobalCodes].[Active] AS [Active], 
+    [GlobalCodes].[CannotModifyNameOrDelete] AS [CannotModifyNameOrDelete], 
+    [GlobalCodes].[SortOrder] AS [SortOrder], 
+    [GlobalCodes].[CreatedBy] AS [CreatedBy], 
+    [GlobalCodes].[CreatedDate] AS [CreatedDate], 
+    [GlobalCodes].[ModifiedBy] AS [ModifiedBy], 
+    [GlobalCodes].[ModifiedDate] AS [ModifiedDate], 
+    [GlobalCodes].[DeletedBy] AS [DeletedBy], 
+    [GlobalCodes].[RecordDeleted] AS [RecordDeleted], 
+    [GlobalCodes].[DeletedDate] AS [DeletedDate]
+    FROM [dbo].[GlobalCodes] AS [GlobalCodes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Menus" EntityType="Self.Menus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Menus].[MenuID] AS [MenuID], 
+    [Menus].[MenuName] AS [MenuName], 
+    [Menus].[IconClass] AS [IconClass], 
+    [Menus].[ScreenId] AS [ScreenId], 
+    [Menus].[IsActive] AS [IsActive], 
+    [Menus].[IsAllevaSoft] AS [IsAllevaSoft], 
+    [Menus].[OrderNumber] AS [OrderNumber], 
+    [Menus].[CreatedBy] AS [CreatedBy], 
+    [Menus].[CreatedDate] AS [CreatedDate], 
+    [Menus].[ModifiedBy] AS [ModifiedBy], 
+    [Menus].[ModifiedDate] AS [ModifiedDate], 
+    [Menus].[RecordDeleted] AS [RecordDeleted], 
+    [Menus].[DeletedDate] AS [DeletedDate], 
+    [Menus].[DeletedBy] AS [DeletedBy]
+    FROM [dbo].[Menus] AS [Menus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RehabCompanies" EntityType="Self.RehabCompanies" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RehabCompanies].[RehabId] AS [RehabId], 
+    [RehabCompanies].[RehabName] AS [RehabName], 
+    [RehabCompanies].[FaderalId] AS [FaderalId], 
+    [RehabCompanies].[WebSite] AS [WebSite], 
+    [RehabCompanies].[OfficePhone] AS [OfficePhone], 
+    [RehabCompanies].[OtherPhone] AS [OtherPhone], 
+    [RehabCompanies].[Fax] AS [Fax], 
+    [RehabCompanies].[Email] AS [Email], 
+    [RehabCompanies].[LogoUrl] AS [LogoUrl], 
+    [RehabCompanies].[Address1] AS [Address1], 
+    [RehabCompanies].[Address2] AS [Address2], 
+    [RehabCompanies].[City] AS [City], 
+    [RehabCompanies].[StateId] AS [StateId], 
+    [RehabCompanies].[CountryId] AS [CountryId], 
+    [RehabCompanies].[PostalCode] AS [PostalCode], 
+    [RehabCompanies].[TimeZone] AS [TimeZone], 
+    [RehabCompanies].[PlanStartDate] AS [PlanStartDate], 
+    [RehabCompanies].[ContactFirstName] AS [ContactFirstName], 
+    [RehabCompanies].[ContactLastName] AS [ContactLastName], 
+    [RehabCompanies].[ContactEmail] AS [ContactEmail], 
+    [RehabCompanies].[ContactOfficePhone] AS [ContactOfficePhone], 
+    [RehabCompanies].[ContactOtherPhone] AS [ContactOtherPhone], 
+    [RehabCompanies].[ContactMobile] AS [ContactMobile], 
+    [RehabCompanies].[ContactAddress1] AS [ContactAddress1], 
+    [RehabCompanies].[ContactAddress2] AS [ContactAddress2], 
+    [RehabCompanies].[ContactCity] AS [ContactCity], 
+    [RehabCompanies].[ContactState] AS [ContactState], 
+    [RehabCompanies].[ContactCountry] AS [ContactCountry], 
+    [RehabCompanies].[Status] AS [Status], 
+    [RehabCompanies].[StatusDate] AS [StatusDate], 
+    [RehabCompanies].[Reason] AS [Reason], 
+    [RehabCompanies].[DatabaseId] AS [DatabaseId], 
+    [RehabCompanies].[DomainName] AS [DomainName], 
+    [RehabCompanies].[CreatedBy] AS [CreatedBy], 
+    [RehabCompanies].[CreatedDate] AS [CreatedDate], 
+    [RehabCompanies].[ModifiedBy] AS [ModifiedBy], 
+    [RehabCompanies].[ModifiedDate] AS [ModifiedDate], 
+    [RehabCompanies].[IsDeleted] AS [IsDeleted], 
+    [RehabCompanies].[DeletedBy] AS [DeletedBy], 
+    [RehabCompanies].[DeletedDate] AS [DeletedDate]
+    FROM [dbo].[RehabCompanies] AS [RehabCompanies]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RehabFacilities" EntityType="Self.RehabFacilities" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RehabFacilities].[RehabFacilityId] AS [RehabFacilityId], 
+    [RehabFacilities].[RehabId] AS [RehabId], 
+    [RehabFacilities].[FacilityName] AS [FacilityName], 
+    [RehabFacilities].[OfficePhone] AS [OfficePhone], 
+    [RehabFacilities].[OtherPhone] AS [OtherPhone], 
+    [RehabFacilities].[Fax] AS [Fax], 
+    [RehabFacilities].[Email] AS [Email], 
+    [RehabFacilities].[Address1] AS [Address1], 
+    [RehabFacilities].[Address2] AS [Address2], 
+    [RehabFacilities].[City] AS [City], 
+    [RehabFacilities].[StateId] AS [StateId], 
+    [RehabFacilities].[CountryId] AS [CountryId], 
+    [RehabFacilities].[PostalCode] AS [PostalCode], 
+    [RehabFacilities].[TimeZoneId] AS [TimeZoneId], 
+    [RehabFacilities].[StatusId] AS [StatusId], 
+    [RehabFacilities].[Reason] AS [Reason], 
+    [RehabFacilities].[AddressLat] AS [AddressLat], 
+    [RehabFacilities].[AddressLong] AS [AddressLong], 
+    [RehabFacilities].[CreatedBy] AS [CreatedBy], 
+    [RehabFacilities].[CreatedDate] AS [CreatedDate], 
+    [RehabFacilities].[ModifiedBy] AS [ModifiedBy], 
+    [RehabFacilities].[ModifiedDate] AS [ModifiedDate], 
+    [RehabFacilities].[IsDeleted] AS [IsDeleted], 
+    [RehabFacilities].[DeletedBy] AS [DeletedBy], 
+    [RehabFacilities].[DeletedDate] AS [DeletedDate]
+    FROM [dbo].[RehabFacilities] AS [RehabFacilities]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Screens" EntityType="Self.Screens" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Screens].[ScreenId] AS [ScreenId], 
+    [Screens].[ScreenName] AS [ScreenName], 
+    [Screens].[ScreenType] AS [ScreenType], 
+    [Screens].[UpdateStoredProcedure] AS [UpdateStoredProcedure], 
+    [Screens].[Url] AS [Url], 
+    [Screens].[ControllerName] AS [ControllerName], 
+    [Screens].[ActionName] AS [ActionName], 
+    [Screens].[FormParameters] AS [FormParameters], 
+    [Screens].[PageTitle] AS [PageTitle], 
+    [Screens].[Active] AS [Active], 
+    [Screens].[CanSetPermission] AS [CanSetPermission], 
+    [Screens].[CreatedBy] AS [CreatedBy], 
+    [Screens].[CreatedDate] AS [CreatedDate], 
+    [Screens].[ModifiedBy] AS [ModifiedBy], 
+    [Screens].[ModifiedDate] AS [ModifiedDate], 
+    [Screens].[RecordDeleted] AS [RecordDeleted], 
+    [Screens].[DeletedDate] AS [DeletedDate], 
+    [Screens].[DeletedBy] AS [DeletedBy]
+    FROM [dbo].[Screens] AS [Screens]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ScreenType" EntityType="Self.ScreenType" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ScreenType].[ScreenTypeID] AS [ScreenTypeID], 
+    [ScreenType].[ScreenTypeName] AS [ScreenTypeName]
+    FROM [dbo].[ScreenType] AS [ScreenType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="States" EntityType="Self.States" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [States].[StateId] AS [StateId], 
+    [States].[CountryId] AS [CountryId], 
+    [States].[StateName] AS [StateName]
+    FROM [dbo].[States] AS [States]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SubMenus" EntityType="Self.SubMenus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SubMenus].[SubMenuID] AS [SubMenuID], 
+    [SubMenus].[SubMenuName] AS [SubMenuName], 
+    [SubMenus].[MenuID] AS [MenuID], 
+    [SubMenus].[ScreenId] AS [ScreenId], 
+    [SubMenus].[IsActive] AS [IsActive], 
+    [SubMenus].[IsAllevaSoft] AS [IsAllevaSoft], 
+    [SubMenus].[SortOrder] AS [SortOrder], 
+    [SubMenus].[CreatedBy] AS [CreatedBy], 
+    [SubMenus].[CreatedDate] AS [CreatedDate], 
+    [SubMenus].[ModifiedBy] AS [ModifiedBy], 
+    [SubMenus].[ModifiedDate] AS [ModifiedDate], 
+    [SubMenus].[RecordDeleted] AS [RecordDeleted], 
+    [SubMenus].[DeletedDate] AS [DeletedDate], 
+    [SubMenus].[DeletedBy] AS [DeletedBy]
+    FROM [dbo].[SubMenus] AS [SubMenus]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exception_Log" Association="Self.FK_Exception_Log">
+      <End Role="Logs" EntitySet="Logs" />
+      <End Role="LogExceptions" EntitySet="LogExceptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeadBillingInfo_LeadInfo" Association="Self.FK_LeadBillingInfo_LeadInfo">
+      <End Role="LeadInfo" EntitySet="LeadInfo" />
+      <End Role="LeadBillingInfo" EntitySet="LeadBillingInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeadCareTreatment_LeadInfo" Association="Self.FK_LeadCareTreatment_LeadInfo">
+      <End Role="LeadInfo" EntitySet="LeadInfo" />
+      <End Role="LeadCareTreatment" EntitySet="LeadCareTreatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeadEmergencyContact_LeadInfo" Association="Self.FK_LeadEmergencyContact_LeadInfo">
+      <End Role="LeadInfo" EntitySet="LeadInfo" />
+      <End Role="LeadEmergencyContact" EntitySet="LeadEmergencyContact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeadIntakeStatus_LeadInfo" Association="Self.FK_LeadIntakeStatus_LeadInfo">
+      <End Role="LeadInfo" EntitySet="LeadInfo" />
+      <End Role="LeadIntakeStatus" EntitySet="LeadIntakeStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeadLevelOfCare_LeadInfo" Association="Self.FK_LeadLevelOfCare_LeadInfo">
+      <End Role="LeadInfo" EntitySet="LeadInfo" />
+      <End Role="LeadLevelOfCare" EntitySet="LeadLevelOfCare" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Log_LogTypes" Association="Self.FK_Log_LogTypes">
+      <End Role="LogTypes" EntitySet="LogTypes" />
+      <End Role="Logs" EntitySet="Logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogProperties_LogTypes" Association="Self.FK_LogProperties_LogTypes">
+      <End Role="LogTypes" EntitySet="LogTypes" />
+      <End Role="LogProperties" EntitySet="LogProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogPropertyChanges_Log" Association="Self.FK_LogPropertyChanges_Log">
+      <End Role="Logs" EntitySet="Logs" />
+      <End Role="LogPropertyChanges" EntitySet="LogPropertyChanges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

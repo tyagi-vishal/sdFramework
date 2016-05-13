@@ -1,0 +1,12 @@
+﻿<div class="leadstatus clientsttats dischrgestts" >
+    <h3>Discharge</h3>
+    <div class="leadstatus-lt">
+        <i class="fa fa-home"></i>
+    </div>
+
+    <div class="leadstatus-rt" ng-repeat="DischargeStatus in Dashboard.CRMDetails._DischargeStatus">
+        <p><span>Today</span>  <b>{{DischargeStatus.DischargeToday}}</b></p>
+        <p><span>Week</span>  <b>{{DischargeStatus.DischargeWeekly}}</b></p>
+        <p><span>Month</span> <b>{{DischargeStatus.DischargeMonthly}}</b></p>
+    </div>
+    </div>

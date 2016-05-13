@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "AuditLog";
+    Layout = "~/Views/Shared/_AllevaLayout.cshtml";
+}
+
+@*<script src="~/Scripts/pageScripts/CRM/contollers/referral.controller.js"></script>*@
+
+@section scripts{
+    <script src="~/Scripts/pageScripts/Common/auditLog.js"></script>
+}
+<div id="custom-toolbar">
+    <input type="text" id="SearchText" name="SearchText" placeholder="search text">
+  
+    <input type="button" id="btnFindAudit" class="search-fix" value="">
+</div>
+<div class="ipadnew">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="referraltop referrallist referallmanage-list">
+                <div class="row referllist">
+                    <div class="col-sm-12">
+                        <div class="referllist-tble visible">
+                            <form id="frmAuditLog">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" id="HiddenHostName" value='@ViewBag.WebServiceURL' />
+                                <div style="height:40px;width:100%"></div>
+                                <div id="filter-bar"> </div>
+                                <div class="table-responsive">
+
+
+
+                                    <table ref="Loggrid" class="table table-hover" data-search="true" data-search-text="" data-toolbar="#post" data-show-columns="true" data-show-filter="true" id="Loggrid">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="ModuleName" data-sortable="true">ModuleName</th>
+                                                <th data-field="FieldName">FieldName</th>
+                                                <th data-field="PreviousValue">PreviousValue</th>
+                                                <th data-field="NewValue">NewValue</th>
+                                                <th data-field="ModifiedBy">ModifiedBy</th>
+                                                <th data-field="ModifiedDate" data-dateformat="YYYY-MM-DD">ModifiedDate</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

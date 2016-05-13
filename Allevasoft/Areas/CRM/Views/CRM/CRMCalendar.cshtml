@@ -1,0 +1,91 @@
+﻿<style>
+.datepicker table tr td.active:active, 
+.datepicker table tr td.active.highlighted:active, 
+.datepicker table tr td.active.active, 
+.datepicker table tr td.active.highlighted.active {
+  background-color: green;
+}
+.datepicker table tr td.active:active:hover, .datepicker table tr td.active.highlighted:active:hover, .datepicker table tr td.active.active:hover, .datepicker table tr td.active.highlighted.active:hover, .datepicker table tr td.active:active:focus, .datepicker table tr td.active.highlighted:active:focus, .datepicker table tr td.active.active:focus, .datepicker table tr td.active.highlighted.active:focus, .datepicker table tr td.active:active.focus, .datepicker table tr td.active.highlighted:active.focus, .datepicker table tr td.active.active.focus, .datepicker table tr td.active.highlighted.active.focus {
+  background-color:red;
+}
+    .datepicker td,
+    .datepicker th {
+        text-align: center;
+        width: 41px;
+        height: 30px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: none;
+    }
+
+    .datepicker-inline {
+        width: 400px;
+    }
+    .datepicker td, .datepicker th {
+    border: medium none;
+    border-radius: 46px;
+    height: 35px;
+    text-align: center;
+    width: 44px;
+}
+</style>
+<div class="calender-whl-crm-right">
+    @*<img src="~/Images/calendar-crm.jpg" class="crmdsbrd">*@
+  
+    <div class='input-group date inputDate' id="select_date">
+        <input type='hidden' class="form-control" />
+      
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#select_date').datepicker({
+            format: 'dd/mm/yyyy',
+            autoclose: false,
+            
+        }).on('changeDate', function (e) {
+            var toDay =convert( new Date());
+           // alert(toDay);
+            var scope = angular.element(document.getElementById("AppointmentController")).scope();
+            scope.$apply(function () {
+                if (toDay == convert(e.date))
+                {
+                    $("#dayDesc").html("");
+                    $("#dayDesc").html('Today');
+                   
+                }
+                else
+                {
+                    $("#dayDesc").html("");
+                    $("#dayDesc").html('Day');
+                  
+                }
+                scope.CurrentDateObj = convert(e.date);
+                var currentDate = scope.CurrentDateObj;
+                scope.fnRefillAppointments(currentDate);
+            });
+
+            
+            if (typeof $.fn.mCustomScrollbar != 'undefined')
+            {
+                console.log('true');
+                //$("ul.scroll.appointment-widget").mCustomScrollbar();
+               
+            }
+            return true;
+        });
+
+    });
+    //to convert date into dd/MM/yyyy format
+    function convert(str) {
+        var date = new Date(str),
+            mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+            day = ("0" + date.getDate()).slice(-2);
+        return [date.getFullYear(), mnth, day].join("-");
+    }
+</script>

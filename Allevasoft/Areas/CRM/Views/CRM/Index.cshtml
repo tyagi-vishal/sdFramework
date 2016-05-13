@@ -1,0 +1,1386 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/CRM/Views/Shared/_CRMLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+@*<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>::Welcome::</title>
+
+    <script src="js/jquery-2.2.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+    <!--Select Dropdown JS-->
+    <script src="js/jquery.selectric.min.js"></script>
+
+    <!-- Required plugin - Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" />
+    <!--Select Dropdown CSSS-->
+    <link rel="stylesheet" href="css/selectric.css">
+    <!-- Custom styles for this template -->
+    <link href="css/master.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+    <link href="css/media-sud.css" rel="stylesheet">
+
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if IE]>
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <!--[if lte IE 7]> <html class="ie7"> <![endif]-->
+    <!--[if IE 8]> <html class="ie8"> <![endif]-->
+    <!--[if IE 9]> <html class="ie9"> <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>*@
+
+<body>
+
+    <!--Header Section Starts-->
+    @*<header class="navbar-fixed-top">
+        <div class="nav-togle-btn">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5 col-md-3 col-sm-2 col-xs-12">
+                    <h1 class="logo"><a href="#"></a></h1>
+                </div>
+
+                <div class="col-lg-7 col-md-9 col-sm-10 col-xs-12">
+                    <div class="topright-nav username-ryt">
+
+                        <div class="username-ryt-left">
+                            <img src="img/user.jpg">
+                        </div>
+
+
+                        <div class="username-ryt-right dropdown">
+                            <h6>DAVID JONES</h6>
+
+
+                            <button class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span><font>Administrator</font> <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                            </button>
+
+
+
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" data-dropdown-out="fadeOutDown" data-dropdown-in="fadeInUp">
+                                <li>
+                                    <a href="#">My Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#">My Appointment <font>12</font></a>
+                                </li>
+
+                                <li class="linebrdr">
+                                    <div class="linesolid"></div>
+                                </li>
+
+                                <li>
+                                    <a href="#"> <i class="fa fa-lock" aria-hidden="true"></i> Lock</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-power-off" aria-hidden="true"></i> Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="msgandnotfctn">
+                        <div class="dropdown friend-request-dropdown  country-notifctns dropdown">
+                            <button id="dLabel1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick="funNotificationSideMenu('dLabel1')">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="count_notifications">2</span>
+                            </button>
+
+                            <div class="dropdown-menu" role="menu" aria-labelledby="dLabel1" id="notification_msg" data-dropdown-out="flipOutX" data-dropdown-in="slideInRight">
+                                <ul class="tabs tabs-basic">
+                                    <li id="divBell" class="_notificationTab"><a href="#div1"><i class="fa fa-bell-o" aria-hidden="true"></i></a></li>
+                                    <li id="divMsg" class="_notificationTab"><a href="#div2"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                                    <li><a href="#div3" class="_notificationTab"><i class="fa fa-gear" aria-hidden="true"></i></a></li>
+                                </ul>
+
+                                <div class="content_outer scroll">
+                                    <div id="div1" class="content">
+                                        <ul>
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="div2" class="content">
+                                        <ul>
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="div3" class="content">
+                                        <ul>
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="dropdown friend-request-dropdown country-notifctns dropdown">
+                            <button id="dLabel2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick="funNotificationSideMenu('dLabel2')">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="count_notifications">2</span>
+                            </button>
+
+                            <div class="dropdown-menu" role="menu" aria-labelledby="dLabel2" id="notification_msg1" data-dropdown-out="flipOutX" data-dropdown-in="slideInRight">
+                                <ul class="tabs tabs-basic">
+                                    <li id="divBell" class="_notificationTab"><a href="#div4"><i class="fa fa-bell-o" aria-hidden="true"></i></a></li>
+                                    <li id="divMsg" class="_notificationTab"><a href="#div5"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                                    <li><a href="#div6" class="_notificationTab"><i class="fa fa-gear" aria-hidden="true"></i></a></li>
+                                </ul>
+
+                                <div class="content_outer scroll">
+                                    <div id="div4" class="content">
+                                        <ul>
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="div5" class="content">
+                                        <ul>
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="div6" class="content">
+                                        <ul>
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="messagestop-lt">
+                                                    <h6>Joe </h6>
+                                                    <p>Adding new layout to desing...</p>
+                                                </div>
+
+                                                <div class="messagestop-rt">
+                                                    <img src="img/user.jpg">
+                                                    <div class="fullmailrply">
+                                                        <a href="#"><i class="fa fa-mail-reply" aria-hidden="true"></i></a>
+                                                        <span>2 hrs ago</span>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="dropdown friend-request-dropdown countryflagdrpdwn dropdown">
+                            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                                <span>US <i aria-hidden="true" class="fa fa-angle-down"></i></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" data-dropdown-out="fadeOutDown" data-dropdown-in="fadeInUp">
+
+                                <li>
+                                    <a href="#">India</a>
+                                </li>
+                                <li>
+                                    <a href="#">Australia</a>
+                                </li>
+                                <li>
+                                    <a href="#">South Africa</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="searchbar searchtop">
+                        <input type="text" placeholder="Patient Search">
+                        <i class="fa fa-search"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="clear"></div>
+    </header>*@
+    <!--Header Section Ends-->
+    <!-- Toggle sidebar start-->
+    <div class="main-nav scroll">
+        <!--<div class="userprofile-lt">
+            <div class="profileltt">
+                <img src="img/user.jpg">
+            </div>
+            <div class="profilertt">
+                <h4>User Name</h4>
+                <h6>Location</h6>
+            </div>
+            <p><a href="#"><i class="fa fa-sign-out"></i>Sign Out</a></p>
+        </div>-->
+
+        <div class="userprofile-lt leftnav">
+            <ul>
+                <li>
+                    <a href="#" class="active"> <i class="fa fa-home"></i> <b>Dashboard</b></a>
+                </li>
+
+                <li class="haschild-submenu">
+                    <a href="#"> <i class="fa fa-medkit"></i> <b>Client</b>  <font><i class="fa fa-angle-right" aria-hidden="true"></i></font></a>
+                    <ul>
+                        <li>
+                            <a href="#">   Demography</a>
+                        </li>
+                        <li>
+                            <a href="#"> Insurance</a>
+                        </li>
+                        <li>
+                            <a href="#"> Encounter</a>
+                        </li>
+                        <li>
+                            <a href="#"> History</a>
+                        </li>
+                        <li>
+                            <a href="#"> Documentation</a>
+                        </li>
+                        <li>
+                            <a href="#"> Reports</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="haschild-submenu">
+                    <a href="#"> <i class="fa fa-calendar-plus-o"></i> <b>Appointments</b> <font><i class="fa fa-angle-right" aria-hidden="true"></i></font></a>
+                    <ul>
+                        <li>
+                            <a href="#">Demography</a>
+                        </li>
+                        <li>
+                            <a href="#">Insurance</a>
+                        </li>
+                        <li>
+                            <a href="#">Encounter</a>
+                        </li>
+                        <li>
+                            <a href="#">History</a>
+                        </li>
+                        <li>
+                            <a href="#">Documentation</a>
+                        </li>
+                        <li>
+                            <a href="#">Reports</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="referal_manage.html"> <i class="fa fa-random"></i> <b>Manage Referral</b></a>
+                </li>
+
+
+                <li>
+                    <a href="#"> <i class="fa fa-hotel"></i> <b>Ocupancy</b></a>
+                </li>
+
+                <li>
+                    <a href="#"> <i class="fa fa-print"></i> <b>Billing</b></a>
+                </li>
+
+                <li>
+                    <a href="#"> <i class="fa fa-file-text-o"></i><b> Documents</b></a>
+                </li>
+
+                <li>
+                    <a href="#"> <i class="fa fa-area-chart"></i> <b>Report</b></a>
+                </li>
+
+                <li>
+                    <a href="#"> <i class="fa fa-gears"></i> <b>Settings</b></a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="userprofile-lt leftnav recentpatient">
+            <!--							<div class="searchbar">
+                                            <input type="text" placeholder="Client Search">
+                                            <i class="fa fa-search"></i>
+                                        </div>-->
+
+            <h3>
+                <i class="fa fa-medkit"></i> Recent Accessed
+
+                <div class="dropdown recentparent-dropdown">
+                    <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class=" fa fa-ellipsis-v"></i>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li> <a href="#">Recently DIscharged</a></li>
+                        <li> <a href="#">Newly Added</a> </li>
+                        <li> <a href="#">Recently Accessed</a></li>
+                    </ul>
+                </div>
+
+
+            </h3>
+
+            <ul>
+                <li>
+                    <img src="img/user.jpg">
+                    Ipsum Lorem
+                </li>
+
+                <li>
+                    <img src="img/user.jpg">
+                    Ipsum Lorem
+                </li>
+
+                <li>
+                    <img src="img/user.jpg">
+                    Ipsum Lorem
+                </li>
+
+                <li>
+                    <img src="img/user.jpg">
+                    Ipsum Lorem
+                </li>
+
+                <li>
+                    <img src="img/user.jpg">
+                    Ipsum Lorem
+                </li>
+
+                <li>
+                    <img src="img/user.jpg">
+                    Ipsum Lorem
+                </li>
+            </ul>
+            <div class="showall">
+                <a href="#">Show all</a>
+            </div>
+        </div>
+
+
+        <div class="visibilityhiden"></div>
+
+    </div>
+    <!-- Toggle sidebar end-->
+    <!--Wrap Section Starts-->
+    <div class="wrap">
+        <div class="">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="head-title">DASHBOARD</h2>
+                </div>
+            </div>
+
+            <div class="row mrgnbtm">
+
+                <!--Calender Section Starts Here-->
+                <div class="col-lg-8 col-md-7">
+                    <div class="calender-whl-crm">
+                        <div class="calender-whl-crm-left">
+                            <h5>Today</h5>
+                            <h4>19 april</h4>
+
+                            <ul class="scroll">
+                                <li>
+                                    <div class="calnder-inner-lt">
+                                        <p>Meeting with newly added patient</p>
+                                    </div>
+
+                                    <div class="calnder-inner-rt">
+                                        <span>
+                                            <i class="fa fa-remove"></i>
+                                            <i class="fa fa-flag"></i>
+                                        </span>
+                                        <b>5:45 am</b>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="calnder-inner-lt">
+                                        <p>Meeting with newly added patient</p>
+                                    </div>
+
+                                    <div class="calnder-inner-rt">
+                                        <span>
+                                            <i class="fa fa-remove"></i>
+                                            <i class="fa fa-flag"></i>
+                                        </span>
+                                        <b>5:45 am</b>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="calnder-inner-lt">
+                                        <p>Meeting with newly added patient</p>
+                                    </div>
+
+                                    <div class="calnder-inner-rt">
+                                        <span>
+                                            <i class="fa fa-remove"></i>
+                                            <i class="fa fa-flag"></i>
+                                        </span>
+                                        <b>5:45 am</b>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="calnder-inner-lt">
+                                        <p>Meeting with newly added patient</p>
+                                    </div>
+
+                                    <div class="calnder-inner-rt">
+                                        <span>
+                                            <i class="fa fa-remove"></i>
+                                            <i class="fa fa-flag"></i>
+                                        </span>
+                                        <b>5:45 am</b>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="calnder-inner-lt">
+                                        <p>Meeting with newly added patient</p>
+                                    </div>
+
+                                    <div class="calnder-inner-rt">
+                                        <span>
+                                            <i class="fa fa-remove"></i>
+                                            <i class="fa fa-flag"></i>
+                                        </span>
+                                        <b>5:45 am</b>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="calender-whl-crm-right">
+                            <img src="img/calendar-crm.jpg" class="crmdsbrd">
+                        </div>
+                    </div>
+                </div>
+                <!--Calender Section Ends Here-->
+                <!--Lead status and Opportunity Section Starts Here-->
+                <div class="col-lg-4 col-md-5">
+                    <div class="leadstatus">
+                        <h3>Lead Status</h3>
+                        <div class="leadstatus-lt">
+                            <i class="fa fa-sitemap"></i>
+                        </div>
+
+                        <div class="leadstatus-rt">
+                            <p><span>New</span>  <b>5</b></p>
+                            <p><span>Hot</span>  <b>6</b></p>
+                            <p><span>Lost</span> <b>4</b></p>
+                        </div>
+                    </div>
+
+                    <div class="leadstatus opportunitysttatus">
+                        <h3>Opportunity </h3>
+                        <div class="leadstatus-lt">
+                            <i class="fa fa-group"></i>
+                        </div>
+
+                        <div class="leadstatus-rt">
+                            <p><span>Sale</span>  <b>5</b></p>
+                            <p><span>Psych</span>  <b>2</b></p>
+                            <p><span>Billing</span> <b>5</b></p>
+                            <p><span>Cost</span> <b>4</b></p>
+                        </div>
+                    </div>
+                </div>
+                <!--Lead status and Opportunity Section Starts Ends Here-->
+
+            </div>
+
+
+
+
+
+
+            <div class="row mrgnbtm">
+                <div class="col-lg-4 col-md-5">
+                    <!--Client status Section Starts Here-->
+                    <div class="leadstatus clientsttats">
+                        <h3>Client Status</h3>
+                        <div class="leadstatus-lt">
+                            <i class="fa fa-user"></i>
+                        </div>
+
+                        <div class="leadstatus-rt">
+                            <p><span>Green</span>  <b>5</b></p>
+                            <p><span>Yellow</span>  <b>5</b></p>
+                            <p><span>Red</span> <b>5</b></p>
+                        </div>
+                    </div>
+                    <!--Client status Section Ends Here-->
+                    <!--Discharge Section Starts Here-->
+                    <div class="leadstatus clientsttats dischrgestts">
+                        <h3>Discharge</h3>
+                        <div class="leadstatus-lt">
+                            <i class="fa fa-home"></i>
+                        </div>
+
+                        <div class="leadstatus-rt">
+                            <p><span>Today</span>  <b>5</b></p>
+                            <p><span>Week</span>  <b>5</b></p>
+                            <p><span>Month</span> <b>5</b></p>
+                        </div>
+                    </div>
+                    <!--Discharge Section Ends Here-->
+                    <!--Discharge Section Starts Here-->
+                    <div class="leadstatus clientsttats bedstts">
+                        <h3>Bed Staus</h3>
+                        <div class="leadstatus-lt">
+                            <i class="fa fa-hotel"></i>
+                        </div>
+
+                        <div class="leadstatus-rt">
+                            <p><span>Total</span>  <b>5</b></p>
+                            <p><span>Available</span>  <b>5</b></p>
+                        </div>
+                    </div>
+                    <!--Discharge Section Ends Here-->
+
+                </div>
+
+
+
+                <div class="col-lg-8 col-md-7">
+                    <!--Notes Section Starts Here-->
+                    <div class="referraltop notes_crm">
+                        <div class="headingbar">
+                            <b>Notes</b>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ul class="scroll">
+                                    <li>
+                                        <h3>
+                                            <b>Allan wake</b>
+                                            <span>Referred by: Jhon Smith</span>
+                                        </h3>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                                        <h5>
+                                            <i class="fa fa-star"></i>
+                                            <b>4/29/2015</b>
+                                            <span> 2hr ago</span>
+                                        </h5>
+                                    </li>
+
+
+                                    <li>
+                                        <h3>
+                                            <b>Allan wake</b>
+                                            <span>Referred by: Jhon Smith</span>
+                                        </h3>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                                        <h5>
+                                            <i class="fa fa-star-o"></i>
+                                            <b>4/29/2015</b>
+                                            <span> 2hr ago</span>
+                                        </h5>
+                                    </li>
+
+                                    <li>
+                                        <h3>
+                                            <b>Allan wake</b>
+                                            <span>Referred by: Jhon Smith</span>
+                                        </h3>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                                        <h5>
+                                            <i class="fa fa-star"></i>
+                                            <b>4/29/2015</b>
+                                            <span> 2hr ago</span>
+                                        </h5>
+                                    </li>
+
+                                    <li>
+                                        <h3>
+                                            <b>Allan wake</b>
+                                            <span>Referred by: Jhon Smith</span>
+                                        </h3>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                                        <h5>
+                                            <i class="fa fa-star-o"></i>
+                                            <b>4/29/2015</b>
+                                            <span> 2hr ago</span>
+                                        </h5>
+                                    </li>
+
+                                    <li>
+                                        <h3>
+                                            <b>Allan wake</b>
+                                            <span>Referred by: Jhon Smith</span>
+                                        </h3>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                                        <h5>
+                                            <i class="fa fa-star"></i>
+                                            <b>4/29/2015</b>
+                                            <span> 2hr ago</span>
+                                        </h5>
+                                    </li>
+                                </ul>
+
+                                <div class="loadmore-crm">
+                                    <a href="#">Load More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Notes Section Ends Here-->
+                </div>
+
+            </div>
+
+
+
+
+            <div class="row mrgnbtm">
+                <div class="col-md-7">
+                    <!--Message Section Starts Here-->
+                    <div class="referraltop notes_crm message_sctn">
+                        <div class="headingbar">
+                            <b>Message</b>
+                            <i class="fa fa-refresh"></i>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ul class="scroll">
+                                    <li>
+                                        <div class="dp">
+                                            <img src="img/user.jpg">
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b>Joe</b>
+                                                <a href="#"><img src="img/message_read.png"></a>
+                                            </h3>
+
+                                            <p>How many beds are available for today? Can you send me....</p>
+                                            <h4>
+                                                <b> 2hr ago</b>
+                                                <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                            </h4>
+                                        </div>
+                                    </li>
+
+
+                                    <li>
+                                        <div class="dp">
+                                            <img src="img/user.jpg">
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b>Joe</b>
+                                                <a href="#"><img src="img/message_read.png"></a>
+                                            </h3>
+
+                                            <p>How many beds are available for today? Can you send me....</p>
+                                            <h4>
+                                                <b> 2hr ago</b>
+                                                <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                            </h4>
+                                        </div>
+                                    </li>
+
+
+                                    <li>
+                                        <div class="dp">
+                                            <img src="img/user.jpg">
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b>Joe</b>
+                                                <a href="#"><img src="img/message_read.png"></a>
+                                            </h3>
+
+                                            <p>How many beds are available for today? Can you send me....</p>
+                                            <h4>
+                                                <b> 2hr ago</b>
+                                                <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                            </h4>
+                                        </div>
+                                    </li>
+
+
+                                    <li>
+                                        <div class="dp">
+                                            <img src="img/user.jpg">
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b>Joe</b>
+                                                <a href="#"><img src="img/message_read.png"></a>
+                                            </h3>
+
+                                            <p>How many beds are available for today? Can you send me....</p>
+                                            <h4>
+                                                <b> 2hr ago</b>
+                                                <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                            </h4>
+                                        </div>
+                                    </li>
+
+
+                                    <li>
+                                        <div class="dp">
+                                            <img src="img/user.jpg">
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b>Joe</b>
+                                                <a href="#"><img src="img/message_read.png"></a>
+                                            </h3>
+
+                                            <p>How many beds are available for today? Can you send me....</p>
+                                            <h4>
+                                                <b> 2hr ago</b>
+                                                <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                            </h4>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="dp">
+                                            <img src="img/user.jpg">
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b>Joe</b>
+                                                <a href="#"><img src="img/message_read.png"></a>
+                                            </h3>
+
+                                            <p>How many beds are available for today? Can you send me....</p>
+                                            <h4>
+                                                <b> 2hr ago</b>
+                                                <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                            </h4>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="loadmore-crm">
+                                    <a href="#">Show all</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Message Section Ends Here-->
+                </div>
+
+
+
+
+
+                <div class="col-md-5">
+                    <!--Notification/Alert Section Starts Here-->
+                    <div class="referraltop notes_crm message_sctn notifctn-sctn">
+                        <div class="headingbar">
+                            <b>Notification/Alerts</b>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ul class="scroll">
+                                    <li>
+                                        <div class="dp green">
+                                            <i class="fa fa-comment-o"></i>
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b> You have 5 message unread</b>
+                                                <a href="#"><i> 2hr ago</i></a>
+                                            </h3>
+
+                                            <p>Pls meet me tomorrow at 6 pm.</p>
+                                        </div>
+                                    </li>
+
+
+                                    <li>
+                                        <div class="dp green blue">
+                                            <i class="fa fa-envelope-o"></i>
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b> Smith has sent you a mail.</b>
+                                                <a href="#"><i> 2hr ago</i></a>
+                                            </h3>
+
+                                            <p>Pls meet me tomorrow at 6 pm.</p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="dp green red">
+                                            <i class="fa fa-exclamation-circle"></i>
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b> Alert notifications</b>
+                                                <a href="#"><i> 2hr ago</i></a>
+                                            </h3>
+
+                                            <p>Beds require for new patient</p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="dp green red">
+                                            <i class="fa fa-exclamation-circle"></i>
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b> Alert notifications</b>
+                                                <a href="#"><i> 2hr ago</i></a>
+                                            </h3>
+
+                                            <p>Beds require for new patient</p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="dp green yellow">
+                                            <i class="fa fa-bell-o"></i>
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b> New notification</b>
+                                                <a href="#"><i> 2hr ago</i></a>
+                                            </h3>
+
+                                            <p>5 new patient added</p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="dp green yellow">
+                                            <i class="fa fa-bell-o"></i>
+                                        </div>
+
+                                        <div class="otherinfo-rt">
+                                            <h3>
+                                                <b> New notification</b>
+                                                <a href="#"><i> 2hr ago</i></a>
+                                            </h3>
+
+                                            <p>5 new patient added</p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="loadmore-crm">
+                                    <a href="#">Show all</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Notification/Alert  Section Ends Here-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Wrap Section Ends-->
+    <!--Side Plus icon Section Starts-->
+    <div id="advertisement-control" class="quickactiondiv">
+        <h4 class="show_hide"><i class=" fa fa-plus"></i></h4>
+
+        <div id="advertisemnt-add" class="slidingDiv">
+            <ul>
+                <!--<li>
+                    <a href="#">
+                        <p class="esign"><img src="img/e-signature.png"></p> <font>6</font>
+                        <span>E-signature</span>
+                    </a>
+                </li>
+                -->
+
+                <li>
+                    <a href="#">
+                        <p><img src="img/bedstatus2_sidebar.png"></p>
+                        <span>E-Signature</span>
+                    </a>
+                </li>
+
+
+
+
+                <li>
+                    <a href="#">
+                        <p><img src="img/bedstatus_sidebar.png"></p>
+                        <span>Bed Status</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <p><img src="img/createschedule_sidebar.png"></p>
+                        <span>Create schedule</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <p><img src="img/message_sidebar.png"></p>
+                        <span>Message</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <p><img src="img/addnotes_sidebar.png"></p>
+                        <span>Add Notes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="add_patient.html" target="_parent">
+                        <p><img src="img/addpatient_sidebar.png"></p>
+                        <span>Add Client</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!--Side Plus icon Section Ends-->
+    <!--Footer Section Starts-->
+    @*<footer>
+        <p>Copyright &copy; Alleva corp 2016</p>
+    </footer>*@
+    <!--Footer Section Ends-->
+
+@*</body>*@
+
+<!-- Tutorial JS code -->
+@*<script src="js/tutorial.js"></script>*@
+@*</html>*@
+

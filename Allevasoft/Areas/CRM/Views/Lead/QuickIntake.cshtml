@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Alleva - Referral";
+    Layout = "~/Views/Shared/_AllevaLayout.cshtml";
+}
+
+@*<script src="~/Scripts/pageScripts/CRM/contollers/referral.controller.js"></script>*@
+<script src="~/Scripts/pageScripts/CRM/contollers/lead.controller.js"></script>
+
+<div class="" ng-controller="leadController" >
+
+    <!--Company Detail (Edit Mode)  Section Starts-->
+    <div class="row" ng-show="true">
+        <div class="col-md-12">
+            <div class="referraltop compnydetail_editmode">
+                <div class="headingbar">
+                    <b>Lead Detail</b>
+                    <a href="javascript:void()" id="minimize-referllist3" class="minimize-reflist"> <i class="fa fa-minus"></i></a>
+                    <div class="editbtn">
+                        <a href="javascript:void()" id="view_btn_cmpnydetail"><i class="fa fa-eye"></i>view</a>
+                    </div>
+                </div>
+
+
+                <div class="row compnydetail_view visible">
+                    <div class="col-lg-9 col-md-8 col-sm-8">
+                        <div class="compnydetail_view-right-top">
+                            <ul>
+                                <li>
+                                    <input type="text" placeholder="First Name" ng-model="leadInfo.FirstName">
+                                </li>
+
+                                <li>
+                                    <input type="text" placeholder="Middle Name" ng-model="leadInfo.MiddelName">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="Last Name" ng-model="leadInfo.LastName">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="Email" ng-model="leadInfo.EmailAddress">
+                                </li>
+
+                                <li>
+                                    <input type="text" placeholder="Home#" ng-model="leadInfo.HomeNumber">
+                                </li>
+
+                                <li>
+                                    <input type="text" placeholder="Office#" ng-model="leadInfo.OfficeNumber">
+                                </li>
+
+                                <li>
+                                    <input type="text" placeholder="Other#" ng-model="leadInfo.OtherNumber">
+                                </li>
+
+                                <li>
+                                    <select ng-model="ReferalView.CountryId">
+                                        <option>Country</option>
+                                    </select>
+                                </li>
+
+                                <li>
+                                    <select ng-model="ReferalView.StateId">
+                                        <option>State</option>
+                                    </select>
+                                </li>
+
+                                <li>
+                                    <input type="text" placeholder="Postal" ng-model="leadInfo.PostalCode">
+                                </li>
+
+
+                                @*<li>
+                                        <textarea placeholder="Referral Reason" ng-model="ReferalView.Reason"></textarea>
+                                    </li>*@
+
+                                <li class="submitbtns">
+                                    <input type="button" value="Clear" ng-click="fnClear()" class="roundedbtn_outline">
+                                    <input type="button" value="Save" ng-click="fnSaveLead(leadInfo)" class="roundedbtn">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Company Detail (Edit Mode) Section Ends-->
+
+</div>
+

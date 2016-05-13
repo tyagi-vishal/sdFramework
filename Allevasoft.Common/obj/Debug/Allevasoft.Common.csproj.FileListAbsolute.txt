@@ -1,0 +1,12 @@
+E:\Projects\Alleva\Allevasoft\Allevasoft.Common\bin\Debug\Allevasoft.Common.dll
+E:\Projects\Alleva\Allevasoft\Allevasoft.Common\bin\Debug\Allevasoft.Common.pdb
+E:\Projects\Alleva\Allevasoft\Allevasoft.Common\obj\Debug\Allevasoft.Common.csprojResolveAssemblyReference.cache
+E:\Projects\Alleva\Allevasoft\Allevasoft.Common\obj\Debug\Allevasoft.Common.dll
+E:\Projects\Alleva\Allevasoft\Allevasoft.Common\obj\Debug\Allevasoft.Common.pdb
+D:\Official\PROJECTS\Allevasoft\AllevaSoft\Allevasoft.Common\bin\Debug\Allevasoft.Common.dll
+D:\Official\PROJECTS\Allevasoft\AllevaSoft\Allevasoft.Common\bin\Debug\Allevasoft.Common.pdb
+D:\Official\PROJECTS\Allevasoft\AllevaSoft\Allevasoft.Common\bin\Debug\Allevasoft.Entities.dll
+D:\Official\PROJECTS\Allevasoft\AllevaSoft\Allevasoft.Common\bin\Debug\Allevasoft.Entities.pdb
+D:\Official\PROJECTS\Allevasoft\AllevaSoft\Allevasoft.Common\obj\Debug\Allevasoft.Common.csprojResolveAssemblyReference.cache
+D:\Official\PROJECTS\Allevasoft\AllevaSoft\Allevasoft.Common\obj\Debug\Allevasoft.Common.dll
+D:\Official\PROJECTS\Allevasoft\AllevaSoft\Allevasoft.Common\obj\Debug\Allevasoft.Common.pdb

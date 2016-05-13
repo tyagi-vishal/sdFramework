@@ -1,0 +1,36 @@
+﻿<div class="referraltop notes_crm message_sctn">
+    <div class="headingbar">
+        <b>Message</b>
+        <i class="fa fa-refresh"></i>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="scroll" ng-repeat="Messages in Dashboard.CRMDetails._Messages">
+                <li>
+                    <div class="dp">
+                        <img src="{{(Messages.ProfileImgUrl)}}" alt="imgloading">
+                    </div>
+
+                    <div class="otherinfo-rt">
+                        <h3>
+                            <b>{{Messages.MessagesFrom}}</b>
+                            <a href="#"><img src="~/Images/message_read.png"></a>
+                        </h3>
+
+                        <p>{{Messages.MessagesContent}}</p>
+                        <h4>
+                            <b> {{Messages.MessagesTimeDifference}} ago</b>
+                            <a href="#"><i class="fa fa-mail-reply"></i></a>
+                        </h4>
+                    </div>
+                </li>
+
+
+            </ul>
+
+            <div class="loadmore-crm">
+                <a href="#">Show all</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+    <section ng-controller="accountController" class="login-section login-section2 login-section-new">
+    <section class="login-box">
+        <div class="loginbox_logo">
+            <img src="../../Images/logo-login.png">
+        </div>
+        <form name="loginForm" ng-submit="loginForm.$valid && fnLogin(LoginViewModel)" novalidate>
+            <section class="loginbox_container">
+                <div class="loginbox_container_inner">
+
+                    <div class="row">
+
+
+                        <div class="col-md-12">
+                            <h3 class="allevalogo-text">alleva</h3>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="col-md-12">
+                            @*<input type="text" placeholder="User Name">*@
+                            <input type="text" placeholder="User Name" ng-minlength="3" name="UserName" ng-model="LoginViewModel.UserName" required>
+                            <span style="color:red" ng-show="(loginForm.$submitted ||  loginForm.UserName.$dirty && loginForm.UserName.$invalid)||(loginForm.UserName.$touched )">
+                                <span ng-show="loginForm.UserName.$error.required">User name is required.</span>
+                                @*<span ng-show="loginForm.email.$error.email">Invalid email address.</span>*@
+                            </span>
+                            <!--Validation Error Example 1 Starts-->
+                            <!--Validation Error Example 1 Ends-->
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            @*<input type="text" placeholder="Enter Password">*@
+                            <input type="password" placeholder="Ex:Test@123" name="password" ng-model="LoginViewModel.Password" required>
+                            <span style="color:red" ng-show="(loginForm.$submitted || loginForm.password.$dirty && loginForm.password.$invalid)|| loginForm.password.$touched">
+                                <span ng-show="loginForm.password.$error.required">Password is required.</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="rememberme_loginbox">
+                            @*<input type="checkbox" id="RememberMe">*@
+                                <input type="checkbox" id="RememberMe" ng-model="LoginViewModel.RememberMe">
+                              <label for="RememberMe">Remember Me</label>
+                            </div>
+                            @*<a href="#" class="forgtpswrd">Forgot Password?</a>*@
+                            @Html.ActionLink("Forgot Password?", "ForgotPassword", "Account",new {@Class="forgtpswrd" })
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!--<input type="submit" value="Log In" class="orange-btn login_btn">-->
+                            <input type="submit" value="Log In" id="login" @*ng-click="fnLogin(LoginViewModel)" ng-disabled="!loginForm.$valid"*@ class="orange-btn login_btn">
+                            @*<a href="dashboard.html" class="orange-btn login_btn">Log In</a>*@
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="clear"></div>
+            </section>
+            </form>
+            <div class="clear"></div>
+</section>
+</section>
+
+

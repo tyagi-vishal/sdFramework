@@ -1,0 +1,16 @@
+﻿<div class="leadstatus">
+    <section>
+        <h3>Lead Status</h3>
+        <div class="leadstatus-lt">
+            <i class="fa fa-sitemap"></i>
+        </div>
+
+        <div class="leadstatus-rt" ng-repeat="lead in Dashboard.CRMDetails._Leads">
+
+            <p><span>Hot Leads</span><b>{{lead.HotLeads}}</b></p>
+            <p><span>Lost Leads</span><b>{{lead.LostLeads}}</b></p>
+            <p><span>New Leads</span><b>{{lead.NewLeads}}</b></p>
+
+        </div>
+    </section>
+</div>

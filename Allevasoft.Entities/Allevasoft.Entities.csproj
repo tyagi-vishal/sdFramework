@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B8C36D3-B3B5-4F60-9296-9A65443C8A58}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Allevasoft.Entities</RootNamespace>
+    <AssemblyName>Allevasoft.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BuildPackage>true</BuildPackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>NewProjects.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Allevasoft.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\AspNetRole.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\AspNetUser.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\AspNetUserClaim.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\AspNetUserLogin.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\BillingCompany.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\BillingCompanyContact.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Country.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\C__MigrationHistory.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ELMAH_Error.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\GlobalCode.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\GlobalCodeCategory.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LeadBillingInfo.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LeadCareTreatment.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LeadEmergencyContact.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LeadInfo.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LeadIntakeStatu.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LeadLevelOfCare.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Log.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LogException.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LogInfo.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LogOperation.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LogProperty.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LogPropertyChanx.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\LogType.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Menu.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Module.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Patient.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Race.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ReferralCompany.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ReferralContact.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\RehabCompany.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\RehabFacility.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Role.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Screen.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ScreenType.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ssp_GetAllMenu_Result.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ssp_GetAllReferralCategory_Result.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ssp_GetAllReferralCompanies_Result.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ssp_GetAllReferralCompanyById_Result.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ssp_GetAllReferralContactById_Result.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ssp_GetAllReferralContact_Result.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ssp_GetAllReferralSource_Result.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ssp_GetAllStates_Result.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ssp_GetCRMDashbordDatails_Result.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\State.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\SubMenu.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\User.cs">
+      <DependentUpon>Allevasoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartialClass\LoggedUserInformation.cs" />
+    <Compile Include="PartialClass\GridFilter.cs" />
+    <Compile Include="PartialClass\Opportunities.cs" />
+    <Compile Include="PartialClass\UserTemp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Classes\Allevasoft.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Allevasoft.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

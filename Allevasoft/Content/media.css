@@ -1,0 +1,391 @@
+﻿@charset "utf-8";
+
+/* CSS Document */
+
+@media screen and (max-width: 1340px) {
+.input-text-rt div { margin-right: 30px; }
+}
+
+@media screen and (max-width: 1300px) {
+.labresults .msg-mid { width: 30%; }
+.labresults .msg-rt { color: #5e5e5e; width: 44%; }
+.msg-mid { width: 43%; }
+.nav-togle-btn { left: 22px; }
+.contact-prtclr ul li { width: 50%; }
+.profile-section { width: 17%; }
+.generalinfo-whole ul li label { font-size: 13px; }
+.generalinfo-whole .input-text-rt, .generalinfo-whole .selectbox-rt { width: 45%; }
+.informationlog-whole .input-text-rt, .demographic-whole .input-text-rt, .demographic-whole .selectbox-rt { width: 45%; }
+.demographic-whole .fullwidth-li-50 .input-text-rt { width: 82%; }
+.demographic-whole .fullwidth-inptfull .selectbox-rt, .demographic-whole .fullwidth-inptfull .input-text-rt { width: 73% }
+.patient-list li { width: 24%; }
+.apoinmntsbtns a { width: auto; }
+.compnydetail_view-rt-top { padding-left: 3px; }
+.compnydetail_view-rt-top li { margin-right: 3px; }
+.referal-details .col-sm-2 span { font-size: 15px; }
+.calender-whl-crm-right { padding: 10px 0; }
+}
+
+@media screen and (max-width: 1200px) {
+.referal-details .col-sm-2 span { font-size: 14px; }
+.otherinfo-rt { width: 85%; }
+.notes_crm.message_sctn.notifctn-sctn .otherinfo-rt { width: 77%; }
+.notes_crm.message_sctn .otherinfo-rt h3 b { font-size: 13px; }
+.notes_crm.message_sctn .otherinfo-rt p, .notes_crm.message_sctn.notifctn-sctn .otherinfo-rt i { font-size: 11px }
+.calnder-inner-rt  , .calnder-inner-lt {
+    float: right;
+    width: 100%;
+}
+.calender-whl-crm-right .crmdsbrd {
+    margin: 55px 0 0;
+}
+}
+
+@media screen and (max-width: 1170px) {
+.wrap { padding-right: 60px; }
+.msgalertsec { width: 24%; margin-right: 0; }
+.discharge-sctn span { font-size: 13px; height: 30px; width: 30px; }
+.discharge-sctn p { font-size: 14px; }
+.labresults .msg-mid { margin: 0 0 0 10px; }
+.resp-vtabs ul.resp-tabs-list { width: 28%; }
+.resp-vtabs .resp-tabs-container { margin: -176px 0 0; }
+.input-text-rt { float: right; width: 52%; }
+.fullwdth .input-text-rt { width: 73%; }
+.informationlog-whole .input-text-rt { width: 46%; }
+.appointmnts-top-whle font { font-size: 17px; }
+.appointmnts-top-whle b { font-size: 35px; }
+.referrallist .searchtop { width: 30%; }
+.compnydetail_editmode .compnydetail_view-right-top ul li.submitbtns .roundedbtn_outline {
+    float: none;
+    margin: 0 auto;
+    width: auto;
+}
+}
+
+@media screen and (max-width: 1100px) {
+.msg-mid { margin: 0 7px; }
+.apoinmntsbtns a { width: auto; }
+.contact-prtclr ul li label { font-size: 13px; width: 90px; }
+.resp-vtabs ul.resp-tabs-list { width: 32%; }
+.resp-vtabs .resp-tabs-container { width: 66%; }
+.generalinfo-whole ul li label { font-size: 14px; }
+.logo { float: none; margin: 0 auto; text-align: center; }
+.informationlog-whole .input-text-rt { width: 35%; }
+.informationlog-whole ul li label { font-size: 13px; width: 110px; }
+.attachdoc { left: auto; right: 0; }
+.informationlog-whole h4 .fincvllychckbx label { font-size: 12px; }
+.infolog-whole h4 span { margin-bottom: 10px; width: 100%; }
+.financial-whole .selectbox-rt { width: 35% }
+.financial-whole ul li label { width: 116px; }
+.apoinmntsbtns a { padding: 6px 8px; }
+.compnydetail_editmode .compnydetail_view-right-top ul li.submitbtns { padding: 15px 0 0; }
+.compnydetail_editmode .compnydetail_view-right-top ul li.submitbtns .roundedbtn_outline, .compnydetail_editmode .compnydetail_view-right-top ul li.submitbtns .roundedbtn { display: inline-block; float: none; margin-bottom: 10px; }
+.notetype .selectric-wrapper, .notetype select { width: 34%; }
+.referlsrch-topform input[type="text"] { margin-right: 5px; }
+.compnydetail_editmode .compnydetail_view-right-top ul li select, .compnydetail_view-right-top ul li select { width: 100%; }
+}
+
+@media screen and (max-width: 1024px) {
+.msgandnotfctn { margin: 0; }
+.msgalertsec { width: 100%; margin: 15px 0; }
+.apoinmntsbtns a { width: 125px; margin-bottom: 4px; }
+.profile-section { width: 25%; }
+.resp-vtabs ul.resp-tabs-list { width: 37%; }
+.resp-vtabs .resp-tabs-container { width: 60%; }
+.contact-prtclr ul li { width: 100%; }
+.input-text-rt { float: right; width: 65%; }
+.fullwdth .input-text-rt { width: 60%; }
+.generalinfo-whole .input-text-rt, .generalinfo-whole .selectbox-rt { width: 68%; }
+.generalinfo-whole ul li.width60 .input-text-rt { float: right; width: 68%; }
+.informationlog-whole .input-text-rt, .financial-whole .selectbox-rt, .financial-whole .fullwidth-inptfull .input-text-rt { width: 57%; }
+.attachdoc { top: -22px; }
+.patient-list li { width: 32%; }
+.logo { text-align: right; width: 200px; }
+.appointmnts-top-whle b { font-size: 28px; }
+.appointmnts-top-whle font { padding-top: 11px; }
+.adnotes-sctn.labresults { position: relative; }
+.referllist-tble { overflow-x: auto; width: 100%; }
+.referlsrch-topform input[type="text"] { width: 21%; }
+.referlsrch-topform .selectric, .referlsrch-topform select { width: 150px; }
+}
+
+@media screen and (max-width: 900px) {
+.appointmntr-whle { width: 100%; }
+.mssgalert-whole { margin: 15px 0; width: 100%; }
+.discharge-sctn p { font-size: 12px; }
+.generalinfo-whole .input-text-rt, .generalinfo-whole .selectbox-rt, .generalinfo-whole ul li.width60 .input-text-rt { width: 60%; }
+.login-section-new .login-box { width: 70%; }
+.referal-details .col-sm-3 span, .referal-details .col-sm-4 span { font-size: 14px; }
+.referlsrch-topform { width: 100%; }
+.referrallist .searchtop { margin: 12px 0 0; width: 100%; }
+}
+
+@media screen and (max-width: 870px) {
+.resp-vtabs { float: left; margin: 30px 0 !important; }
+.resp-vtabs .resp-tabs-container { width: 96%; margin: 0; }
+.addpatientlt-sctn, .resp-vtabs .resp-tabs-container { width: 100%; }
+.profile-section { width: 37%; }
+.demographic-whole .input-text-rt { width: 75%; }
+.demographic-whole .selectbox-rt { width: 77% }
+.generalinfo-whole .input-text-rt, .generalinfo-whole .selectbox-rt { width: 71%; }
+.generalinfo-whole ul li.width60 .input-text-rt { float: left }
+.demographic-whole .orange-btn { margin: 0 0 10px; float: none }
+.logo { margin: 0 0 0 20px; }
+.demographic-whole .input-text-rt, .financial-whole .selectbox-rt, .financial-whole .fullwidth-inptfull .input-text-rt { width: 62%; }
+.patient-list li { width: 49%; }
+.logo { margin: 0 auto 20px 35px; }
+#advertisement-control h4 { top: auto; bottom: 0; }
+#advertisement-control { bottom: 10px; top: auto; }
+#advertisemnt-add, #advertisemnt-add2 { bottom: 60px; }
+.logo { text-align: left; margin: 0 auto 0px 50px; }
+.login-section { background-size: 100% 100%; }
+.login-section2 { background-size: cover; }
+.referlsrch-topform .selectric-wrapper, .referlsrch-topform select { float: left; margin-right: 0; margin-bottom: 10px; width: 100%; }
+.referlsrch-topform input[type="text"] { width: 100%; margin-bottom: 10px; }
+.compnydetail_editmode .compnydetail_view-right-top { padding-right: 0 }
+.addbtns-viewbtns { float: right; margin: 10px 0 0; width: 100%; }
+.referraltop .headingbar a.addnew { margin-left: 22px; margin-right: 0; }
+.compnydetail_editmode .compnydetail_view-right-top ul li , .compnydetail_view-right-top ul li , .compnydetail_view-right-top ul li.fullwidth-cmpnydetail {
+    margin-bottom: 15px;
+    width: 100%;
+}
+.notetype textarea {
+    margin: 15px 0;
+}
+.searchbar_static {
+    clear: both;
+    margin: 10px 0 0;
+    width: 100%;
+}
+}
+
+@media screen and (max-width: 768px) {
+.wrap { padding-top: 130px; }
+.main-nav { top: 57px; }
+.appointmntr-whle.commondiagnosis-section { width: 100%; }
+.dischrge-lbrec-whole { width: 100%; margin: 20px 0; }
+.discharge-sctn p { font-size: 15px; }
+.generalinfo-whole .input-text-rt, .generalinfo-whole .selectbox-rt { width: 65%; }
+.input-text-rt { width: 58%; }
+.profile-section { width: 35%; }
+.referal-details .col-sm-3 span, .referal-details .col-sm-4 span { line-height: 30px; padding-left: 0; }
+.main-nav.toggle-menu {
+    top: 57px;
+}
+.userprofile-lt.leftnav { padding: 0 18px 30px; }
+.topheaderresponsive .col-xs-12:first-child { width: 185px; }
+.topheaderresponsive .col-xs-12:first-child .logo { padding-left:55px; }
+.topheaderresponsive .col-xs-12:nth-child(2) { width: 74%; float: right }
+.searchtop input[type="text"] { left: auto; right: 0; position: absolute }
+
+}
+
+@media screen and (max-width: 720px) {
+.generalinfo-whole .input-text-rt { width: 60%; }
+.demographic-whole .input-text-rt, .demographic-whole.informationlog-whole .fullwidth-inptfull .input-text-rt { width: 100% }
+.informationlog-whole ul li label { font-size: 14px; width: auto; }
+.infolog-whole h4 .fincvllychckbx input[type="checkbox"] + label::before { left: 0; }
+.infolog-whole h4 .fincvllychckbx input[type="checkbox"]:checked + label::after { left: 5px; }
+.informationlog-whole h4 .fincvllychckbx label { font-size: 13px; padding-left: 28px; }
+.contact-prtclr ul li label { width: auto; }
+.generalinfo-whole .selectbox-rt, .generalinfo-whole ul li.width60 .input-text-rt, .financial-whole .selectbox-rt { width: 100%; margin-left: 0 }
+.profile-section { width: 42%; }
+.main-nav { height: 100%;position: fixed; }
+.login-section-new .login-box { width: 85%; }
+.login-section-new .loginbox_logo { left: -55px; }
+.main-nav, .main-nav.toggle-menu {z-index: 999; }
+.topheaderresponsive .col-xs-12:first-child { width: 26px }
+.topheaderresponsive .col-xs-12 .logo { padding-left: 0; width: 26px; }
+.topheaderresponsive .col-xs-12 .logo a { width: 26px; }
+.topheaderresponsive .col-xs-12:nth-child(2) { width: 88%; }
+.minimize-reflist{ line-height:18px;}
+}
+
+
+@media screen and (max-width: 750px) and (min-width:651px) {
+	.actionButton{ width:35px; height:35px;}
+	.actionButton::before , .actionButton::after{ font-size:18px; margin-left: 11px;
+    margin-top: 5px;}
+	.subActionButton{ width:30px; height:30px; margin-left:2px;}
+	.subActionButton.person::before {
+    margin-left: 9px;
+    margin-top: 4px;
+}
+.subActionButton.mapMarker::before {
+    margin-left: 7px;
+    margin-top: 4px;
+}
+.subActionButton.note::before {
+    margin-left: 7px;
+    margin-top: 4px;
+}
+.subActionButton.message::before {
+    margin-left: 7px;
+    margin-top: 3px;
+}
+.subActionButton.notes::before {
+    margin-left: 8px;
+    margin-top: 4px;
+}
+.subActionButton.client::before {
+    margin-left: 6px;
+    margin-top: 4px;
+}
+.main-nav.scroll.toggle-menu .userprofile-lt.leftnav{ padding-bottom:0;}
+.main-nav.scroll.toggle-menu .userprofile-lt.leftnav li a{ padding:6px 14px;}
+.main-nav.scroll.toggle-menu .userprofile-lt.leftnav li i{ margin-right:11px; padding:0px 0; font-size:16px; width:16px;}
+}
+
+@media screen and (max-width: 650px) {
+.wrap { margin-left: 0; padding-right: 28px; }
+.main-nav { bottom: 0; left: -265px; }
+.toggle-menu { margin-left: 265px; }
+.topright-nav ul li a { padding: 7px 20px; }
+.topright-nav { min-width: auto; }
+.discharge-sctn p { font-size: 17px; }
+.discharge-sctn span { padding: 8px 0; height: 44px; width: 44px; font-size: 18px; }
+.profile-section { width: 30%; }
+.generalinfo-whole ul li label { width: 140px; }
+.generalinfo-whole ul li.width60 .input-text-rt { float: right; }
+.attachdoc { top: -12px; }
+footer { position: static; z-index:0; }
+.floatingContainer {
+    bottom: 15px;
+    right: 33px;
+}
+.demographic-whole .input-text-rt, .demographic-whole.informationlog-whole .fullwidth-inptfull .input-text-rt, .generalinfo-whole .selectbox-rt, .generalinfo-whole ul li.width60 .input-text-rt, .financial-whole .selectbox-rt { width: 60%; }
+.patient-list li { width: 32%; }
+.show-on-hover .dropdown-menu { min-width: 140px; }
+.main-nav.toggle-menu { left: 0; margin-left: 0; }
+.main-nav.toggle-menu .userprofile-lt.leftnav li a b { display: block; }
+.topright-nav { min-width: 150px; }
+.main-nav.toggle-menu .userprofile-lt.leftnav ul li.haschild-submenu ul { left: 0; position: static; box-shadow: none; }
+.main-nav.toggle-menu .userprofile-lt.leftnav li a i { float: none; }
+.main-nav.toggle-menu .userprofile-lt.leftnav li a b { display: inline-block; }
+.main-nav.toggle-menu .userprofile-lt.leftnav li font i { display: inline-block; float: right; }
+.wrap.toggle-side { margin-left: 0px; }
+.main-nav.toggle-menu .recentpatient { display: block; }
+.main-nav.toggle-menu .userprofile-lt.leftnav ul li.haschild-submenu li a { padding: 6px 0 6px 48px; }
+.login-box { width: 80% }
+.login-section-new .loginbox_logo { width: 150px; left: -20px; top: -55px; }
+.login-section-new .loginbox_logo img { max-width: 100%; }
+.referlsrch-topform .search_refrl { margin-top: 10px; }
+.addbtns-viewbtns { float: right; margin: 0px 15px 0 0; width: auto; }
+.referraltop .headingbar a.addnew { margin-left: 17px; }
+.notetype .selectric-wrapper, .notetype select { width: 100%; }
+.main-nav.toggle-menu .userprofile-lt.leftnav ul li.haschild-submenu ul { background: none; }
+.main-nav.toggle-menu .userprofile-lt.leftnav ul li.haschild-submenu li a { padding: 6px 10px; color: #cbe5f9; border: none; padding-left: 54px; }
+.main-nav.toggle-menu .userprofile-lt.leftnav ul li { border: none; }
+.main-nav.toggle-menu .userprofile-lt.leftnav ul li.haschild-submenu li a:hover { color: #fff; background: none; }
+.msgandnotfctn { margin-right: 12px; }
+}
+
+@media screen and (max-width: 570px) {
+.msgandnotfctn { min-width: 100px; }
+.profile-section { width: 40%; }
+.patient-list li { width: 49%; }
+.login-section2 .loginbox_container_inner { width: 100%; }
+.login-section-new .loginbox_logo { width: 120px; left: -20px; top: -55px; }
+.referraltop .headingbar a.addnew { margin-right: 4px; }
+.username-ryt .username-ryt-left, .username-ryt .username-ryt-left img { width: 28px; height: 28px; }
+.topright-nav { min-width: 135px; }
+.username-ryt .username-ryt-left { padding-top: 8px; }
+.msgandnotfctn .country-notifctns button { margin-right: 14px; }
+.msgandnotfctn { margin-left: 10px; }
+.searchtop input[type="text"]:focus{ width:152px;}
+}
+
+@media screen and (max-width: 480px) {
+.wrap { padding-top: 200px; }
+#advertisement-control { top: 225px; }
+#advertisement-control.homert-cntrl { top: 370px; }
+.profile-section { width: 50%; }
+.contact-prtclr ul li label { font-size: 14px; text-align: left; width: 100%; }
+.input-text-rt, .demographic-whole .fullwidth-inptfull .input-text-rt, .demographic-whole .fullwidth-inptfull .selectbox-rt, .demographic-whole .selectbox-rt, .demographic-whole .input-text-rt, .generalinfo-whole ul li.width60 .input-text-rt, .financial-whole .fullwidth-li.fullwidth-inptfull .input-text-rt { width: 100%; }
+.time-lt { width: 64%; }
+.time-rt { width: 34%; }
+.patient-list { text-align: center; max-height: none; }
+.indicate > li { margin-bottom: 9px; }
+.login-box { width: 90% }
+.login-section-new .login_btn, .compnydetail_view-right-top ul li.fullwidth-cmpnydetail { width: 100%; }
+.login-section-new .loginbox_logo { left: -22px; top: -23px; width: 100px; }
+.login-section-new .login_btn { font-size: 18px; }
+.login-section-new .loginbox_container_inner input[type="text"], .login-section-new .loginbox_container_inner input[type="email"], .login-section-new .loginbox_container_inner input[type="password"], .login-section-new .forgtpswrd { font-size: 14px; }
+.loginbox_container h3.allevalogo-text { font-size: 36px; margin-bottom: 0; padding-left: 43px; }
+.notes_section .compnydetail_view-lt-top img { margin-left: 0; }
+.calender-whl-crm-left, .calender-whl-crm-right { width: 100%; height: auto; }
+.calender-whl-crm { height: 640px; }
+.otherinfo-rt { width: 70%; }
+.main-nav, .main-nav.toggle-menu { top: 55px; }
+.addbtns-viewbtns { width: 100%; margin: 10px 0 0 0; }
+.username-ryt .username-ryt-right button { padding-left: 9px; }
+.msgandnotfctn i.fa-bell, .msgandnotfctn i.fa-envelope { font-size: 21px; }
+.msgandnotfctn i { font-size: 23px; }
+.msgandnotfctn { min-width: 180px; }
+.searchtop input[type="text"] { padding: 7px 22px 7px 15px; width: 10px; }
+.searchtop { margin: 0 10px 0 0; }
+.msgandnotfctn { margin-left: 0px; margin-right: 12px; }
+.nav-togle-btn i { font-size: 25px; }
+.topheaderresponsive .col-xs-12:first-child .logo { padding-left: 17px; }
+.topheaderresponsive .col-xs-12:first-child { width: 70px; }
+.topheaderresponsive .col-xs-12:nth-child(2) { padding-left: 0; width: 76%; }
+.username-ryt .username-ryt-right button { padding-left: 0; }
+.topright-nav { min-width: 45px; }
+.msgandnotfctn .country-notifctns button { margin-right: 22px; }
+.searchtop input[type="text"]:focus{ width:160px;}
+.searchtop input[type="text"]{ left:0; background-position:left center;    padding: 7px 7px 7px 27px;
+    width: 10px;}
+	.nav-togle-btn {
+    left: 10px;
+}
+.calender-whl-crm-right .crmdsbrd {
+    margin: 20px 0 0;
+}
+.username-ryt .username-ryt-right {
+    padding-top: 13px;
+}
+.countryflagdrpdwn em {
+    vertical-align: text-bottom;
+}
+.referraltop .headingbar .selectric-wrapper{
+    margin-top: 10px;
+    width: 100%;
+}
+.table-pagination ul {
+    float: none;
+    margin-bottom: 0;
+    width: 100%;
+}
+.table-pagination ul li {
+    margin: 0 0 0 6px;
+}
+.table-pagination ul li{ float:none; display:inline-block; text-align:center;}
+}
+
+@media screen and (max-width: 400px) {
+.compnydetail_editmode .compnydetail_view-right-top ul li, .compnydetail_view-right-top ul li { width: 100%; }
+.country-notifctns .dropdown-menu { width: 320px; }
+.msgandnotfctn { min-width: 138px;}
+.msgandnotfctn .country-notifctns button {
+    margin-right: 13px;
+}
+.msgandnotfctn i.fa-bell, .msgandnotfctn i.fa-envelope {
+    font-size: 18px;
+}
+.msgandnotfctn i {
+    font-size: 20px;
+}
+.msgandnotfctn .countryflagdrpdwn span i {line-height: 22px; }
+.msgandnotfctn {
+    min-width: 127px;
+}
+.count_notifications{ top:-11px;}
+.msgandnotfctn .countryflagdrpdwn i {
+    vertical-align: baseline;
+}
+.msgandnotfctn .countryflagdrpdwn span i {
+    line-height: 22px;
+}
+
+
+}

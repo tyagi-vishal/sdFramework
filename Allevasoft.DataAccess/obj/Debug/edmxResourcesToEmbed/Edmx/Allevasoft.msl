@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AllevasoftModelStoreContainer" CdmEntityContainer="AllevasoftEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="AllevasoftModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="AllevasoftModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="AllevasoftModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="AllevasoftModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="AllevasoftModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELMAH_Error">
+      <EntityTypeMapping TypeName="AllevasoftModel.ELMAH_Error">
+        <MappingFragment StoreEntitySet="ELMAH_Error">
+          <ScalarProperty Name="AllXml" ColumnName="AllXml" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="TimeUtc" ColumnName="TimeUtc" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Host" ColumnName="Host" />
+          <ScalarProperty Name="Application" ColumnName="Application" />
+          <ScalarProperty Name="ErrorId" ColumnName="ErrorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="AllevasoftModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUser">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRole">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="ssp_GetAllMenu" FunctionName="AllevasoftModel.Store.ssp_GetAllMenu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AllevasoftModel.ssp_GetAllMenu_Result">
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="NxtMenuId" ColumnName="NxtMenuId" />
+          <ScalarProperty Name="SubMenuID" ColumnName="SubMenuID" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="IconClass" ColumnName="IconClass" />
+          <ScalarProperty Name="SubMenuName" ColumnName="SubMenuName" />
+          <ScalarProperty Name="SubMenuUrl" ColumnName="SubMenuUrl" />
+          <ScalarProperty Name="MenuUrl" ColumnName="MenuUrl" />
+          <ScalarProperty Name="ISSubMenu" ColumnName="ISSubMenu" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Races">
+      <EntityTypeMapping TypeName="AllevasoftModel.Race">
+        <MappingFragment StoreEntitySet="Races">
+          <ScalarProperty Name="Race1" ColumnName="Race" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogExceptions">
+      <EntityTypeMapping TypeName="AllevasoftModel.LogException">
+        <MappingFragment StoreEntitySet="LogExceptions">
+          <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+          <ScalarProperty Name="LogExceptionId" ColumnName="LogExceptionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogOperations">
+      <EntityTypeMapping TypeName="AllevasoftModel.LogOperation">
+        <MappingFragment StoreEntitySet="LogOperations">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogProperties">
+      <EntityTypeMapping TypeName="AllevasoftModel.LogProperty">
+        <MappingFragment StoreEntitySet="LogProperties">
+          <ScalarProperty Name="LogValues" ColumnName="LogValues" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="TypeKey" ColumnName="TypeKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogPropertyChanges">
+      <EntityTypeMapping TypeName="AllevasoftModel.LogPropertyChanx">
+        <MappingFragment StoreEntitySet="LogPropertyChanges">
+          <ScalarProperty Name="EncryptionKey" ColumnName="EncryptionKey" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+          <ScalarProperty Name="PreviousValue" ColumnName="PreviousValue" />
+          <ScalarProperty Name="PropertyKey" ColumnName="PropertyKey" />
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+          <ScalarProperty Name="LogPropertyChangeId" ColumnName="LogPropertyChangeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="AllevasoftModel.Log">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="Representative" ColumnName="Representative" />
+          <ScalarProperty Name="WriteAsFile" ColumnName="WriteAsFile" />
+          <ScalarProperty Name="SendEmail" ColumnName="SendEmail" />
+          <ScalarProperty Name="ProcessedDate" ColumnName="ProcessedDate" />
+          <ScalarProperty Name="Processed" ColumnName="Processed" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+          <ScalarProperty Name="TypeKey" ColumnName="TypeKey" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogTypes">
+      <EntityTypeMapping TypeName="AllevasoftModel.LogType">
+        <MappingFragment StoreEntitySet="LogTypes">
+          <ScalarProperty Name="ParentIdName" ColumnName="ParentIdName" />
+          <ScalarProperty Name="ClientIdName" ColumnName="ClientIdName" />
+          <ScalarProperty Name="IdName" ColumnName="IdName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modules">
+      <EntityTypeMapping TypeName="AllevasoftModel.Module">
+        <MappingFragment StoreEntitySet="Module">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="AllevasoftModel.Patient">
+        <MappingFragment StoreEntitySet="Patients">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="EmergencyPhone" ColumnName="EmergencyPhone" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Ethnicity" ColumnName="Ethnicity" />
+          <ScalarProperty Name="PreferredLanguage" ColumnName="PreferredLanguage" />
+          <ScalarProperty Name="Siblings" ColumnName="Siblings" />
+          <ScalarProperty Name="DateOfReferral" ColumnName="DateOfReferral" />
+          <ScalarProperty Name="ReasonForReferral" ColumnName="ReasonForReferral" />
+          <ScalarProperty Name="ReferralSource" ColumnName="ReferralSource" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+          <ScalarProperty Name="Race" ColumnName="Race" />
+          <ScalarProperty Name="FundSourcePolicy" ColumnName="FundSourcePolicy" />
+          <ScalarProperty Name="FundSource" ColumnName="FundSource" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="SocialSecurityNo" ColumnName="SocialSecurityNo" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="ServiceRequested" ColumnName="ServiceRequested" />
+          <ScalarProperty Name="ProgramStartDate" ColumnName="ProgramStartDate" />
+          <ScalarProperty Name="Program" ColumnName="Program" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogInfoes">
+      <EntityTypeMapping TypeName="AllevasoftModel.LogInfo">
+        <MappingFragment StoreEntitySet="LogInfoes">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+          <ScalarProperty Name="PreviousValue" ColumnName="PreviousValue" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="LogInfoId" ColumnName="LogInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ssp_GetCRMDashbordDatails" FunctionName="AllevasoftModel.Store.ssp_GetCRMDashbordDatails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AllevasoftModel.ssp_GetCRMDashbordDatails_Result">
+          <ScalarProperty Name="HotLeads" ColumnName="HotLeads" />
+          <ScalarProperty Name="LostLeads" ColumnName="LostLeads" />
+          <ScalarProperty Name="NewLeads" ColumnName="NewLeads" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="AllevasoftModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BillingCompanies">
+      <EntityTypeMapping TypeName="AllevasoftModel.BillingCompany">
+        <MappingFragment StoreEntitySet="BillingCompanies">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="StatusDate" ColumnName="StatusDate" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="OtherNumber" ColumnName="OtherNumber" />
+          <ScalarProperty Name="OfficeNumber" ColumnName="OfficeNumber" />
+          <ScalarProperty Name="CompanyURL" ColumnName="CompanyURL" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BillingCompanyId" ColumnName="BillingCompanyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BillingCompanyContacts">
+      <EntityTypeMapping TypeName="AllevasoftModel.BillingCompanyContact">
+        <MappingFragment StoreEntitySet="BillingCompanyContacts">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="StatusDate" ColumnName="StatusDate" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="OtherPhone" ColumnName="OtherPhone" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="BillingCompanyId" ColumnName="BillingCompanyId" />
+          <ScalarProperty Name="BillingCompanyContactId" ColumnName="BillingCompanyContactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="AllevasoftModel.Country">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="NumCode" ColumnName="NumCode" />
+          <ScalarProperty Name="ISO3" ColumnName="ISO3" />
+          <ScalarProperty Name="NiceName" ColumnName="NiceName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ISO" ColumnName="ISO" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GlobalCodeCategories">
+      <EntityTypeMapping TypeName="AllevasoftModel.GlobalCodeCategory">
+        <MappingFragment StoreEntitySet="GlobalCodeCategories">
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="RecordDeleted" ColumnName="RecordDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="HasSubcodes" ColumnName="HasSubcodes" />
+          <ScalarProperty Name="UserDefinedCategory" ColumnName="UserDefinedCategory" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AllowSortOrderEdit" ColumnName="AllowSortOrderEdit" />
+          <ScalarProperty Name="AllowCodeNameEdit" ColumnName="AllowCodeNameEdit" />
+          <ScalarProperty Name="AllowAddDelete" ColumnName="AllowAddDelete" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GlobalCodes">
+      <EntityTypeMapping TypeName="AllevasoftModel.GlobalCode">
+        <MappingFragment StoreEntitySet="GlobalCodes">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="RecordDeleted" ColumnName="RecordDeleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="CannotModifyNameOrDelete" ColumnName="CannotModifyNameOrDelete" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="GlobalCodeId" ColumnName="GlobalCodeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="AllevasoftModel.Menu">
+        <MappingFragment StoreEntitySet="Menus">
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="RecordDeleted" ColumnName="RecordDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="IsAllevaSoft" ColumnName="IsAllevaSoft" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ScreenId" ColumnName="ScreenId" />
+          <ScalarProperty Name="IconClass" ColumnName="IconClass" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RehabCompanies">
+      <EntityTypeMapping TypeName="AllevasoftModel.RehabCompany">
+        <MappingFragment StoreEntitySet="RehabCompanies">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+          <ScalarProperty Name="DatabaseId" ColumnName="DatabaseId" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="StatusDate" ColumnName="StatusDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ContactCountry" ColumnName="ContactCountry" />
+          <ScalarProperty Name="ContactState" ColumnName="ContactState" />
+          <ScalarProperty Name="ContactCity" ColumnName="ContactCity" />
+          <ScalarProperty Name="ContactAddress2" ColumnName="ContactAddress2" />
+          <ScalarProperty Name="ContactAddress1" ColumnName="ContactAddress1" />
+          <ScalarProperty Name="ContactMobile" ColumnName="ContactMobile" />
+          <ScalarProperty Name="ContactOtherPhone" ColumnName="ContactOtherPhone" />
+          <ScalarProperty Name="ContactOfficePhone" ColumnName="ContactOfficePhone" />
+          <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="PlanStartDate" ColumnName="PlanStartDate" />
+          <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="LogoUrl" ColumnName="LogoUrl" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="OtherPhone" ColumnName="OtherPhone" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+          <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+          <ScalarProperty Name="FaderalId" ColumnName="FaderalId" />
+          <ScalarProperty Name="RehabName" ColumnName="RehabName" />
+          <ScalarProperty Name="RehabId" ColumnName="RehabId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RehabFacilities">
+      <EntityTypeMapping TypeName="AllevasoftModel.RehabFacility">
+        <MappingFragment StoreEntitySet="RehabFacilities">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="AddressLong" ColumnName="AddressLong" />
+          <ScalarProperty Name="AddressLat" ColumnName="AddressLat" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="TimeZoneId" ColumnName="TimeZoneId" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="OtherPhone" ColumnName="OtherPhone" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+          <ScalarProperty Name="FacilityName" ColumnName="FacilityName" />
+          <ScalarProperty Name="RehabId" ColumnName="RehabId" />
+          <ScalarProperty Name="RehabFacilityId" ColumnName="RehabFacilityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Screens">
+      <EntityTypeMapping TypeName="AllevasoftModel.Screen">
+        <MappingFragment StoreEntitySet="Screens">
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="RecordDeleted" ColumnName="RecordDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CanSetPermission" ColumnName="CanSetPermission" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="FormParameters" ColumnName="FormParameters" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="ControllerName" ColumnName="ControllerName" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="UpdateStoredProcedure" ColumnName="UpdateStoredProcedure" />
+          <ScalarProperty Name="ScreenType" ColumnName="ScreenType" />
+          <ScalarProperty Name="ScreenName" ColumnName="ScreenName" />
+          <ScalarProperty Name="ScreenId" ColumnName="ScreenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScreenTypes">
+      <EntityTypeMapping TypeName="AllevasoftModel.ScreenType">
+        <MappingFragment StoreEntitySet="ScreenType">
+          <ScalarProperty Name="ScreenTypeName" ColumnName="ScreenTypeName" />
+          <ScalarProperty Name="ScreenTypeID" ColumnName="ScreenTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="AllevasoftModel.State">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubMenus">
+      <EntityTypeMapping TypeName="AllevasoftModel.SubMenu">
+        <MappingFragment StoreEntitySet="SubMenus">
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="RecordDeleted" ColumnName="RecordDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsAllevaSoft" ColumnName="IsAllevaSoft" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ScreenId" ColumnName="ScreenId" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="SubMenuName" ColumnName="SubMenuName" />
+          <ScalarProperty Name="SubMenuID" ColumnName="SubMenuID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReferralCompanies">
+      <EntityTypeMapping TypeName="AllevasoftModel.ReferralCompany">
+        <MappingFragment StoreEntitySet="ReferralCompanies">
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DocumentFilePath" ColumnName="DocumentFilePath" />
+          <ScalarProperty Name="DocumentExtension" ColumnName="DocumentExtension" />
+          <ScalarProperty Name="UploadDocumentName" ColumnName="UploadDocumentName" />
+          <ScalarProperty Name="LinkedinProfileURL" ColumnName="LinkedinProfileURL" />
+          <ScalarProperty Name="TwitterProfileURL" ColumnName="TwitterProfileURL" />
+          <ScalarProperty Name="FacebookProfileURL" ColumnName="FacebookProfileURL" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="ReferralCategoryId" ColumnName="ReferralCategoryId" />
+          <ScalarProperty Name="ReferralTypeId" ColumnName="ReferralTypeId" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="OtherNumber" ColumnName="OtherNumber" />
+          <ScalarProperty Name="OfficeNumber" ColumnName="OfficeNumber" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="ReferralCompanyName" ColumnName="ReferralCompanyName" />
+          <ScalarProperty Name="ReferralCompanyId" ColumnName="ReferralCompanyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReferralContacts">
+      <EntityTypeMapping TypeName="AllevasoftModel.ReferralContact">
+        <MappingFragment StoreEntitySet="ReferralContacts">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DocumentFilePath" ColumnName="DocumentFilePath" />
+          <ScalarProperty Name="DocumentExtension" ColumnName="DocumentExtension" />
+          <ScalarProperty Name="UploadDocumentName" ColumnName="UploadDocumentName" />
+          <ScalarProperty Name="LinkedinProfileURL" ColumnName="LinkedinProfileURL" />
+          <ScalarProperty Name="TwitterProfileURL" ColumnName="TwitterProfileURL" />
+          <ScalarProperty Name="FacebookProfileURL" ColumnName="FacebookProfileURL" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="OtherNumber" ColumnName="OtherNumber" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="OfficeNumber" ColumnName="OfficeNumber" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="PrimaryLanguageId" ColumnName="PrimaryLanguageId" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="ContactPersonTitle" ColumnName="ContactPersonTitle" />
+          <ScalarProperty Name="ReferralCompanyId" ColumnName="ReferralCompanyId" />
+          <ScalarProperty Name="ReferalCategoryId" ColumnName="ReferalCategoryId" />
+          <ScalarProperty Name="ReferralContactId" ColumnName="ReferralContactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Ssp_InsertUpdateRehabUsers" FunctionName="AllevasoftModel.Store.Ssp_InsertUpdateRehabUsers" />
+    <FunctionImportMapping FunctionImportName="ssp_GetAllReferralCategory" FunctionName="AllevasoftModel.Store.ssp_GetAllReferralCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AllevasoftModel.ssp_GetAllReferralCategory_Result">
+          <ScalarProperty Name="GlobalCodeId" ColumnName="GlobalCodeId" />
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ssp_GetAllReferralCompanyById" FunctionName="AllevasoftModel.Store.ssp_GetAllReferralCompanyById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AllevasoftModel.ssp_GetAllReferralCompanyById_Result">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ssp_GetAllReferralContact" FunctionName="AllevasoftModel.Store.ssp_GetAllReferralContact">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AllevasoftModel.ssp_GetAllReferralContact_Result">
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ReferralType" ColumnName="ReferralType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ssp_GetAllReferralContactById" FunctionName="AllevasoftModel.Store.ssp_GetAllReferralContactById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AllevasoftModel.ssp_GetAllReferralContactById_Result">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ContactPersonTitle" ColumnName="ContactPersonTitle" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ssp_GetAllReferralSource" FunctionName="AllevasoftModel.Store.ssp_GetAllReferralSource">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AllevasoftModel.ssp_GetAllReferralSource_Result">
+          <ScalarProperty Name="GlobalCodeId" ColumnName="GlobalCodeId" />
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ssp_GetAllStates" FunctionName="AllevasoftModel.Store.ssp_GetAllStates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AllevasoftModel.ssp_GetAllStates_Result">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ssp_GetAllReferralCompanies" FunctionName="AllevasoftModel.Store.ssp_GetAllReferralCompanies">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AllevasoftModel.ssp_GetAllReferralCompanies_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReferralCompanyName" ColumnName="ReferralCompanyName" />
+          <ScalarProperty Name="ReferralCategory" ColumnName="ReferralCategory" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="ReferralType" ColumnName="ReferralType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="AllevasoftModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="TimeZoneId" ColumnName="TimeZoneId" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="AspNetUserId" ColumnName="AspNetUserId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadBillingInfoes">
+      <EntityTypeMapping TypeName="AllevasoftModel.LeadBillingInfo">
+        <MappingFragment StoreEntitySet="LeadBillingInfo">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="AssignBillingCompany" ColumnName="AssignBillingCompany" />
+          <ScalarProperty Name="PaymentOption" ColumnName="PaymentOption" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="LeadBillingId" ColumnName="LeadBillingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadCareTreatments">
+      <EntityTypeMapping TypeName="AllevasoftModel.LeadCareTreatment">
+        <MappingFragment StoreEntitySet="LeadCareTreatment">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CareTreatmentId" ColumnName="CareTreatmentId" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="TreatmentId" ColumnName="TreatmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadInfoes">
+      <EntityTypeMapping TypeName="AllevasoftModel.LeadInfo">
+        <MappingFragment StoreEntitySet="LeadInfo">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsLeadHot" ColumnName="IsLeadHot" />
+          <ScalarProperty Name="LeadIntakeStatusId" ColumnName="LeadIntakeStatusId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="MovedLeadClientDate" ColumnName="MovedLeadClientDate" />
+          <ScalarProperty Name="IsMoved" ColumnName="IsMoved" />
+          <ScalarProperty Name="IsAuthorized" ColumnName="IsAuthorized" />
+          <ScalarProperty Name="ProfileStatus" ColumnName="ProfileStatus" />
+          <ScalarProperty Name="Race" ColumnName="Race" />
+          <ScalarProperty Name="Ethnicity" ColumnName="Ethnicity" />
+          <ScalarProperty Name="LastContactDate" ColumnName="LastContactDate" />
+          <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
+          <ScalarProperty Name="RehabId" ColumnName="RehabId" />
+          <ScalarProperty Name="ContactPhoneNumber" ColumnName="ContactPhoneNumber" />
+          <ScalarProperty Name="Relation" ColumnName="Relation" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="OtherNumber" ColumnName="OtherNumber" />
+          <ScalarProperty Name="OfficeNumber" ColumnName="OfficeNumber" />
+          <ScalarProperty Name="HomeNumber" ColumnName="HomeNumber" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="SSNNo" ColumnName="SSNNo" />
+          <ScalarProperty Name="PrimaryLanguageId" ColumnName="PrimaryLanguageId" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddelName" ColumnName="MiddelName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="ReferralContactId" ColumnName="ReferralContactId" />
+          <ScalarProperty Name="ReferralCompanyId" ColumnName="ReferralCompanyId" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadIntakeStatus">
+      <EntityTypeMapping TypeName="AllevasoftModel.LeadIntakeStatu">
+        <MappingFragment StoreEntitySet="LeadIntakeStatus">
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="StausDate" ColumnName="StausDate" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="LeadIntakeStatus" ColumnName="LeadIntakeStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadLevelOfCares">
+      <EntityTypeMapping TypeName="AllevasoftModel.LeadLevelOfCare">
+        <MappingFragment StoreEntitySet="LeadLevelOfCare">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LevelOfCareId" ColumnName="LevelOfCareId" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="LeadCareId" ColumnName="LeadCareId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadEmergencyContacts">
+      <EntityTypeMapping TypeName="AllevasoftModel.LeadEmergencyContact">
+        <MappingFragment StoreEntitySet="LeadEmergencyContact">
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="HomeNumber" ColumnName="HomeNumber" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="LeadEmergencyContactId" ColumnName="LeadEmergencyContactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,672 @@
+﻿
+@{
+    ViewBag.Title = "Alleva - Referral";
+    Layout = "~/Views/Shared/_AllevaLayout.cshtml";
+}
+
+<script src="~/Scripts/pageScripts/CRM/contollers/referral.controller.js"></script>
+
+
+<div class="" ng-controller="referralCtrl" ng-init="fnLoadDefault()">
+    <div class="row" ng-show="true">
+
+        <!--Referral Section Starts-->
+    <div class="col-md-12">
+            <div class="referraltop">
+                <div class="headingbar">
+                    <b>Referral Company</b>
+                    <div class="addbtns-viewbtns">
+                        <a href="#" class="addnew" id="addnewbtn_refmang" ng-click="fnAdd()">Add New</a>
+                        <a href="#" class="addnew" id="btnGrid" ng-click="fnGetData()">Show List</a>
+                    </div>
+                </div>
+                <div class="row referlsrch">
+                    <div class="col-sm-12">
+                        <div class="referlsrch-topform">
+                            <h3>Referral Search</h3>                           
+                            <select ng-model="selected_type" ng-change="fnChangeData(selected_type.CodeName)" ng-options="c.CodeName for c in referralTypes" selectric-element></select>                       
+                            <input type="text" placeholder="Enter Keyword">
+                            <input type="submit" value="" class="search_refrl">
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     <!--Referral List Section Starts-->
+    <div class="row" ng-show="divGrid">
+        <div class="col-md-12">
+            <div class="referraltop referrallist" >
+                <div class="headingbar">
+                    <b>Referral List</b>               
+                    
+                    <div class="searchbar searchtop">
+                        <input type="text" placeholder="Search">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+
+                <div class="row referllist">
+                    <div class="col-sm-12">
+                        <div class="referllist-tble visible">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th width="20%">Referral Source Name</th>
+                                        <th width="10%">Type</th>
+                                        <th width="20%">Category</th>
+                                        <th width="10%">Cost</th>
+                                        <th style="text-align:center" colspan="2" width="20%">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="list in refLists">
+                                        <td>{{ list.ReferralSourceName}}</td>
+                                        <td>{{list.ReferralType}}</td>
+                                        <td>{{list.ReferralCategory}}</td>
+                                        <td>{{list.Cost}}</td>
+                                        <td><a data-ng-click="fnEdit(list)"><i class="fa fa-pencil-square-o" style="cursor:pointer" ></i>Edit</a></td>
+                                        <td><a data-ng-click="fnView(list)"><i class="fa fa-pencil-square-o" style="cursor:pointer"></i>View</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="table-pagination">
+                                <ul>
+                                    <li class="nocircle">
+                                        <a href="#"><i class="fa fa-angle-left"></i></a>
+                                    </li>
+
+                                    <li class="nocircle">
+                                        <a href="#">pre</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">1</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">5</a>
+                                    </li>
+
+                                    <li class="nocircle">
+                                        <a href="#">next</a>
+                                    </li>
+
+                                    <li class="nocircle">
+                                        <a href="#"><i class="fa fa-angle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Referral List Section Ends-->
+    
+    <!--Referral Add Section Starts-->
+    <div ng-show="divContent" ng-repeat="list in lstContent">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="referraltop">
+                    <div class="headingbar">
+                        <b>Referral Details</b>                       
+                    </div>
+                    <div class="row referlsrch">
+                        <div class="col-sm-12">
+                            <div class="referlsrch-topform">
+                                <h3>Type</h3>
+                                <select ng-model="selected_type" ng-change="fnChangeLayout(selected_type.CodeName,selected_type.GlobalCodeId)" ng-options="c.CodeName for c in referralTypes"></select>
+                                <h3 ng-show="ddlCategory">Category</h3>
+                                <select ng-show="ddlCategory" ng-model="selected_category" ng-options="c.CodeName for c in referralCategories"></select>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+            <!--Company Detail (Edit Mode)  Section Starts-->
+       <div ng-show="divCompanyContent" >
+                    <div class="referraltop compnydetail_editmode">
+                        <div class="headingbar">
+                            <b>Company Detail</b>
+                            <a href="javascript:void()" id="minimize-referllist3" class="minimize-reflist"> <i class="fa fa-minus"></i></a>
+                            <div class="editbtn" data-ng-click="fnView(list)">
+                                <a href="javascript:void()" id="view_btn_cmpnydetail"><i class="fa fa-eye"></i>view</a>
+                            </div>
+                        </div>
+
+                        <div class="row compnydetail_view visible">
+                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                <div class="compnydetail_view-lt-top">
+                                    <div class="cmpnydetail-img">
+                                        <img src="~/Images/compnydetail-img.png">
+                                        <i class="fa fa-pencil"></i>
+                                    </div>
+                                    <input type="text" placeholder="Company Name">
+                                </div>
+
+                                <div class="compnydetail_view-rt-top">
+                                    <h5>or</h5>
+                                    <h6>Import Contact from</h6>
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-9 col-md-8 col-sm-8">
+                                <div class="compnydetail_view-right-top">
+                                    <ul>
+                                        <li>
+                                            <input type="text" placeholder="Company Name"  ng-model="referralView.ReferralCompanyName" value="{{list.ReferralCompanyName}}">
+                                            <label ng-show="refCompanyView">Referral Company Name</label>
+                                            <span ng-show="refCompanyView">{{referralView.ReferralCompanyName}}</span>
+                                        </li>
+
+                                        <li>
+                                            <input type="text" placeholder="Referral Cost" ng-model="referralView.Cost" value="{{list.Cost}}">
+                                            <label ng-show="refCompanyView">Referral Cost</label>
+                                            <span ng-show="refCompanyView">{{referralView.Cost}}</span>
+                                        </li>
+
+                                        <li>
+                                            <input type="text" placeholder="Contact No."  ng-model="referralView.Number" value="{{list.Number}}">
+                                            <label ng-show="refCompanyView">Number</label>
+                                            <span ng-show="refCompanyView">{{referralView.Number}}</span>
+                                        </li>
+                                        <li>
+                                            <input type="text" placeholder="Email" ng-model="referralView.Email" value="{{list.Email}}">
+                                            <label ng-show="refCompanyView">Email</label>
+                                            <span ng-show="refCompanyView">{{referralView.Email}}</span>
+                                        </li>
+
+                                        <li>
+                                            <textarea type="text" placeholder="Enter your address 1 here" ng-model="referralView.Address1" value="{{list.Address1}}"></textarea>
+                                            <label ng-show="refCompanyView">Address1</label>
+                                            <span ng-show="refCompanyView">{{referralView.Address1}}</span>
+                                        </li>
+
+                                        <li>
+                                            <textarea type="text" placeholder="Enter your address 2 here" ng-model="referralView.Address2" value="{{list.Address2}}"></textarea>
+                                            <label ng-show="refCompanyView">Address2</label>
+                                            <span ng-show="refCompanyView">{{referralView.Address2}}</span>
+                                        </li>
+
+                                        <li>
+                                            <input type="text" placeholder="City" ng-model="referralView.City" value="{{list.City}}">
+                                            <label ng-show="refCompanyView">City</label>
+                                            <span ng-show="refCompanyView">{{referralView.City}}</span>
+                                        </li>
+
+                                        <li>
+                                            <input type="text" placeholder="Postal" ng-model="referralView.Postal" value="{{list.Postal}}">
+                                            <label ng-show="refCompanyView">Postal</label>
+                                            <span ng-show="refCompanyView">{{referralView.Postal}}</span>
+                                        </li> 
+                                            
+                                        <li>
+                                            <select ng-model="selected_country" ng-change="fnChangeState(selected_country.CountryId)" ng-options="c.Name for c in countriesList"></select>
+                                            <label ng-show="refCompanyView">Country</label>
+                                            <span ng-show="refCompanyView">{{selected_country.Name}}</span>
+                                        </li>
+                                        <li>
+                                            <select ng-model="selected_state" ng-options="s.StateName for s in statesList"></select>
+                                            <label ng-show="refCompanyView">State</label>
+                                            <span ng-show="refCompanyView">{{selected_state.StateName}}</span>
+                                        </li>                                  
+                                                                                
+                                        <li>
+                                            <select>
+                                                <option value="1">Active</option>
+                                                <option value="2">DeActive</option>
+                                                <option value="3">Suspended</option>
+                                            </select>
+                                            <label ng-show="refCompanyView">Status</label>
+                                            <span ng-show="refCompanyView">{{status}}</span>
+                                        </li>
+                                        
+                                         <li>
+                                            <textarea placeholder="Referral Reason" ng-model="referralView.Reason">{{list.Reason}}</textarea>
+                                            <label ng-show="refCompanyView">Reason</label>
+                                            <span ng-show="refCompanyView">{{referralView.Reason}}</span>
+                                        </li>                                 
+
+                                        <li class="submitbtns">
+                                            <input type="button" value="Clear" ng-click="fnClear()" class="roundedbtn_outline">
+                                            <input type="button" value="{{btnSave}}" ng-click="fnSaveReferral(referralView)" class="roundedbtn">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            
+        <!--Contact Detail (Edit Mode) Section Starts-->
+        <div ng-show="divContactContent">
+                <div class="referrltop_leadintake compnydetail_editmode demographics-leadintke _parentDiv">
+                    <div class="headingbar">
+                        <b>Contacts Detail</b>
+                        <a class="minimize-reflist minimize-referllist-lead minimize-referllist-demogrphcs" href="javascript:void()"> <i class="fa fa-minus"></i></a>
+                    </div>
+
+
+                    <div class="row compnydetail_view visible _childDiv">
+                        <div class="col-lg-3 col-md-4 col-sm-4">
+                            <div class="compnydetail_view-lt-top">
+                                <div class="cmpnydetail-img">
+                                    <img src="img/compnydetail-img.png">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+
+                                <h6>Upload Profile Picture</h6>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-9 col-md-8 col-sm-8">
+                            <div class="compnydetail_view-right-top">
+                                <ul>
+                                    <li class="chkboxes_labl">
+                                        <label>Prefix</label>
+                                        <div class="input-text-rt prefix_chckbxs radioall">
+                                            <div><input type="radio" name="prefixx" checked="checked" id="mr"> <label for="mr">Mr</label></div>
+                                            <div><input type="radio" name="prefixx" id="mrs"> <label for="mrs">Mrs</label></div>
+                                            <div><input type="radio" name="prefixx" id="miss"> <label for="miss">Miss</label></div>
+                                            <div><input type="radio" name="prefixx" id="ms"> <label for="ms">Ms</label></div>
+                                        </div>
+                                        <span ng-show="refContactView">{{prefix}}</span>
+                                    </li>
+
+                                    <li>
+                                        <input ng-show="refContactEdit" type="text" ng-model="refContactData.lastName" placeholder="Last Name">
+                                        <label ng-show="refContactView">Last Name</label>
+                                        <span ng-show="refContactView">{{refContactData.lastName}}</span>
+                                    </li>
+
+                                    <li>
+                                        <input ng-show="refContactEdit" type="text" ng-model="refContactData.fistName" placeholder="First Name">
+                                        <label ng-show="refContactView">First Name</label>
+                                        <span ng-show="refContactView">{{refContactData.fistName}}</span>
+                                    </li>
+
+                                    <li class="chkboxes_labl">
+                                        <label>Gender</label>
+                                        <div ng-show="refContactEdit" class="input-text-rt prefix_chckbxs radioall">
+                                            <div><input type="radio" ng-model="radioValue" name="gender" checked="checked" id="male1"> <label for="male1">Male</label></div>
+                                            <div><input type="radio" ng-model="radioValue" name="gender" id="female1"> <label for="female1">Female</label></div>
+                                            <div><input type="radio" ng-model="radioValue" name="gender" id="others1"> <label for="others1">Others</label></div>
+                                        </div>
+                                        <span ng-show="refContactView">{{radioValue}}</span>
+                                    </li>
+
+                                    <li>
+                                        <input ng-show="refContactEdit" type="text" ng-model="refContactData.email" placeholder="Email">
+                                        <label ng-show="refContactView">Email</label>
+                                        <span ng-show="refContactView">{{refContactData.email}}</span>
+                                    </li>
+
+                                    <li>
+                                        <div ng-show="refContactEdit" class="leadintke_rtsection calenderinput">
+                                            <input type="text" placeholder="Date of Birth">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <label ng-show="refContactView">Date of Birth</label>
+                                        <span ng-show="refContactView">{{dob}}</span>
+                                    </li>
+
+                                    <li>
+                                        <input ng-show="refContactEdit" type="text" ng-model="refContactData.city" placeholder="City">
+                                        <label ng-show="refContactView">City</label>
+                                        <span ng-show="refContactView">{{refContactData.city}}</span>
+                                    </li>
+
+                                    <li>
+                                        <input ng-show="refContactEdit" type="text" ng-model="refContactData.mobile" placeholder="Mobile">
+                                        <label ng-show="refContactView">Mobile</label>
+                                        <span ng-show="refContactView">{{refContactData.mobile}}</span>
+                                    </li> 
+
+                                    <li>
+                                        <textarea ng-show="refContactEdit" ng-model="refContactData.address2" placeholder="Address 2"></textarea>
+                                        <label ng-show="refContactView">Address 2</label>
+                                        <span ng-show="refContactView">{{refContactData.address2}}</span>
+                                    </li>                                    
+
+                                    <li>
+                                        <textarea ng-show="refContactEdit" ng-model="refContactData.address1" placeholder="Address 1"></textarea>
+                                        <label ng-show="refContactView">Address 1</label>
+                                        <span ng-show="refContactView">{{refContactData.address1}}</span>
+                                    </li>                                
+
+                                    <li>
+                                        <select ng-model="selected_state" ng-options="s.StateName for s in statesList"></select>
+                                        <label ng-show="refContactView">State</label>
+                                        <span ng-show="refContactView">{{selected_state.StateName}}</span>
+
+                                    </li>                                 
+                                   
+                                    <li>
+                                        <select ng-model="selected_country" ng-change="fnChangeState(selected_country.CountryId)" ng-options="c.Name for c in countriesList"></select>
+                                        <label ng-show="refContactView">Country</label>
+                                        <span ng-show="refContactView">{{selected_country.Name}}</span>
+                                    </li>
+
+                                    <li>
+                                        <input ng-show="refContactEdit" type="text" ng-model="refContactData.postal" placeholder="Postal">
+                                        <label ng-show="refContactView">Postal</label>
+                                        <span ng-show="refContactView">{{refContactData.postal}}</span>
+                                    </li>
+
+                                    <li>
+                                        <select>
+                                            <option value="1">Active</option>
+                                            <option value="2">DeActive</option>
+                                            <option value="3">Suspended</option>
+                                        </select>
+                                        <label ng-show="refCompanyView">Status</label>
+                                        <span ng-show="refCompanyView">{{status}}</span>
+                                    </li>                             
+
+                                    <li>
+                                        <textarea ng-show="refContactEdit" type="text" ng-model="refContactData.reason" placeholder="Reason"></textarea>
+                                        <label ng-show="refContactView">Reson</label>
+                                        <span ng-show="refContactView">{{refContactData.reason}}</span>
+                                    </li>
+
+                                    <li>
+                                        <select ng-show="refContactEdit">
+                                            <option>Referral Company</option>
+                                        </select>
+                                        <label ng-show="refContactView">Referral Company</label>
+                                        <span ng-show="refContactView">{{refContactData.company}}</span>
+                                    </li>
+
+                                    <li class="submitbtns" ng-show="refContactEdit">
+                                        <input type="button" value="Save" class="roundedbtn">
+                                        <input type="button" value="Clear" class="roundedbtn">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>        
+        <!--Contact Detail (Edit Mode) Section Ends-->
+
+        
+        <!--Add Notes (Edit Mode)  Section Starts-->
+                    <div class="referraltop compnydetail  addnotes_editmode">
+                        <div class="headingbar">
+                            <b>Add Notes</b>
+                            <a href="javascript:void()" id="minimize-referllist4" class="minimize-reflist"> <i class="fa fa-minus"></i></a>
+
+                            <div class="editbtn">
+                                <a href="javascript:void()" id="view_btn_notesdetail"><i class="fa fa-eye"></i>view</a>
+                            </div>
+
+                        </div>
+
+                        <div class="addnotes-editwhole visible">
+                            <div class="compnydetail_view addnotes_top-edit ">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="notetype">
+                                            <select>
+                                                <option>Note Type</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="notetype">
+                                            <textarea></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="button" value="Add" class="roundedbtn">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Add Notes (Edit Mode) Section Ends-->
+        </div>
+</div>
+    <!--Referral Add Section Ends-->
+
+    <!--Referral View Section Starts-->
+    <div ng-show="divView">
+        <!--Company Detail Section Starts-->
+        <div class="row">
+            <div class="col-md-12" ng-repeat="list in lstReferalView">
+                <div class="referraltop compnydetail compnydetails_editmode_whole">
+                    <div class="headingbar">
+                        <b>Company Detail</b>
+
+                        <a href="javascript:void()" id="minimize-referllist5" class="minimize-reflist"> <i class="fa fa-minus"></i></a>
+
+
+                        <div class="editbtn" data-ng-click="fnEdit(list)">
+                            <a href="javascript:void()" id="edit_btn_cmpnydetail"><i class="fa fa-pencil"  ></i>edit</a>
+                        </div>
+
+                    </div>
+
+                    <div class="row compnydetails_editmode visible">
+                        <div class="col-md-3 col-sm-4">
+                            <div class="compnydetail_view-lt-top">
+                                <img src="~/Images/cmpnydetail_profilepic.png">
+                                <h4>Alleva Corp</h4>
+                            </div>
+
+                            <div class="compnydetail_view-rt-top">
+                                <h5>Join us</h5>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            <div class="compnydetail_view-right-top">
+                                <ul >
+                                    <li>
+                                        <label>Referral Source</label>
+                                        <span>Company</span>
+                                    </li>
+
+                                    <li>
+                                        <label>Category</label>
+                                        <span>{{list.CategoryName}}</span>
+                                    </li>
+
+                                    <li>
+                                        <label>Contact No.</label>
+                                        <span>{{list.CategoryName}}</span>
+                                    </li>
+
+                                    <li>
+                                        <label>Referral Cost</label>
+                                        <span>{{list.Cost}}</span>
+                                    </li>
+
+                                    <li>
+                                        <label>E-mail</label>
+                                        <span>{{list.Email}}</span>
+                                    </li>
+
+                                    <li>
+                                        <label>Address 1</label>
+                                        <span>{{list.Address1}}</span>
+                                    </li>
+
+                                    <li>
+                                        <label>Address 2</label>
+                                        <span>{{list.Address2}}</span>
+                                    </li>
+
+                                    <li>
+                                        <label>City</label>
+                                        <span>{{list.City}}</span>
+                                    </li>
+
+                                    <li>
+                                        <label>Country</label>  
+                                        <span>{{list.CountryName}}</span>
+                                    </li>
+
+                                    <li>
+                                        <label>State</label>
+                                        <span>{{list.StateName}}</span>
+                                    </li>
+
+                                    <li>
+                                        <label>Postal</label>
+                                        <span>{{list.PostalCode}}</span>
+                                    </li>
+
+                                    <li>
+                                        <label>Status</label>
+                                        <span>{{list.Status}}</span>
+                                    </li>
+
+                                    <li class="fullwidth-cmpnydetail">
+                                        <label>Referral Reason:</label>
+                                        <span>{{list.Reason}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Company Detail Section Ends-->
+        <!--Notes Section Starts-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="referraltop compnydetail notes_section_whle">
+                    <div class="headingbar">
+                        <b>Notes</b>
+
+                        <a href="javascript:void(0)" id="minimize-referllist6" class="minimize-reflist"> <i class="fa fa-minus"></i></a>
+
+
+                        <div class="editbtn">
+                            <a href="javascript:void(0)" id="edit_btn_notes_sectn"><i class="fa fa-pencil"></i>edit</a>
+                        </div>
+
+                    </div>
+
+
+                    <div class="notes_sctn_edit visible">
+                        <div class="row notes_section">
+                            <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2">
+                                <div class="compnydetail_view-lt-top">
+                                    <img src="~/Images/cmpnydetail_profilepic.png">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-11 col-md-10 col-sm-10 col-xs-10">
+                                <div class="notes_rtsctn">
+                                    <h3>
+                                        <label>Visit Note</label>
+                                        <span>4/25/2016</span>
+                                    </h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip .</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row notes_section">
+                            <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2">
+                                <div class="compnydetail_view-lt-top">
+                                    <img src="~/Images/cmpnydetail_profilepic.png">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-11 col-md-10 col-sm-10 col-xs-10">
+                                <div class="notes_rtsctn">
+                                    <h3>
+                                        <label>Visit Note</label>
+                                        <span>4/25/2016</span>
+                                    </h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip .</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row notes_section">
+                            <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2">
+                                <div class="compnydetail_view-lt-top">
+                                    <img src="~/Images/cmpnydetail_profilepic.png">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-11 col-md-10 col-sm-10 col-xs-10">
+                                <div class="notes_rtsctn">
+                                    <h3>
+                                        <label>Visit Note</label>
+                                        <span>4/25/2016</span>
+                                    </h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip .</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Referral View Section Ends-->
+</div>
+

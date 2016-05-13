@@ -1,0 +1,42 @@
+﻿@using StackExchange.Profiling;
+<!doctype html>
+<html  ng-app="allevaApp" >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="~/Images/icon.png">
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/FontAwesome/css")
+    @Styles.Render("~/Content/master")
+    @Styles.Render("~/Content/media")
+    @Styles.Render("~/Content/animate")    
+
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+</head>
+
+<body>    
+    
+    @RenderBody()
+</body>
+</html>
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/tutorial")
+@Scripts.Render("~/bundles/angularJs")
+@RenderSection("scripts", required: false)
+@MiniProfiler.RenderIncludes()
+@*<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>*@
+<script src="~/Scripts/js/toastr.js"></script>
+
+
+
+<script src="~/Scripts/pageScripts/Common/accountController.js"></script>
+
+

@@ -1,0 +1,14 @@
+﻿<div class="leadstatus opportunitysttatus">
+    <h3>Opportunity </h3>
+    <div class="leadstatus-lt">
+        <i class="fa fa-group"></i>
+    </div>
+    <section @*ng-controller="dashBoardController"*@>
+        <div class="leadstatus-rt" ng-repeat="opportunity in Dashboard.CRMDetails._Oppertunities">
+            <p><span>Sale</span>  <b>{{opportunity.SalesOpp}}</b></p>
+            <p><span>Psych</span>  <b>{{opportunity.PychOpp}}</b></p>
+            <p><span>Billing</span> <b>{{opportunity.BillingOpp}}</b></p>
+            <p><span>Cost</span> <b>{{opportunity.CostOpp}}</b></p>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,41 @@
+﻿<div class="calender-whl-crm-left">
+    <h5 id="dayDesc">Today</h5>
+    <h4 id="SelectedDate">{{CurrentDateObj | date:'dd/MM/yyyy'}}</h4>
+    <input type="hidden" class="form-control" id="bindAppointmentDate" ng-model="CurrentDateObj" />
+    
+   
+    <ul class="scroll appointment-widget">
+       
+            <li ng-if="Appointments.length == 0">
+                <div class="calnder-inner-lt">
+                    <p>No Record Found</p>
+                </div>
+
+                <div class="calnder-inner-rt">
+
+                </div>
+            </li>
+            <li ng-repeat="Appointment in Appointments">
+                <div class="calnder-inner-lt">
+                    <p>{{Appointment.AppointmentText}}</p>
+                </div>
+
+                <div class="calnder-inner-rt">
+                    <span>
+                        <i class="fa fa-remove"></i>
+                        <i class="fa fa-flag"></i>
+                    </span>
+                    <b>{{Appointment.AppointmentTextTime}}</b>
+                </div>
+            </li>
+          
+
+
+            
+            
+</ul>
+
+ </div>
+
+
+

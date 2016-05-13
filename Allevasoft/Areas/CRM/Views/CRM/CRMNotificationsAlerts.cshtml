@@ -1,0 +1,105 @@
+﻿<div class="referraltop notes_crm message_sctn notifctn-sctn">
+    <div class="headingbar">
+        <b>Notification/Alerts</b>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="scroll" ng-repeat="AlertMessages in Dashboard.CRMDetails._AlertsMessages">
+                <li>
+                    <div class="dp green">
+                        <i class="fa fa-comment-o"></i>
+                    </div>
+
+                    <div class="otherinfo-rt">
+                        <h3>
+                            <b> {{AlertMessages.AlertContent}}</b>
+                            <a href="#"><i> {{AlertMessages.AlertTimeDifference}} ago</i></a>
+                        </h3>
+
+                        <p>Pls meet me tomorrow at 6 pm.</p>
+                    </div>
+                </li>
+
+
+                @*<li>
+                        <div class="dp green blue">
+                            <i class="fa fa-envelope-o"></i>
+                        </div>
+
+                        <div class="otherinfo-rt">
+                            <h3>
+                                <b> Smith has sent you a mail.</b>
+                                <a href="#"><i> 2hr ago</i></a>
+                            </h3>
+
+                            <p>Pls meet me tomorrow at 6 pm.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dp green red">
+                            <i class="fa fa-exclamation-circle"></i>
+                        </div>
+
+                        <div class="otherinfo-rt">
+                            <h3>
+                                <b> Alert notifications</b>
+                                <a href="#"><i> 2hr ago</i></a>
+                            </h3>
+
+                            <p>Beds require for new patient</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dp green red">
+                            <i class="fa fa-exclamation-circle"></i>
+                        </div>
+
+                        <div class="otherinfo-rt">
+                            <h3>
+                                <b> Alert notifications</b>
+                                <a href="#"><i> 2hr ago</i></a>
+                            </h3>
+
+                            <p>Beds require for new patient</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dp green yellow">
+                            <i class="fa fa-bell-o"></i>
+                        </div>
+
+                        <div class="otherinfo-rt">
+                            <h3>
+                                <b> New notification</b>
+                                <a href="#"><i> 2hr ago</i></a>
+                            </h3>
+
+                            <p>5 new patient added</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dp green yellow">
+                            <i class="fa fa-bell-o"></i>
+                        </div>
+
+                        <div class="otherinfo-rt">
+                            <h3>
+                                <b> New notification</b>
+                                <a href="#"><i> 2hr ago</i></a>
+                            </h3>
+
+                            <p>5 new patient added</p>
+                        </div>
+                    </li>*@
+            </ul>
+
+            <div class="loadmore-crm">
+                <a href="#">Show all</a>
+            </div>
+        </div>
+    </div>
+</div>

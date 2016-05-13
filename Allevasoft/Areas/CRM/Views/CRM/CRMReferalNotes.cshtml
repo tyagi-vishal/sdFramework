@@ -1,0 +1,91 @@
+﻿<div class="referraltop notes_crm">
+    <div class="headingbar">
+
+        <b>Notes</b>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="scroll" >
+                <li ng-repeat="Notes in Dashboard.CRMDetails._Notes">
+                    <h3>
+                        <b>{{Notes.NotesTo}}</b>
+                        <span>Referred by: {{Notes.NotesFrom}}</span>
+                    </h3>
+
+                    <p>{{Notes.NotesContent}}</p>
+
+                    <h5>
+                        <i class="fa fa-star"></i>
+                        <b>{{Notes.NotesCreatedDate}}</b>
+                        <span>{{Notes.NotesCreatedDate}}ago</span>
+                    </h5>
+                </li>
+
+
+                @*<li>
+                    <h3>
+                        <b>Allan wake</b>
+                        <span>Referred by: Jhon Smith</span>
+                    </h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                    <h5>
+                        <i class="fa fa-star-o"></i>
+                        <b>4/29/2015</b>
+                        <span> 2hr ago</span>
+                    </h5>
+                </li>
+
+                <li>
+                    <h3>
+                        <b>Allan wake</b>
+                        <span>Referred by: Jhon Smith</span>
+                    </h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                    <h5>
+                        <i class="fa fa-star"></i>
+                        <b>4/29/2015</b>
+                        <span> 2hr ago</span>
+                    </h5>
+                </li>
+
+                <li>
+                    <h3>
+                        <b>Allan wake</b>
+                        <span>Referred by: Jhon Smith</span>
+                    </h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                    <h5>
+                        <i class="fa fa-star-o"></i>
+                        <b>4/29/2015</b>
+                        <span> 2hr ago</span>
+                    </h5>
+                </li>
+
+                <li>
+                    <h3>
+                        <b>Allan wake</b>
+                        <span>Referred by: Jhon Smith</span>
+                    </h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                    <h5>
+                        <i class="fa fa-star"></i>
+                        <b>4/29/2015</b>
+                        <span> 2hr ago</span>
+                    </h5>
+                </li>*@
+            </ul>
+
+            <div class="loadmore-crm">
+                <a href="#">Load More</a>
+            </div>
+        </div>
+    </div>
+</div>

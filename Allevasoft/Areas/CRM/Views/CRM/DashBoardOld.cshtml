@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "DashBoard";
+    Layout = "~/Views/Shared/_AllevaLayout.cshtml";
+
+
+}
+
+<script src="~/Scripts/pageScripts/CRM/contollers/dashboard.controller.js"></script>
+
+
+
+    <div class="" id="AppointmentController" ng-controller="dashBoardController" ng-init="fnDashBord()">
+   
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="head-title">DASHBOARD</h2>
+            </div>
+        </div>
+
+        <div class="row mrgnbtm">
+
+            <!--Calender Section Starts Here-->
+            <div class="col-lg-8 col-md-7">
+                
+                <div class="calender-whl-crm">
+                    <ng-include src="'@Url.Action("CRMAppointment", "CRM",new {area="CRM" })'"></ng-include>
+
+
+                    <ng-include src="'@Url.Action("CRMCalendar", "CRM",new {area="CRM" })'"></ng-include>
+
+
+
+
+                </div>
+             </div>
+            <!--Calender Section Ends Here-->
+            <!--Lead status and Opportunity Section Starts Here-->
+            <div class="col-lg-4 col-md-5">
+                <div class="leadstatus">
+                    <ng-include src="'@Url.Action("CRMLeadStatus", "CRM",new {area="CRM" })'"></ng-include>
+                </div>
+
+                <div class="leadstatus opportunitysttatus">
+                    <ng-include src="'@Url.Action("CRMOpportunitySttatus", "CRM",new {area="CRM" })'"></ng-include>
+
+                </div>
+            </div>
+            <!--Lead status and Opportunity Section Starts Ends Here-->
+
+        </div>
+
+
+
+
+
+
+        <div class="row mrgnbtm">
+            <div class="col-lg-4 col-md-5">
+                <!--Client status Section Starts Here-->
+                
+                    <ng-include src="'@Url.Action("CRMClientStatus", "CRM",new {area="CRM" })'"></ng-include>
+
+                
+                <!--Client status Section Ends Here-->
+                <!--Discharge Section Starts Here-->
+               
+                    <ng-include src="'@Url.Action("CRMDischargeStatus", "CRM",new {area="CRM" })'"></ng-include>
+               
+                <!--Discharge Section Ends Here-->
+                <!--Discharge Section Starts Here-->
+               
+                    <ng-include src="'@Url.Action("CRMBedStatus", "CRM",new {area="CRM" })'"></ng-include>
+                </div>
+                <!--Discharge Section Ends Here-->
+
+          
+
+
+
+            <div class="col-lg-8 col-md-7">
+                <!--Notes Section Starts Here-->
+              
+                    <ng-include src="'@Url.Action("CRMReferalNotes", "CRM",new {area="CRM" })'"></ng-include>
+
+                
+                <!--Notes Section Ends Here-->
+            </div>
+
+        </div>
+
+
+
+
+        <div class="row mrgnbtm">
+            <div class="col-md-7">
+                <!--Message Section Starts Here-->
+                <div class="referraltop notes_crm message_sctn">
+                   
+                    <ng-include src="'@Url.Action("CRMMessages", "CRM",new {area="CRM" })'"></ng-include>
+
+                </div>
+                <!--Message Section Ends Here-->
+            </div>
+
+
+
+
+
+            <div class="col-md-5">
+                <!--Notification/Alert Section Starts Here-->
+                <div class="referraltop notes_crm message_sctn notifctn-sctn">
+                    
+                    <ng-include src="'@Url.Action("CRMNotificationsAlerts", "CRM",new {area="CRM" })'"></ng-include>
+
+                </div>
+                <!--Notification/Alert  Section Ends Here-->
+            </div>
+        </div>
+    </div>
+
+@*@Styles.Render("~/Content/mCustomScrollbar")
+@Scripts.Render("~/bundles/mCustomScrollbarJs")*@

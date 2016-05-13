@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="724f9d7372754b6286c6eda1227508d4" Name="Diagram1" ZoomLevel="46">
+        <EntityTypeShape EntityType="AllevasoftModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="AllevasoftModel.AspNetUserClaim" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="2.125" />
+        <EntityTypeShape EntityType="AllevasoftModel.AspNetUser" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="AllevasoftModel.ELMAH_Error" Width="1.5" PointX="7.75" PointY="3.75" />
+        <AssociationConnector Association="AllevasoftModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="AllevasoftModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="AllevasoftModel.Race" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.LogException" Width="1.5" PointX="14.875" PointY="4.375" />
+        <EntityTypeShape EntityType="AllevasoftModel.LogOperation" Width="1.5" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.LogProperty" Width="1.5" PointX="12.625" PointY="7.5" />
+        <EntityTypeShape EntityType="AllevasoftModel.LogPropertyChanx" Width="1.5" PointX="14.875" PointY="1.25" />
+        <EntityTypeShape EntityType="AllevasoftModel.Log" Width="1.5" PointX="12.625" PointY="1.875" />
+        <EntityTypeShape EntityType="AllevasoftModel.LogType" Width="1.5" PointX="10.375" PointY="4.125" />
+        <EntityTypeShape EntityType="AllevasoftModel.Module" Width="1.5" PointX="7.375" PointY="10.75" />
+        <AssociationConnector Association="AllevasoftModel.FK_Exception_Log" />
+        <AssociationConnector Association="AllevasoftModel.FK_LogProperties_LogTypes" />
+        <AssociationConnector Association="AllevasoftModel.FK_LogPropertyChanges_Log" />
+        <AssociationConnector Association="AllevasoftModel.FK_Log_LogTypes" />
+        <EntityTypeShape EntityType="AllevasoftModel.Patient" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.LogInfo" Width="1.5" PointX="9.375" PointY="7.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.Role" Width="1.5" PointX="9.375" PointY="14" />
+        <EntityTypeShape EntityType="AllevasoftModel.BillingCompany" Width="1.5" PointX="3.75" PointY="13.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.BillingCompanyContact" Width="1.5" PointX="5.75" PointY="14.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.Country" Width="1.5" PointX="14.75" PointY="10.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.GlobalCodeCategory" Width="1.5" PointX="14.75" PointY="14.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.GlobalCode" Width="1.5" PointX="16.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.Menu" Width="1.5" PointX="16.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.RehabCompany" Width="1.5" PointX="0.75" PointY="17.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.RehabFacility" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.Screen" Width="1.5" PointX="16.75" PointY="17.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.ScreenType" Width="1.5" PointX="3.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.State" Width="1.5" PointX="5.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.SubMenu" Width="1.5" PointX="18.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.ReferralCompany" Width="1.5" PointX="8.375" PointY="18.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.ReferralContact" Width="1.5" PointX="19.375" PointY="12.75" />
+        <EntityTypeShape EntityType="AllevasoftModel.User" Width="1.5" PointX="11.625" PointY="12.125" />
+        <AssociationConnector Association="AllevasoftModel.FK_Users_Roles" />
+        <EntityTypeShape EntityType="AllevasoftModel.LeadBillingInfo" Width="1.5" PointX="12.625" PointY="21.5" />
+        <EntityTypeShape EntityType="AllevasoftModel.LeadCareTreatment" Width="1.5" PointX="12.625" PointY="32.375" />
+        <EntityTypeShape EntityType="AllevasoftModel.LeadInfo" Width="1.5" PointX="10.375" PointY="23.375" />
+        <EntityTypeShape EntityType="AllevasoftModel.LeadIntakeStatu" Width="1.5" PointX="12.625" PointY="25.625" />
+        <EntityTypeShape EntityType="AllevasoftModel.LeadLevelOfCare" Width="1.5" PointX="12.625" PointY="28.5" />
+        <AssociationConnector Association="AllevasoftModel.FK_LeadBillingInfo_LeadInfo" />
+        <AssociationConnector Association="AllevasoftModel.FK_LeadCareTreatment_LeadInfo" />
+        <AssociationConnector Association="AllevasoftModel.FK_LeadIntakeStatus_LeadInfo" />
+        <AssociationConnector Association="AllevasoftModel.FK_LeadLevelOfCare_LeadInfo" />
+        <EntityTypeShape EntityType="AllevasoftModel.LeadEmergencyContact" Width="1.5" PointX="12.625" PointY="36.375" />
+        <AssociationConnector Association="AllevasoftModel.FK_LeadEmergencyContact_LeadInfo" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

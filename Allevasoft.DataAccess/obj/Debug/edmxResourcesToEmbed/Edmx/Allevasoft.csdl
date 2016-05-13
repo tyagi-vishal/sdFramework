@@ -1,0 +1,1195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AllevasoftModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AllevasoftEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="AllevasoftModel.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="AllevasoftModel.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="AllevasoftModel.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="AllevasoftModel.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="AllevasoftModel.AspNetUser" />
+    <EntitySet Name="ELMAH_Error" EntityType="AllevasoftModel.ELMAH_Error" />
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="AllevasoftModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="AllevasoftModel.AspNetUserRoles">
+      <End Role="AspNetRole" EntitySet="AspNetRoles" />
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <FunctionImport Name="ssp_GetAllMenu" ReturnType="Collection(AllevasoftModel.ssp_GetAllMenu_Result)" />
+    <EntitySet Name="Races" EntityType="AllevasoftModel.Race" />
+    <EntitySet Name="LogExceptions" EntityType="AllevasoftModel.LogException" />
+    <EntitySet Name="LogOperations" EntityType="AllevasoftModel.LogOperation" />
+    <EntitySet Name="LogProperties" EntityType="AllevasoftModel.LogProperty" />
+    <EntitySet Name="LogPropertyChanges" EntityType="AllevasoftModel.LogPropertyChanx" />
+    <EntitySet Name="Logs" EntityType="AllevasoftModel.Log" />
+    <EntitySet Name="LogTypes" EntityType="AllevasoftModel.LogType" />
+    <EntitySet Name="Modules" EntityType="AllevasoftModel.Module" />
+    <AssociationSet Name="FK_Exception_Log" Association="AllevasoftModel.FK_Exception_Log">
+      <End Role="Log" EntitySet="Logs" />
+      <End Role="LogException" EntitySet="LogExceptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogProperties_LogTypes" Association="AllevasoftModel.FK_LogProperties_LogTypes">
+      <End Role="LogType" EntitySet="LogTypes" />
+      <End Role="LogProperty" EntitySet="LogProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogPropertyChanges_Log" Association="AllevasoftModel.FK_LogPropertyChanges_Log">
+      <End Role="Log" EntitySet="Logs" />
+      <End Role="LogPropertyChanx" EntitySet="LogPropertyChanges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Log_LogTypes" Association="AllevasoftModel.FK_Log_LogTypes">
+      <End Role="LogType" EntitySet="LogTypes" />
+      <End Role="Log" EntitySet="Logs" />
+    </AssociationSet>
+    <EntitySet Name="Patients" EntityType="AllevasoftModel.Patient" />
+    <EntitySet Name="LogInfoes" EntityType="AllevasoftModel.LogInfo" />
+    <FunctionImport Name="ssp_GetCRMDashbordDatails" ReturnType="Collection(AllevasoftModel.ssp_GetCRMDashbordDatails_Result)">
+      <Parameter Name="actionparameter" Mode="In" Type="String" />
+      <Parameter Name="appointmentDateFilter" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ssp_InsertReferralCompany">
+      <Parameter Name="ReferralCompanyName" Mode="In" Type="String" />
+      <Parameter Name="Address1" Mode="In" Type="String" />
+      <Parameter Name="Address2" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="StateId" Mode="In" Type="Int32" />
+      <Parameter Name="CountryId" Mode="In" Type="Int32" />
+      <Parameter Name="PostalCode" Mode="In" Type="String" />
+      <Parameter Name="MobileNumber" Mode="In" Type="String" />
+      <Parameter Name="OfficeNumber" Mode="In" Type="String" />
+      <Parameter Name="OtherNumber" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+      <Parameter Name="EmailAddress" Mode="In" Type="String" />
+      <Parameter Name="Website" Mode="In" Type="String" />
+      <Parameter Name="ReferralTypeId" Mode="In" Type="Int32" />
+      <Parameter Name="ReferralCategoryId" Mode="In" Type="Int32" />
+      <Parameter Name="Reason" Mode="In" Type="String" />
+      <Parameter Name="FacebookProfileURL" Mode="In" Type="String" />
+      <Parameter Name="TwitterProfileURL" Mode="In" Type="String" />
+      <Parameter Name="LinkedinProfileURL" Mode="In" Type="String" />
+      <Parameter Name="UploadDocumentName" Mode="In" Type="String" />
+      <Parameter Name="DocumentExtension" Mode="In" Type="String" />
+      <Parameter Name="DocumentFilePath" Mode="In" Type="String" />
+      <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ssp_UpdateReferralCompany">
+      <Parameter Name="ReferralCompanyId" Mode="In" Type="Int32" />
+      <Parameter Name="ReferralCompanyName" Mode="In" Type="String" />
+      <Parameter Name="Address1" Mode="In" Type="String" />
+      <Parameter Name="Address2" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="StateId" Mode="In" Type="Int32" />
+      <Parameter Name="CountryId" Mode="In" Type="Int32" />
+      <Parameter Name="PostalCode" Mode="In" Type="String" />
+      <Parameter Name="MobileNumber" Mode="In" Type="String" />
+      <Parameter Name="OfficeNumber" Mode="In" Type="String" />
+      <Parameter Name="OtherNumber" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+      <Parameter Name="EmailAddress" Mode="In" Type="String" />
+      <Parameter Name="Website" Mode="In" Type="String" />
+      <Parameter Name="ReferralTypeId" Mode="In" Type="Int32" />
+      <Parameter Name="ReferralCategoryId" Mode="In" Type="Int32" />
+      <Parameter Name="Reason" Mode="In" Type="String" />
+      <Parameter Name="FacebookProfileURL" Mode="In" Type="String" />
+      <Parameter Name="TwitterProfileURL" Mode="In" Type="String" />
+      <Parameter Name="LinkedinProfileURL" Mode="In" Type="String" />
+      <Parameter Name="UploadDocumentName" Mode="In" Type="String" />
+      <Parameter Name="DocumentExtension" Mode="In" Type="String" />
+      <Parameter Name="DocumentFilePath" Mode="In" Type="String" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Roles" EntityType="AllevasoftModel.Role" />
+    <EntitySet Name="BillingCompanies" EntityType="AllevasoftModel.BillingCompany" />
+    <EntitySet Name="BillingCompanyContacts" EntityType="AllevasoftModel.BillingCompanyContact" />
+    <EntitySet Name="Countries" EntityType="AllevasoftModel.Country" />
+    <EntitySet Name="GlobalCodeCategories" EntityType="AllevasoftModel.GlobalCodeCategory" />
+    <EntitySet Name="GlobalCodes" EntityType="AllevasoftModel.GlobalCode" />
+    <EntitySet Name="Menus" EntityType="AllevasoftModel.Menu" />
+    <EntitySet Name="RehabCompanies" EntityType="AllevasoftModel.RehabCompany" />
+    <EntitySet Name="RehabFacilities" EntityType="AllevasoftModel.RehabFacility" />
+    <EntitySet Name="Screens" EntityType="AllevasoftModel.Screen" />
+    <EntitySet Name="ScreenTypes" EntityType="AllevasoftModel.ScreenType" />
+    <EntitySet Name="States" EntityType="AllevasoftModel.State" />
+    <EntitySet Name="SubMenus" EntityType="AllevasoftModel.SubMenu" />
+    <EntitySet Name="ReferralCompanies" EntityType="AllevasoftModel.ReferralCompany" />
+    <EntitySet Name="ReferralContacts" EntityType="AllevasoftModel.ReferralContact" />
+    <FunctionImport Name="Ssp_InsertUpdateRehabUsers">
+      <Parameter Name="ACTION" Mode="In" Type="String" />
+      <Parameter Name="DATAXML" Mode="In" Type="String" />
+      <Parameter Name="CREDXML" Mode="In" Type="String" />
+      <Parameter Name="output" Mode="InOut" Type="Int32" />
+      <Parameter Name="LONGVALUE1" Mode="In" Type="Int64" />
+      <Parameter Name="LONGVALUE2" Mode="In" Type="Int64" />
+      <Parameter Name="BITVALUE1" Mode="In" Type="Boolean" />
+      <Parameter Name="BITVALUE2" Mode="In" Type="Boolean" />
+      <Parameter Name="STRINGVALUE1" Mode="In" Type="String" />
+      <Parameter Name="STRINGVALUE2" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ssp_GetAllReferralCategory" ReturnType="Collection(AllevasoftModel.ssp_GetAllReferralCategory_Result)">
+      <Parameter Name="GlobalCodeId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ssp_GetAllReferralCompanyById" ReturnType="Collection(AllevasoftModel.ssp_GetAllReferralCompanyById_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ssp_GetAllReferralContact" ReturnType="Collection(AllevasoftModel.ssp_GetAllReferralContact_Result)" />
+    <FunctionImport Name="ssp_GetAllReferralContactById" ReturnType="Collection(AllevasoftModel.ssp_GetAllReferralContactById_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ssp_GetAllReferralSource" ReturnType="Collection(AllevasoftModel.ssp_GetAllReferralSource_Result)" />
+    <FunctionImport Name="ssp_GetAllStates" ReturnType="Collection(AllevasoftModel.ssp_GetAllStates_Result)">
+      <Parameter Name="CountryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ssp_GetAllReferralCompanies" ReturnType="Collection(AllevasoftModel.ssp_GetAllReferralCompanies_Result)" />
+    <EntitySet Name="Users" EntityType="AllevasoftModel.User" />
+    <AssociationSet Name="FK_Users_Roles" Association="AllevasoftModel.FK_Users_Roles">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="LeadBillingInfoes" EntityType="AllevasoftModel.LeadBillingInfo" />
+    <EntitySet Name="LeadCareTreatments" EntityType="AllevasoftModel.LeadCareTreatment" />
+    <EntitySet Name="LeadInfoes" EntityType="AllevasoftModel.LeadInfo" />
+    <EntitySet Name="LeadIntakeStatus" EntityType="AllevasoftModel.LeadIntakeStatu" />
+    <EntitySet Name="LeadLevelOfCares" EntityType="AllevasoftModel.LeadLevelOfCare" />
+    <AssociationSet Name="FK_LeadBillingInfo_LeadInfo" Association="AllevasoftModel.FK_LeadBillingInfo_LeadInfo">
+      <End Role="LeadInfo" EntitySet="LeadInfoes" />
+      <End Role="LeadBillingInfo" EntitySet="LeadBillingInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeadCareTreatment_LeadInfo" Association="AllevasoftModel.FK_LeadCareTreatment_LeadInfo">
+      <End Role="LeadInfo" EntitySet="LeadInfoes" />
+      <End Role="LeadCareTreatment" EntitySet="LeadCareTreatments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeadIntakeStatus_LeadInfo" Association="AllevasoftModel.FK_LeadIntakeStatus_LeadInfo">
+      <End Role="LeadInfo" EntitySet="LeadInfoes" />
+      <End Role="LeadIntakeStatu" EntitySet="LeadIntakeStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LeadLevelOfCare_LeadInfo" Association="AllevasoftModel.FK_LeadLevelOfCare_LeadInfo">
+      <End Role="LeadInfo" EntitySet="LeadInfoes" />
+      <End Role="LeadLevelOfCare" EntitySet="LeadLevelOfCares" />
+    </AssociationSet>
+    <EntitySet Name="LeadEmergencyContacts" EntityType="AllevasoftModel.LeadEmergencyContact" />
+    <AssociationSet Name="FK_LeadEmergencyContact_LeadInfo" Association="AllevasoftModel.FK_LeadEmergencyContact_LeadInfo">
+      <End Role="LeadInfo" EntitySet="LeadInfoes" />
+      <End Role="LeadEmergencyContact" EntitySet="LeadEmergencyContacts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="AllevasoftModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="AllevasoftModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Hometown" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="AllevasoftModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+    <NavigationProperty Name="AspNetRoles" Relationship="AllevasoftModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+  </EntityType>
+  <EntityType Name="ELMAH_Error">
+    <Key>
+      <PropertyRef Name="ErrorId" />
+    </Key>
+    <Property Name="ErrorId" Type="Guid" Nullable="false" />
+    <Property Name="Application" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Host" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Source" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="User" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusCode" Type="Int32" Nullable="false" />
+    <Property Name="TimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sequence" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AllXml" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Type="AllevasoftModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="AllevasoftModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Type="AllevasoftModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+    <End Type="AllevasoftModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="ssp_GetAllMenu_Result">
+    <Property Type="Int32" Name="MenuID" Nullable="false" />
+    <Property Type="Int32" Name="NxtMenuId" Nullable="true" />
+    <Property Type="Int32" Name="SubMenuID" Nullable="true" />
+    <Property Type="String" Name="MenuName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IconClass" Nullable="true" />
+    <Property Type="String" Name="SubMenuName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SubMenuUrl" Nullable="true" />
+    <Property Type="String" Name="MenuUrl" Nullable="true" />
+    <Property Type="Int32" Name="ISSubMenu" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Race">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Race1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LogException">
+    <Key>
+      <PropertyRef Name="LogExceptionId" />
+    </Key>
+    <Property Name="LogExceptionId" Type="Guid" Nullable="false" />
+    <Property Name="LogId" Type="Guid" Nullable="false" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Source" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StackTrace" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Log" Relationship="AllevasoftModel.FK_Exception_Log" FromRole="LogException" ToRole="Log" />
+  </EntityType>
+  <EntityType Name="LogOperation">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LogProperty">
+    <Key>
+      <PropertyRef Name="TypeKey" />
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="TypeKey" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LogValues" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="LogType" Relationship="AllevasoftModel.FK_LogProperties_LogTypes" FromRole="LogProperty" ToRole="LogType" />
+  </EntityType>
+  <EntityType Name="LogPropertyChanx">
+    <Key>
+      <PropertyRef Name="LogPropertyChangeId" />
+    </Key>
+    <Property Name="LogPropertyChangeId" Type="Guid" Nullable="false" />
+    <Property Name="LogId" Type="Guid" Nullable="false" />
+    <Property Name="PropertyKey" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PreviousValue" Type="String" Nullable="false" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="NewValue" Type="String" Nullable="false" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="EncryptionKey" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Log" Relationship="AllevasoftModel.FK_LogPropertyChanges_Log" FromRole="LogPropertyChanx" ToRole="Log" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="Guid" Nullable="false" />
+    <Property Name="ObjectId" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="TypeKey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OperationKey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="Processed" Type="Boolean" Nullable="false" />
+    <Property Name="ProcessedDate" Type="DateTime" Precision="7" />
+    <Property Name="SendEmail" Type="Boolean" Nullable="false" />
+    <Property Name="WriteAsFile" Type="Boolean" Nullable="false" />
+    <Property Name="Representative" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="LogExceptions" Relationship="AllevasoftModel.FK_Exception_Log" FromRole="Log" ToRole="LogException" />
+    <NavigationProperty Name="LogPropertyChanges" Relationship="AllevasoftModel.FK_LogPropertyChanges_Log" FromRole="Log" ToRole="LogPropertyChanx" />
+    <NavigationProperty Name="LogType" Relationship="AllevasoftModel.FK_Log_LogTypes" FromRole="Log" ToRole="LogType" />
+  </EntityType>
+  <EntityType Name="LogType">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClientIdName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ParentIdName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LogProperties" Relationship="AllevasoftModel.FK_LogProperties_LogTypes" FromRole="LogType" ToRole="LogProperty" />
+    <NavigationProperty Name="Logs" Relationship="AllevasoftModel.FK_Log_LogTypes" FromRole="LogType" ToRole="Log" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="ModuleID" />
+    </Key>
+    <Property Name="ModuleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_Exception_Log">
+    <End Type="AllevasoftModel.Log" Role="Log" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="AllevasoftModel.LogException" Role="LogException" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Log">
+        <PropertyRef Name="LogId" />
+      </Principal>
+      <Dependent Role="LogException">
+        <PropertyRef Name="LogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogProperties_LogTypes">
+    <End Type="AllevasoftModel.LogType" Role="LogType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="AllevasoftModel.LogProperty" Role="LogProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogType">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="LogProperty">
+        <PropertyRef Name="TypeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogPropertyChanges_Log">
+    <End Type="AllevasoftModel.Log" Role="Log" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="AllevasoftModel.LogPropertyChanx" Role="LogPropertyChanx" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Log">
+        <PropertyRef Name="LogId" />
+      </Principal>
+      <Dependent Role="LogPropertyChanx">
+        <PropertyRef Name="LogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Log_LogTypes">
+    <End Type="AllevasoftModel.LogType" Role="LogType" Multiplicity="0..1" />
+    <End Type="AllevasoftModel.Log" Role="Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogType">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="Log">
+        <PropertyRef Name="TypeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Program" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProgramStartDate" Type="DateTime" Precision="3" />
+    <Property Name="ServiceRequested" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="SocialSecurityNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Weight" Type="Int16" />
+    <Property Name="Height" Type="Double" Nullable="false" />
+    <Property Name="FundSource" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FundSourcePolicy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Race" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HomeAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ReferralSource" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReasonForReferral" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfReferral" Type="DateTime" Precision="3" />
+    <Property Name="Siblings" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PreferredLanguage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ethnicity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmergencyPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="LogInfo">
+    <Key>
+      <PropertyRef Name="LogInfoId" />
+    </Key>
+    <Property Name="LogInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FieldName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PreviousValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NewValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="101" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Descriptions" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="SortOrder" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Users" Relationship="AllevasoftModel.FK_Users_Roles" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="BillingCompany">
+    <Key>
+      <PropertyRef Name="BillingCompanyId" />
+    </Key>
+    <Property Name="BillingCompanyId" Type="Int32" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyURL" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="OfficeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OtherNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="Country" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Reason" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="StatusDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeletedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="BillingCompanyContact">
+    <Key>
+      <PropertyRef Name="BillingCompanyContactId" />
+    </Key>
+    <Property Name="BillingCompanyContactId" Type="Int32" Nullable="false" />
+    <Property Name="BillingCompanyId" Type="Int32" />
+    <Property Name="Prefix" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Lastname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="OfficePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OtherPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="Country" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Reason" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="StatusDate" Type="DateTime" Precision="3" />
+    <Property Name="PostalCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeletedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+      <PropertyRef Name="ISO" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="NiceName" />
+      <PropertyRef Name="PhoneCode" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="ISO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NiceName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ISO3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NumCode" Type="Int32" />
+    <Property Name="PhoneCode" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GlobalCodeCategory">
+    <Key>
+      <PropertyRef Name="Category" />
+      <PropertyRef Name="CategoryName" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="AllowAddDelete" />
+      <PropertyRef Name="AllowCodeNameEdit" />
+      <PropertyRef Name="AllowSortOrderEdit" />
+      <PropertyRef Name="UserDefinedCategory" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="ModifiedBy" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="Category" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AllowAddDelete" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AllowCodeNameEdit" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AllowSortOrderEdit" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserDefinedCategory" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HasSubcodes" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordDeleted" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GlobalCode">
+    <Key>
+      <PropertyRef Name="GlobalCodeId" />
+      <PropertyRef Name="Category" />
+      <PropertyRef Name="CodeName" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="CannotModifyNameOrDelete" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="ModifiedBy" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="GlobalCodeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CodeName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CannotModifyNameOrDelete" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SortOrder" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="RecordDeleted" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="MenuID" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="ModifiedBy" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="MenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IconClass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ScreenId" Type="Int32" />
+    <Property Name="IsActive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsAllevaSoft" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OrderNumber" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordDeleted" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RehabCompany">
+    <Key>
+      <PropertyRef Name="RehabId" />
+    </Key>
+    <Property Name="RehabId" Type="Int32" Nullable="false" />
+    <Property Name="RehabName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FaderalId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="WebSite" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="OfficePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OtherPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LogoUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TimeZone" Type="Int32" />
+    <Property Name="PlanStartDate" Type="DateTime" Precision="0" />
+    <Property Name="ContactFirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ContactLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ContactEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContactOfficePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactOtherPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactMobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ContactAddress1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContactAddress2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContactCity" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ContactState" Type="Int32" />
+    <Property Name="ContactCountry" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="StatusDate" Type="DateTime" Precision="3" />
+    <Property Name="Reason" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="DatabaseId" Type="Int32" />
+    <Property Name="DomainName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeletedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RehabFacility">
+    <Key>
+      <PropertyRef Name="RehabFacilityId" />
+    </Key>
+    <Property Name="RehabFacilityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RehabId" Type="Int32" />
+    <Property Name="FacilityName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="OfficePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OtherPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="PostalCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="TimeZoneId" Type="Int32" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLat" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLong" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeletedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Screen">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+      <PropertyRef Name="ScreenName" />
+      <PropertyRef Name="ScreenType" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="ModifiedBy" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ScreenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScreenName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ScreenType" Type="Int32" Nullable="false" />
+    <Property Name="UpdateStoredProcedure" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ControllerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ActionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FormParameters" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PageTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CanSetPermission" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordDeleted" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ScreenType">
+    <Key>
+      <PropertyRef Name="ScreenTypeID" />
+    </Key>
+    <Property Name="ScreenTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScreenTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SubMenu">
+    <Key>
+      <PropertyRef Name="SubMenuID" />
+      <PropertyRef Name="IsActive" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="ModifiedBy" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="SubMenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubMenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MenuID" Type="Int32" />
+    <Property Name="ScreenId" Type="Int32" />
+    <Property Name="IsActive" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsAllevaSoft" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SortOrder" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordDeleted" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ReferralCompany">
+    <Key>
+      <PropertyRef Name="ReferralCompanyId" />
+    </Key>
+    <Property Name="ReferralCompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferralCompanyName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="PostalCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="OfficeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OtherNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReferralTypeId" Type="Int32" />
+    <Property Name="ReferralCategoryId" Type="Int32" />
+    <Property Name="StatusId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FacebookProfileURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TwitterProfileURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LinkedinProfileURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UploadDocumentName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentExtension" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentFilePath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="ReferralContact">
+    <Key>
+      <PropertyRef Name="ReferralContactId" />
+    </Key>
+    <Property Name="ReferralContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferalCategoryId" Type="Int32" />
+    <Property Name="ReferralCompanyId" Type="Int32" />
+    <Property Name="ContactPersonTitle" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="PrimaryLanguageId" Type="Int32" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="PostalCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="OfficeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="OtherNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FacebookProfileURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TwitterProfileURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LinkedinProfileURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UploadDocumentName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentExtension" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentFilePath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="ssp_GetAllReferralCategory_Result">
+    <Property Type="Int32" Name="GlobalCodeId" Nullable="false" />
+    <Property Type="String" Name="CodeName" Nullable="false" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="ssp_GetAllReferralCompanies_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="ReferralCompanyName" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="ReferralCategory" Nullable="false" MaxLength="250" />
+    <Property Type="Decimal" Name="Cost" Nullable="true" Precision="19" />
+    <Property Type="String" Name="ReferralType" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="ssp_GetAllReferralCompanyById_Result">
+    <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="150" />
+    <Property Type="Decimal" Name="Cost" Nullable="true" Precision="19" />
+    <Property Type="String" Name="Address1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="StateId" Nullable="true" />
+    <Property Type="String" Name="StateName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CountryId" Nullable="true" />
+    <Property Type="String" Name="CountryName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="8" />
+    <Property Type="Int32" Name="CategoryId" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Reason" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="StatusId" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="6" />
+  </ComplexType>
+  <ComplexType Name="ssp_GetAllReferralContact_Result">
+    <Property Type="String" Name="CodeName" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="61" />
+    <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="ReferralType" Nullable="false" MaxLength="7" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ssp_GetAllReferralContactById_Result">
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="CategoryId" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="ContactPersonTitle" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Gender" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+    <Property Type="String" Name="Address1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="StateId" Nullable="true" />
+    <Property Type="String" Name="StateName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CountryId" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="MobileNumber" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="String" Name="Reason" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="ssp_GetAllReferralSource_Result">
+    <Property Type="Int32" Name="GlobalCodeId" Nullable="false" />
+    <Property Type="String" Name="CodeName" Nullable="false" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="ssp_GetAllStates_Result">
+    <Property Type="Int32" Name="StateId" Nullable="false" />
+    <Property Type="String" Name="StateName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ssp_GetCRMDashbordDatails_Result">
+    <Property Type="Int32" Name="HotLeads" Nullable="true" />
+    <Property Type="Int32" Name="LostLeads" Nullable="true" />
+    <Property Type="Int32" Name="NewLeads" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AspNetUserId" Type="Guid" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Prefix" Type="Int32" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="Suffix" Type="Int32" />
+    <Property Name="MaritalStatus" Type="Int32" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SSN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="PostalCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Position" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="HireDate" Type="DateTime" Precision="0" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="TimeZoneId" Type="Int32" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Role" Relationship="AllevasoftModel.FK_Users_Roles" FromRole="User" ToRole="Role" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_Users_Roles">
+    <End Type="AllevasoftModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="AllevasoftModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LeadBillingInfo">
+    <Key>
+      <PropertyRef Name="LeadBillingId" />
+    </Key>
+    <Property Name="LeadBillingId" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="Int64" />
+    <Property Name="PaymentOption" Type="Int32" />
+    <Property Name="AssignBillingCompany" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="LeadInfo" Relationship="AllevasoftModel.FK_LeadBillingInfo_LeadInfo" FromRole="LeadBillingInfo" ToRole="LeadInfo" />
+  </EntityType>
+  <EntityType Name="LeadCareTreatment">
+    <Key>
+      <PropertyRef Name="TreatmentId" />
+    </Key>
+    <Property Name="TreatmentId" Type="Int64" Nullable="false" />
+    <Property Name="LeadId" Type="Int64" />
+    <Property Name="CareTreatmentId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="LeadInfo" Relationship="AllevasoftModel.FK_LeadCareTreatment_LeadInfo" FromRole="LeadCareTreatment" ToRole="LeadInfo" />
+  </EntityType>
+  <EntityType Name="LeadInfo">
+    <Key>
+      <PropertyRef Name="LeadId" />
+    </Key>
+    <Property Name="LeadId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferralCompanyId" Type="Int32" />
+    <Property Name="ReferralContactId" Type="Int32" />
+    <Property Name="Prefix" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MiddelName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="PrimaryLanguageId" Type="Int32" />
+    <Property Name="SSNNo" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="PostalCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="HomeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OfficeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OtherNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContactType" Type="Int32" />
+    <Property Name="ContactFirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ContactLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Relation" Type="Int32" />
+    <Property Name="ContactPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RehabId" Type="Int32" />
+    <Property Name="FacilityId" Type="Int32" />
+    <Property Name="LastContactDate" Type="DateTime" Precision="0" />
+    <Property Name="Ethnicity" Type="Int32" />
+    <Property Name="Race" Type="Int32" />
+    <Property Name="ProfileStatus" Type="Int32" />
+    <Property Name="IsAuthorized" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsMoved" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MovedLeadClientDate" Type="DateTime" Precision="3" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="LeadIntakeStatusId" Type="Int32" />
+    <Property Name="IsLeadHot" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="LeadBillingInfoes" Relationship="AllevasoftModel.FK_LeadBillingInfo_LeadInfo" FromRole="LeadInfo" ToRole="LeadBillingInfo" />
+    <NavigationProperty Name="LeadCareTreatments" Relationship="AllevasoftModel.FK_LeadCareTreatment_LeadInfo" FromRole="LeadInfo" ToRole="LeadCareTreatment" />
+    <NavigationProperty Name="LeadIntakeStatus" Relationship="AllevasoftModel.FK_LeadIntakeStatus_LeadInfo" FromRole="LeadInfo" ToRole="LeadIntakeStatu" />
+    <NavigationProperty Name="LeadLevelOfCares" Relationship="AllevasoftModel.FK_LeadLevelOfCare_LeadInfo" FromRole="LeadInfo" ToRole="LeadLevelOfCare" />
+    <NavigationProperty Name="LeadEmergencyContacts" Relationship="AllevasoftModel.FK_LeadEmergencyContact_LeadInfo" FromRole="LeadInfo" ToRole="LeadEmergencyContact" />
+  </EntityType>
+  <EntityType Name="LeadIntakeStatu">
+    <Key>
+      <PropertyRef Name="LeadIntakeStatus" />
+    </Key>
+    <Property Name="LeadIntakeStatus" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeadId" Type="Int64" Nullable="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="StausDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ChangedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LeadInfo" Relationship="AllevasoftModel.FK_LeadIntakeStatus_LeadInfo" FromRole="LeadIntakeStatu" ToRole="LeadInfo" />
+  </EntityType>
+  <EntityType Name="LeadLevelOfCare">
+    <Key>
+      <PropertyRef Name="LeadCareId" />
+    </Key>
+    <Property Name="LeadCareId" Type="Int64" Nullable="false" />
+    <Property Name="LeadId" Type="Int64" />
+    <Property Name="LevelOfCareId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="LeadInfo" Relationship="AllevasoftModel.FK_LeadLevelOfCare_LeadInfo" FromRole="LeadLevelOfCare" ToRole="LeadInfo" />
+  </EntityType>
+  <Association Name="FK_LeadBillingInfo_LeadInfo">
+    <End Type="AllevasoftModel.LeadInfo" Role="LeadInfo" Multiplicity="0..1" />
+    <End Type="AllevasoftModel.LeadBillingInfo" Role="LeadBillingInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeadInfo">
+        <PropertyRef Name="LeadId" />
+      </Principal>
+      <Dependent Role="LeadBillingInfo">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeadCareTreatment_LeadInfo">
+    <End Type="AllevasoftModel.LeadInfo" Role="LeadInfo" Multiplicity="0..1" />
+    <End Type="AllevasoftModel.LeadCareTreatment" Role="LeadCareTreatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeadInfo">
+        <PropertyRef Name="LeadId" />
+      </Principal>
+      <Dependent Role="LeadCareTreatment">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeadIntakeStatus_LeadInfo">
+    <End Type="AllevasoftModel.LeadInfo" Role="LeadInfo" Multiplicity="1" />
+    <End Type="AllevasoftModel.LeadIntakeStatu" Role="LeadIntakeStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeadInfo">
+        <PropertyRef Name="LeadId" />
+      </Principal>
+      <Dependent Role="LeadIntakeStatu">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LeadLevelOfCare_LeadInfo">
+    <End Type="AllevasoftModel.LeadInfo" Role="LeadInfo" Multiplicity="0..1" />
+    <End Type="AllevasoftModel.LeadLevelOfCare" Role="LeadLevelOfCare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeadInfo">
+        <PropertyRef Name="LeadId" />
+      </Principal>
+      <Dependent Role="LeadLevelOfCare">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LeadEmergencyContact">
+    <Key>
+      <PropertyRef Name="LeadEmergencyContactId" />
+    </Key>
+    <Property Name="LeadEmergencyContactId" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Relationship" Type="Int32" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="Country" Type="Int32" />
+    <Property Name="HomeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="LeadInfo" Relationship="AllevasoftModel.FK_LeadEmergencyContact_LeadInfo" FromRole="LeadEmergencyContact" ToRole="LeadInfo" />
+  </EntityType>
+  <Association Name="FK_LeadEmergencyContact_LeadInfo">
+    <End Type="AllevasoftModel.LeadInfo" Role="LeadInfo" Multiplicity="0..1" />
+    <End Type="AllevasoftModel.LeadEmergencyContact" Role="LeadEmergencyContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeadInfo">
+        <PropertyRef Name="LeadId" />
+      </Principal>
+      <Dependent Role="LeadEmergencyContact">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,52 @@
+﻿
+@model Allevasoft.Entities.PartialClass.LoggedUserInformationModel
+<div class="topright-nav username-ryt">
+
+    @if (Model.LoginUserId != 0)
+    {
+        <div class="username-ryt-left">
+            <img src="~/Images/user.jpg">
+        </div>
+
+
+        <div class="username-ryt-right dropdown">
+
+            @{
+                var res = Model.LastName.Substring(0, 1).ToUpper() + ". " + Model.FirstName;
+            }
+
+
+            <h6>@res</h6>
+            <button class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span><font>@Model.RoleType</font> <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            </button>
+
+
+
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" data-dropdown-out="bounceOut" data-dropdown-in="bounceIn">
+                <li>
+                    <a href="#">My Profile</a>
+                </li>
+                <li>
+                    <a href="#">My Appointment <font>12</font></a>
+                </li>
+
+                <li class="linebrdr">
+                    <div class="linesolid"></div>
+                </li>
+
+                <li>
+                    <a href="#"> <i class="fa fa-lock" aria-hidden="true"></i> Lock</a>
+                </li>
+
+                @using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "" }))
+            {
+            @Html.AntiForgeryToken()
+            <li>
+                <a href="javascript:document.getElementById('logoutForm').submit()"> <i class="fa fa-power-off" aria-hidden="true"></i> Logout</a>
+            </li>
+            }
+            </ul>
+        </div>
+                }
+</div>

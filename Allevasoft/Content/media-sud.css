@@ -1,0 +1,147 @@
+﻿@charset "utf-8";
+
+/* CSS Document */
+
+
+@media screen and (max-width: 1300px) {
+.labresults .msg-mid { width: 30%; }
+.labresults .msg-rt { color: #5e5e5e; width: 44%; }
+.msg-mid { width: 43%; }
+}
+
+@media (max-width:1264px) {
+.patient-list > li { width: 24.66%; }
+.patient-indicate { width: 57%; }
+.p-menu-left { color: #278ad8; float: left; width: 29%; }
+.p-menu.right { float: left; margin-left: 0; text-align: right; width: 70%; }
+}
+
+@media (max-width:1200px) {
+.RA-lft { width: 54%; }
+.patient-list > li { width: 24.55%; }
+}
+
+@media screen and (max-width: 1170px) {
+.wrap { padding-right: 15px; }
+.msgalertsec { width: 24%; margin-right: 0; }
+.discharge-sctn span { font-size: 13px; height: 30px; width: 30px; }
+.discharge-sctn p { font-size: 14px; }
+.labresults .msg-mid { margin: 0 0 0 10px; }
+}
+
+@media screen and (max-width: 1100px) {
+.msg-mid { margin: 0 7px; }
+.apoinmntsbtns a { width: auto; }
+}
+
+@media (max-width:1092px) {
+.pd-sec1 .patient-img { width: 147px !important; }
+.max-wdth { width: 100%; }
+.detail-wrap { padding: 0 20px; margin-top: 20px; }
+.common-div label { padding-right: 42px; }
+}
+
+@media screen and (max-width: 1024px) {
+.msgalertsec { width: 100%; margin: 15px 0; }
+.apoinmntsbtns a { width: auto; }
+}
+
+@media(max-width:992px) {
+.appoinment-section { margin-bottom: 25px; }
+.appoinment-section.low-width { margin-bottom: 20px; }
+.pd-sec-3 { margin-top: 0; }
+.apoinmntsbtns a { width: 130px; }
+.leadstatus { margin-top: 22px; }
+.referraltop.notes_crm { margin-top: 22px; }
+.notes_crm.message_sctn.notifctn-sctn .otherinfo-rt { width: 87%; }
+.calender-whl-crm , .leadstatus{ margin-bottom:25px;}
+.leadstatus , .referraltop.notes_crm{ margin-top:0;}
+.col-lg-4 .leadstatus:nth-child(2n){ margin-bottom:0;}
+.col-lg-4 .leadstatus.dischrgestts{ margin-bottom:25px;}
+.message_sctn.notifctn-sctn{ margin-top:25px;}
+
+}
+
+
+@media(max-width:984px) {
+.patient-list > li { width: 32.88%; }
+}
+
+@media(max-width:984px) {
+.patient-list > li { width: 32%; }
+}
+
+@media(max-width:940px) {
+.p-menu right .btn.btn-default.dropdown-toggle { width: 127px; }
+}
+
+@media screen and (max-width: 900px) {
+.appointmntr-whle { width: 100%; }
+.mssgalert-whole { margin: 15px 0; width: 100%; }
+.discharge-sctn p { font-size: 12px; }
+}
+
+@media(max-width:840px) {
+.p-menu.right { width: 100%; }
+.patient-indicate { float: left; text-align: left; }
+.p-menu.right { margin-top: 10px; }
+.p-menu-left { width: 100%; }
+}
+
+@media screen and (max-width: 768px) {
+.logo { float: none; margin: 0 auto 0px; text-align: center; }
+.wrap { padding-top: 90px; }
+
+.appointmntr-whle.commondiagnosis-section { width: 100%; }
+.dischrge-lbrec-whole { width: 100%; margin: 20px 0; }
+.discharge-sctn p { font-size: 15px; }
+.patient-img { margin-bottom: 23px; }
+.common-div { padding-left: 22px; }
+.appoinment-section { margin-bottom: 28px; }
+.patient-list > li { width: 48.88%; }
+.btn.btn-default.dropdown-toggle { width: 100px; }
+.labeled > li { color: #a7a6a6; font-size: 11px; }
+.logo { padding-left: 23px; text-align: left; }
+}
+
+@media screen and (max-width: 650px) {
+.wrap { margin-left: 0; padding-right: 28px; }
+.main-nav { bottom: 0; left: -265px; }
+.toggle-menu { margin-left: 265px; }
+.topright-nav ul li a { padding: 7px 20px; }
+/*.topright-nav { min-width: auto; }*/
+.discharge-sctn p { font-size: 17px; }
+.discharge-sctn span { padding: 8px 0; height: 44px; width: 44px; font-size: 18px; }
+.msgandnotfctn .dropdown { margin-right:0px; }
+ .wrap{ padding:82px 10px 0 10px;}
+ select{ background:#fff; border:1px solid #ccc; padding:4px 10px; color:#777;}
+
+.main-nav.toggle-menu .userprofile-lt.leftnav.recentpatient{ padding-bottom:110px;}
+}
+
+
+
+@media screen and (max-width: 480px) {
+#advertisement-control { top: 225px; }
+#advertisement-control.homert-cntrl { top: 370px; }
+.notes_crm.message_sctn.notifctn-sctn .otherinfo-rt { width: 73%; }
+.wrap{ padding:68px 10px 0 10px;}
+.head-title{ margin-top:0; margin-bottom:12px;}
+.logo{ margin-bottom:0;}
+.topright-nav { min-width: 55px; width: 40px; }
+.username-ryt-right h6 { display: none; }
+.username-ryt-right span font { display: none }
+}
+
+@media (max-width:420px) {
+.patient-list > li { width: 100%; }
+.btn.btn-default.dropdown-toggle { width: 100px; }
+.apoinmntsbtns a { width: auto; }
+.patient-list li { width: 80%; }
+.topright-nav { min-width:45px; }
+}
+
+@media(max-width:360px) {
+.p-menu right .btn.btn-default.dropdown-toggle { width: 100px; }
+.apoinmntsbtns a { padding: 6px 8px; }
+}

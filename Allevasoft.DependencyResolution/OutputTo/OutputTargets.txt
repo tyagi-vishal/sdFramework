@@ -1,0 +1,4 @@
+..\Allevasoft\bin
+..\Allevasoft\obj\Release\Package\PackageTmp\bin
+..\\AllevasoftWebAPI\bin
+..\\AllevasoftWebAPI\obj\Release\Package\PackageTmp\bin

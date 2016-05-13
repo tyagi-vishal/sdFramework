@@ -1,0 +1,556 @@
+﻿@{
+    ViewBag.Title = "DashBoard";
+    Layout = "~/Views/Shared/_AllevaLayout.cshtml";
+}
+<script src="~/Scripts/pageScripts/CRM/contollers/dashboard.controller.js"></script>
+<div  id="AppointmentController" ng-controller="dashBoardController" ng-init="fnDashBord()" >
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="head-title">DASHBOARD</h2>
+        </div>
+    </div>
+
+    <div class="row mrgnbtm">
+
+        <!--Calender Section Starts Here-->
+        <div class="col-lg-8 col-md-7">
+            <div class="calender-whl-crm">
+                @*<div class="calender-whl-crm-left">
+                <h5>Today</h5>
+                <h4>19 april</h4>
+
+                <ul class="scroll">
+                    <li>
+                        <div class="calnder-inner-lt">
+                            <p>Meeting with newly added patient</p>
+                        </div>
+
+                        <div class="calnder-inner-rt">
+                            <span>
+                                <i class="fa fa-remove"></i>
+                                <i class="fa fa-flag"></i>
+                            </span>
+                            <b>5:45 am</b>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="calnder-inner-lt">
+                            <p>Meeting with newly added patient</p>
+                        </div>
+
+                        <div class="calnder-inner-rt">
+                            <span>
+                                <i class="fa fa-remove"></i>
+                                <i class="fa fa-flag"></i>
+                            </span>
+                            <b>5:45 am</b>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="calnder-inner-lt">
+                            <p>Meeting with newly added patient</p>
+                        </div>
+
+                        <div class="calnder-inner-rt">
+                            <span>
+                                <i class="fa fa-remove"></i>
+                                <i class="fa fa-flag"></i>
+                            </span>
+                            <b>5:45 am</b>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="calnder-inner-lt">
+                            <p>Meeting with newly added patient</p>
+                        </div>
+
+                        <div class="calnder-inner-rt">
+                            <span>
+                                <i class="fa fa-remove"></i>
+                                <i class="fa fa-flag"></i>
+                            </span>
+                            <b>5:45 am</b>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="calnder-inner-lt">
+                            <p>Meeting with newly added patient</p>
+                        </div>
+
+                        <div class="calnder-inner-rt">
+                            <span>
+                                <i class="fa fa-remove"></i>
+                                <i class="fa fa-flag"></i>
+                            </span>
+                            <b>5:45 am</b>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="calender-whl-crm-right">
+                <img src="~/Images/calendar-crm.jpg" class="crmdsbrd">
+            </div>*@
+                
+                        <ng-include src="'@Url.Action("CRMAppointment", "CRM",new {area="CRM" })'"></ng-include>
+
+                  
+                        <ng-include src="'@Url.Action("CRMCalendar", "CRM",new {area="CRM" })'"></ng-include>
+                </div>
+            </div>
+        <!--Calender Section Ends Here-->
+        <!--Lead status and Opportunity Section Starts Here-->
+        <div class="col-lg-4 col-md-5">
+            @*<div class="leadstatus">
+                <h3>Lead Status</h3>
+                <div class="leadstatus-lt">
+                    <i class="fa fa-sitemap"></i>
+                </div>
+
+                <div class="leadstatus-rt">
+                    <p><span>New</span>  <b>5</b></p>
+                    <p><span>Hot</span>  <b>6</b></p>
+                    <p><span>Lost</span> <b>4</b></p>
+                </div>
+            </div>*@
+            <ng-include src="'@Url.Action("CRMLeadStatus", "CRM",new {area="CRM" })'"></ng-include>
+            <ng-include src="'@Url.Action("CRMOpportunitySttatus", "CRM",new {area="CRM" })'"></ng-include>
+            @*<div class="leadstatus opportunitysttatus">
+                <h3>Opportunity </h3>
+                <div class="leadstatus-lt">
+                    <i class="fa fa-group"></i>
+                </div>
+
+                <div class="leadstatus-rt">
+                    <p><span>Sale</span>  <b>5</b></p>
+                    <p><span>Psych</span>  <b>2</b></p>
+                    <p><span>Billing</span> <b>5</b></p>
+                    <p><span>Cost</span> <b>4</b></p>
+                </div>
+            </div>*@
+        </div>
+        <!--Lead status and Opportunity Section Starts Ends Here-->
+
+    </div>
+
+
+
+
+
+
+    <div class="row mrgnbtm">
+        <div class="col-lg-4 col-md-5">
+            <!--Client status Section Starts Here-->
+            @*<div class="leadstatus clientsttats">
+                <h3>Client Status</h3>
+                <div class="leadstatus-lt">
+                    <i class="fa fa-user"></i>
+                </div>
+
+                <div class="leadstatus-rt">
+                    <p><span>Green</span>  <b>5</b></p>
+                    <p><span>Yellow</span>  <b>5</b></p>
+                    <p><span>Red</span> <b>5</b></p>
+                </div>
+            </div>*@
+            <ng-include src="'@Url.Action("CRMClientStatus", "CRM",new {area="CRM" })'"></ng-include>
+            <!--Client status Section Ends Here-->
+            <!--Discharge Section Starts Here-->
+            @*<div class="leadstatus clientsttats dischrgestts">
+                <h3>Discharge</h3>
+                <div class="leadstatus-lt">
+                    <i class="fa fa-home"></i>
+                </div>
+
+                <div class="leadstatus-rt">
+                    <p><span>Today</span>  <b>5</b></p>
+                    <p><span>Week</span>  <b>5</b></p>
+                    <p><span>Month</span> <b>5</b></p>
+                </div>
+            </div>*@
+            <ng-include src="'@Url.Action("CRMDischargeStatus", "CRM",new {area="CRM" })'"></ng-include>
+            <!--Discharge Section Ends Here-->
+            <!--Discharge Section Starts Here-->
+            @*<div class="leadstatus clientsttats bedstts">
+                <h3>Bed Staus</h3>
+                <div class="leadstatus-lt">
+                    <i class="fa fa-hotel"></i>
+                </div>
+
+                <div class="leadstatus-rt">
+                    <p><span>Total</span>  <b>5</b></p>
+                    <p><span>Available</span>  <b>5</b></p>
+                </div>
+            </div>*@
+            <ng-include src="'@Url.Action("CRMBedStatus", "CRM",new {area="CRM" })'"></ng-include>
+            <!--Discharge Section Ends Here-->
+
+        </div>
+
+
+
+        <div class="col-lg-8 col-md-7">
+            <!--Notes Section Starts Here-->
+            @*<div class="referraltop notes_crm">
+                <div class="headingbar">
+                    <b>Notes</b>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="scroll">
+                            <li>
+                                <h3>
+                                    <b>Allan wake</b>
+                                    <span>Referred by: Jhon Smith</span>
+                                </h3>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                                <h5>
+                                    <i class="fa fa-star"></i>
+                                    <b>4/29/2015</b>
+                                    <span> 2hr ago</span>
+                                </h5>
+                            </li>
+
+
+                            <li>
+                                <h3>
+                                    <b>Allan wake</b>
+                                    <span>Referred by: Jhon Smith</span>
+                                </h3>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                                <h5>
+                                    <i class="fa fa-star-o"></i>
+                                    <b>4/29/2015</b>
+                                    <span> 2hr ago</span>
+                                </h5>
+                            </li>
+
+                            <li>
+                                <h3>
+                                    <b>Allan wake</b>
+                                    <span>Referred by: Jhon Smith</span>
+                                </h3>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                                <h5>
+                                    <i class="fa fa-star"></i>
+                                    <b>4/29/2015</b>
+                                    <span> 2hr ago</span>
+                                </h5>
+                            </li>
+
+                            <li>
+                                <h3>
+                                    <b>Allan wake</b>
+                                    <span>Referred by: Jhon Smith</span>
+                                </h3>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                                <h5>
+                                    <i class="fa fa-star-o"></i>
+                                    <b>4/29/2015</b>
+                                    <span> 2hr ago</span>
+                                </h5>
+                            </li>
+
+                            <li>
+                                <h3>
+                                    <b>Allan wake</b>
+                                    <span>Referred by: Jhon Smith</span>
+                                </h3>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</p>
+
+                                <h5>
+                                    <i class="fa fa-star"></i>
+                                    <b>4/29/2015</b>
+                                    <span> 2hr ago</span>
+                                </h5>
+                            </li>
+                        </ul>
+
+                        <div class="loadmore-crm">
+                            <a href="#">Load More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+            <ng-include src="'@Url.Action("CRMReferalNotes", "CRM",new {area="CRM" })'"></ng-include>
+            <!--Notes Section Ends Here-->
+        </div>
+
+    </div>
+
+
+
+
+    <div class="row mrgnbtm">
+        <div class="col-md-7">
+            <!--Message Section Starts Here-->
+            @*<div class="referraltop notes_crm message_sctn">
+                <div class="headingbar">
+                    <b>Message</b>
+                    <i class="fa fa-refresh"></i>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="scroll">
+                            <li>
+                                <div class="dp">
+                                    <img src="~/Images/user.jpg">
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b>Joe</b>
+                                        <a href="#"><img src="~/Images/message_read.png"></a>
+                                    </h3>
+
+                                    <p>How many beds are available for today? Can you send me....</p>
+                                    <h4>
+                                        <b> 2hr ago</b>
+                                        <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                    </h4>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="dp">
+                                    <img src="~/Images/user.jpg">
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b>Joe</b>
+                                        <a href="#"><img src="~/Images/message_read.png"></a>
+                                    </h3>
+
+                                    <p>How many beds are available for today? Can you send me....</p>
+                                    <h4>
+                                        <b> 2hr ago</b>
+                                        <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                    </h4>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="dp">
+                                    <img src="~/Images/user.jpg">
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b>Joe</b>
+                                        <a href="#"><img src="~/Images/message_read.png"></a>
+                                    </h3>
+
+                                    <p>How many beds are available for today? Can you send me....</p>
+                                    <h4>
+                                        <b> 2hr ago</b>
+                                        <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                    </h4>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="dp">
+                                    <img src="~/Images/user.jpg">
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b>Joe</b>
+                                        <a href="#"><img src="~/Images/message_read.png"></a>
+                                    </h3>
+
+                                    <p>How many beds are available for today? Can you send me....</p>
+                                    <h4>
+                                        <b> 2hr ago</b>
+                                        <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                    </h4>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="dp">
+                                    <img src="~/Images/user.jpg">
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b>Joe</b>
+                                        <a href="#"><img src="~/Images/message_read.png"></a>
+                                    </h3>
+
+                                    <p>How many beds are available for today? Can you send me....</p>
+                                    <h4>
+                                        <b> 2hr ago</b>
+                                        <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                    </h4>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="dp">
+                                    <img src="~/Images/user.jpg">
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b>Joe</b>
+                                        <a href="#"><img src="~/Images/message_read.png"></a>
+                                    </h3>
+
+                                    <p>How many beds are available for today? Can you send me....</p>
+                                    <h4>
+                                        <b> 2hr ago</b>
+                                        <a href="#"><i class="fa fa-mail-reply"></i></a>
+                                    </h4>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="loadmore-crm">
+                            <a href="#">Show all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+            <ng-include src="'@Url.Action("CRMMessages", "CRM",new {area="CRM" })'"></ng-include>
+            <!--Message Section Ends Here-->
+        </div>
+
+
+
+
+
+        <div class="col-md-5">
+            <!--Notification/Alert Section Starts Here-->
+            @*<div class="referraltop notes_crm message_sctn notifctn-sctn">
+                <div class="headingbar">
+                    <b>Notification/Alerts</b>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="scroll">
+                            <li>
+                                <div class="dp green">
+                                    <i class="fa fa-comment"></i>
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b> You have 5 message unread</b>
+                                        <a href="#"><i> 2hr ago</i></a>
+                                    </h3>
+
+                                    <p>Pls meet me tomorrow at 6 pm.</p>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="dp green blue">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b> Smith has sent you a mail.</b>
+                                        <a href="#"><i> 2hr ago</i></a>
+                                    </h3>
+
+                                    <p>Pls meet me tomorrow at 6 pm.</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="dp green red">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b> Alert notifications</b>
+                                        <a href="#"><i> 2hr ago</i></a>
+                                    </h3>
+
+                                    <p>Beds require for new patient</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="dp green red">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b> Alert notifications</b>
+                                        <a href="#"><i> 2hr ago</i></a>
+                                    </h3>
+
+                                    <p>Beds require for new patient</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="dp green yellow">
+                                    <i class="fa fa-bell"></i>
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b> New notification</b>
+                                        <a href="#"><i> 2hr ago</i></a>
+                                    </h3>
+
+                                    <p>5 new patient added</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="dp green yellow">
+                                    <i class="fa fa-bell"></i>
+                                </div>
+
+                                <div class="otherinfo-rt">
+                                    <h3>
+                                        <b> New notification</b>
+                                        <a href="#"><i> 2hr ago</i></a>
+                                    </h3>
+
+                                    <p>5 new patient added</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="loadmore-crm">
+                            <a href="#">Show all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+            <ng-include src="'@Url.Action("CRMNotificationsAlerts", "CRM",new {area="CRM" })'"></ng-include>
+            <!--Notification/Alert  Section Ends Here-->
+        </div>
+    </div>
+</div>
+
